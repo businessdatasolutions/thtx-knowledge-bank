@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>AI Strategy Matrix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .matrix-container {
+        display: grid;
+        grid-template-columns: auto 1fr 1fr;
+        grid-template-rows: auto 1fr 1fr;
+        gap: 1rem;
+      }
+      .axis-label-y {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-50 text-gray-800 flex items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8"
+  >
+    <div class="w-full max-w-4xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl font-bold text-center mb-8 text-gray-900">
+        AI Strategy Matrix
+      </h1>
+
+      <div class="matrix-container">
+        <!-- Empty corner -->
+        <div></div>
+
+        <!-- Risk Axis Labels -->
+        <div class="text-center font-semibold text-gray-600">Low Risk</div>
+        <div class="text-center font-semibold text-gray-600">High Risk</div>
+
+        <!-- Opportunity Axis Label (High) -->
+        <div class="flex items-center justify-center">
+          <div
+            class="axis-label-y font-semibold text-gray-600 whitespace-nowrap"
+          >
+            High Opportunity
+          </div>
+        </div>
+
+        <!-- Quadrant 1: Exploit -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex flex-col"
+        >
+          <h2 class="text-2xl font-bold text-blue-600 mb-2">Exploit</h2>
+          <p class="text-sm text-gray-500 mb-4">(High Opportunity, Low Risk)</p>
+          <div class="mt-auto">
+            <h3 class="font-semibold text-gray-800 mb-2">
+              Business Innovation Example:
+            </h3>
+            <p class="text-gray-600">
+              Implement an AI-powered chatbot for customer service to answer
+              common queries, reducing support tickets and improving response
+              time. This is a proven, low-risk way to increase efficiency.
+            </p>
+          </div>
+        </div>
+
+        <!-- Quadrant 2: Explore -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex flex-col"
+        >
+          <h2 class="text-2xl font-bold text-purple-600 mb-2">Explore</h2>
+          <p class="text-sm text-gray-500 mb-4">
+            (High Opportunity, High Risk)
+          </p>
+          <div class="mt-auto">
+            <h3 class="font-semibold text-gray-800 mb-2">
+              Business Innovation Example (Moonshot):
+            </h3>
+            <p class="text-gray-600">
+              Develop a proprietary generative AI model trained on internal data
+              to create novel product designs autonomously. This is a high-risk,
+              high-reward "moonshot" that could create a significant competitive
+              advantage.
+            </p>
+          </div>
+        </div>
+
+        <!-- Opportunity Axis Label (Low) -->
+        <div class="flex items-center justify-center">
+          <div
+            class="axis-label-y font-semibold text-gray-600 whitespace-nowrap"
+          >
+            Low Opportunity
+          </div>
+        </div>
+
+        <!-- Quadrant 3: Learn -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex flex-col"
+        >
+          <h2 class="text-2xl font-bold text-green-600 mb-2">Learn</h2>
+          <p class="text-sm text-gray-500 mb-4">(Low Opportunity, Low Risk)</p>
+          <div class="mt-auto">
+            <h3 class="font-semibold text-gray-800 mb-2">
+              Business Innovation Example:
+            </h3>
+            <p class="text-gray-600">
+              Run internal workshops and provide access to AI tools (like
+              content generators) for the marketing team to experiment with
+              creating ad copy and social media posts. This fosters learning
+              without impacting core operations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Quadrant 4: Monitor -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex flex-col"
+        >
+          <h2 class="text-2xl font-bold text-yellow-600 mb-2">Monitor</h2>
+          <p class="text-sm text-gray-500 mb-4">(Low Opportunity, High Risk)</p>
+          <div class="mt-auto">
+            <h3 class="font-semibold text-gray-800 mb-2">
+              Business Innovation Example:
+            </h3>
+            <p class="text-gray-600">
+              Assign a research team to track the development of Artificial
+              General Intelligence (AGI). While too risky and nascent for
+              current investment, monitoring progress ensures the company isn't
+              blindsided by a paradigm shift.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

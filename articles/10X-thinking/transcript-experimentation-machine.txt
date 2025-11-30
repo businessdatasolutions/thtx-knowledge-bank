@@ -1,0 +1,1094 @@
+YT: https://youtu.be/yBs9ClR2db4?si=d8wASqjbzZXwA_Hz
+
+0:00
+everyone um good afternoon um thanks for joining
+0:06
+us for this uh this far side chat with Jeff bosgang um and uh Jeff really
+0:15
+doesn't need an introduction in the entrepreneurship and Venture Capital ecosystem um but uh let me give you some
+0:22
+of the highlights of his background and Jeff and I have known each other for H
+0:28
+more than 30 years and we HPS classmates H we also are study group classmates and
+0:35
+that's where I learned how many um standard deviations a human being can
+0:40
+have between the intelligence of another another human being um um we have been
+0:47
+busy peers for quite a few years h h o
+0:53
+over 20 years ago Jeff co-founded flybridge and he continues to lead fly
+0:58
+flybridge which is one of the premier early stage VC funds uh in the US with
+1:05
+over a billion dollars in assets under management H also H he has written two
+1:11
+books the three books that he has written is are behind him and mastering the VC game which he wrote in 2010 and
+1:20
+entering startup land which uh the first one got more praise but I actually
+1:26
+prefer the entering startup land and I think that's a great book and and we are
+1:32
+also HBS colleagues and Jeff has been the faculty of har school for over 10
+1:38
+years where he designed and leads in the second year in HBS MBA course called
+1:44
+launching tech tech Ventures everybody at HBS calls at LTV which onethird of
+1:50
+the students at the MBA class takes that course so it's tremendously popular um
+1:56
+one of the most popular HBS courses so congratulations Jeff on that um now at
+2:01
+the book launch which happened last Thursday um which Jeff H offered and
+2:08
+hosted for HBS students and faculty Mitch wise H who interviewed H Jeff for
+2:16
+the launch said this book is not only about how to become a 10x founder and
+2:23
+this book is about how to become a 10x leader and and I think it very much
+2:29
+repres present what this book is about and we're going to get quite a bit on the how um now I would like to add to
+2:36
+this H quote from from Mitch by saying that this book is an invitation H it's an invitation to
+2:44
+become an a 10x leader with the help of AI um now J book is also a manual that
+2:53
+every startup founder should have at their side and I say this regard
+2:59
+regardless of AI um the book is a man of how to launch and scale your Venture and
+3:07
+of course in this book Jeff also suggests um how AI can can do it faster
+3:16
+leaner and better um now the the book is a gem in many ways um but one of the
+3:23
+reasons why it it's a gem just to give you an example in appendix a he takes
+3:30
+you step and step step by step on with tips and examples of how you should
+3:37
+interact with the ey so it really brings it down to to to the very practical
+3:43
+level in appendix D he lists the apps that He suggests and and tools to
+3:51
+recommend to start using AI so really very practical book to get you started
+3:57
+in this journey of of AI and um Now by reading the this book you will not
+4:03
+become an expert in AI that is not the intention of the book um but it is a
+4:08
+motivation and a guide so you so you can start your o own H journey to become a
+4:14
+10x leader and and let me give you a notch of why you should read this book
+4:20
+and and start this this journey and soon and soon is in months not years um if
+4:28
+you are not well versed in to ai co-pilots ai agents and it will be
+4:34
+exactly the same as if today you didn't know how to use Microsoft Excel that's
+4:39
+basically how I think it should be viewed now the good news is that all
+4:45
+these tools are not rocket science and and Jeff States in in in his book a PhD
+4:53
+is no longer needed to build an ai ai forward company the technical playing
+4:59
+field is being leveled by this technology and so after reading this
+5:05
+book you I think a lot of that anxiety will come down because you'll see that
+5:11
+anyone any of us can actually do this um and uh and and I think that's one of the
+5:17
+great things about this book um now we're gonna um um right now I'm going to
+5:24
+pass it over to Jeff to give us a little bit of of uh of some of the basics um on
+5:32
+some of the fundamentals and uh after we're going to have a a conversation and in the last 10
+5:40
+minutes we're going to leave it for a Q&A which if you have questions please submit them submit them in the in the
+5:48
+Q&A feature and for Zoom so with this um again thank you very much for joining
+5:53
+and I'll pass it over to to Jeff thank you so much Alvaro you know you said we've been
+6:00
+friends for over 30 years which is very true I'm not sure if that happened when we were 5 years old or 25 years old at
+6:07
+Harvard Business School I think it's uh kind of hard to Fathom but Alvaro has been with me for over three decades and
+6:13
+we've lived these parallel lives as investors entrepreneurs and faculty
+6:19
+colleagues here at Harvard Business School and it's been just a joy um to be on that Journey with you and I was so
+6:24
+grateful you were there last week you got to meet my mom and of course you know my wife and my mom who's 92 years
+6:30
+old I revealed to the audience is a power user of chat GPT my mom was
+6:36
+telling a few of my students that she used it to help her write a job description for the coral director at
+6:43
+her senior care home for the chorus that um that they've created so to your point
+6:50
+Alvaro don't be scared of AI if my 92-year-old mom can be a power user you all can be power users and of these
+6:57
+incredible tools as well so I'll maybe show a couple slides and tell a little
+7:03
+bit the story of the book amplifying what Alvaro said and then I'll open it up for conversation and questions and
+7:11
+the the book um as as Alvaro described it's really what I hope is a Playbook or
+7:17
+a framework for how you can become a 10x leader and we all know this mythical 10x
+7:23
+software developer that's out there that's 10 times more productive than the average software developer and we all
+7:28
+try to hire those incredible 10x software developers into our portfolio companies and work with them in our in
+7:33
+our in our lives I believe we're entering an era where as I say at the beginning of the book AI is not going to
+7:40
+replace Founders anytime soon but Founders who use AI are going to replace
+7:46
+Founders who don't and the founders who learn to you use AI effectively are going to be effectively 10x Founders
+7:53
+they're going to be 10 times more productive than the average and typical founder and that's not just relegated to
+7:59
+Founders it's it's the same for salespeople for analysts for consultants for marketers probably um for for us
+8:06
+even as parents so I'm really excited to reveal and and bring forward not only
+8:13
+these timely tools and it is a bit awkward to write a a book about AI when
+8:19
+things change so rapidly and the tools are so Dynamic and improving so quickly and I'll show you a a little bit of data
+8:26
+on that so these incredibly time tools with Timeless techniques of finding
+8:32
+product Market fit and creating enduring value in a profitable sustainable business so that's really the the goal
+8:39
+and the hope of what the material provides and as Alvaro described you know I I've been an entrepreneur in the
+8:45
+web 10 era I've been an investor in the cloud era and the mobile era more recently in the crypto web 3 era and the
+8:51
+and the blockchain I firmly believe that this moment in time is far more
+8:57
+impactful far more disruptive than any of these other technology waves that this wave is the largest and most
+9:04
+disruptive for all 8 billion people on this planet and that it's going to happen very very quickly and one chart
+9:12
+that gives me that confidence or provides me with that data is this chart
+9:17
+which looks a bit complicated but is very simple in its framework it's a an example of the journey that some of
+9:24
+these models are on and as they've evolved in the last year or two the x-axis is cost so how expensive are
+9:32
+these AI models and the tokens and the underlying capabilities and the Y AIS is
+9:38
+capabilities how skilled are these models and what you see is similar to Mo's law but on steroids these models
+9:46
+are getting dramatically better in terms of their capabilities which is on a log scale and
+9:52
+dramatically cheaper in terms of their cost also on a log scale and if you sort
+9:58
+of look at the top of this chart you see this dotted line what is the capability
+10:05
+represented by a PhD a human PhD in the field a biologist a chemist a physicist
+10:11
+a computer scientist and these models which now are providing this Chain of
+10:17
+Thought analysis and these incredible capabilities for a deep
+10:23
+research and inference and insight are reaching PhD level capabilities so what
+10:29
+does that mean it means that these capabilities are coming and are going to
+10:35
+have a massive impact on our economy there's a recent PWC study that forecasted a$6 trillion impact on our
+10:43
+economy 7 trillion of which would be through productivity gains nine trillion of which would come from additional
+10:50
+consumption because of these improved capabilities and if you just want to put
+10:55
+that number in perspective this is roughly the size of the GDP of China so in terms of the scale that we're talking
+11:02
+about it's just mindblowing and when you think about historically when new technologies have
+11:08
+come about whether it was the Advent of the smartphone or cloud or EV electronic
+11:15
+Vehicles you would see this natural technology life cycle adoption curve where the innovators a few percentage
+11:21
+points would be the first adopters early adopters early majority and over time it
+11:26
+would finally Cascade to the late majority and it would take many many years for this cycle I did my first
+11:32
+internet Commerce transaction in 1994 when Alvaro and I were still at Harvard Business School as students Because the
+11:39
+Internet had just been released and I was one of the first people to do one of these secure transactions I foolishly
+11:46
+put in my credit card into a website in 1994 and I bought a mug at a at a Lo at
+11:52
+a little e-commerce store that had been created and it took decades for that e-commerce capability to become
+12:00
+universally available through Amazon and Shopify and other platforms well what's
+12:06
+different about AI is that the adoption curve is absolutely vertical the speed
+12:13
+of adoption is extraordinary and one of the reasons for that is that the devices
+12:18
+that are delivering these capabilities are already in your pocket there are 8
+12:24
+trillion smartphones in the world that are getting more and more AI capab
+12:30
+there are uh over 2 billion laptops and iPads in the world that are getting more
+12:36
+and more AI capable there are a billion and a half automobiles in the world that are able to be updated over the air with
+12:43
+their software capabilities for autonomous driving and other AI capabilities thus all of these
+12:51
+capabilities that you saw in that chart earlier on this log scale that are dramatically improving they're all
+12:57
+coming to your home and they're coming to your home and your pocket and your office now there's a new release of
+13:05
+Alexa some of you may have Amazon smart devices in your home I don't know about
+13:10
+you I found it very frustrating to talk to Alexa lately because I've been trained on the capabilities of chat GPT
+13:16
+and they're so much better and Alexa seems very dumb to me right now whereas when it first came out three or four
+13:22
+years ago it was this incredible smart home device well Alexa plus is coming out in the next few days and the llm
+13:29
+large language model capabilities are going to be embedded and immediately available to you so this ability for
+13:35
+this installed base to receive these capabilities is dramatically changing
+13:41
+the adoption curve and when you look at the big companies that are themselves the purveyors of the AI tools Google and
+13:48
+Amazon being two obvious examples and you look at how they're using the tools
+13:53
+themselves how the most sophisticated companies in the world are eating their
+13:58
+own dog food and pointing internally you see some astounding statistics the CEO
+14:04
+of Google just announced in their third quarter earnings a few months ago that one out of every four lines of code that
+14:11
+Google is writing is being constructed by Ai and that's a few months ago if you
+14:16
+look today I bet it's 30% 35% and in the next couple quarters it'll be above half
+14:24
+Amazon Andy jasse who's coming to HBS next week and briefing Us in more detail on these matters reported in a public
+14:32
+blog post that he did that the Amazon platform which they've infused with AI to help them with their SKU analysis and
+14:39
+updates across all their millions and millions of product lines has saved them
+14:45
+4,500 developer years in parentheses he says yes that number is crazy but real
+14:52
+and if you look at Clara a more sophisticated fintech um that's
+14:57
+leveraging AI tools working very closely with open AI they're very public about the fact that they harmonized their data
+15:03
+store and eliminated all of their SAS platforms and are using gen capabilities
+15:09
+to improve their sales and marketing and improve efficiency now 100% year-over-year uh employee growth and
+15:16
+all this is happening and what I'll describe as the co-pilot phase of the AI
+15:22
+adoption curve the co-pilot the AI co-pilots are those tools that allow you
+15:28
+to do do your tasks as humans more efficiently and amplify your direction
+15:35
+and that's the current state-ofthe-art that's 2025 but as we enter into the back half
+15:41
+of this year and 2026 and Beyond we're seeing more and more agentic AI
+15:47
+capabilities be launched and this is a new area that's just coming online it's
+15:52
+very early in company adoption and human adoption but AI agents
+15:59
+actually do the tasks for you they take and make decisions so they don't just
+16:05
+provide better information synthesize documents or provide you with interesting insights based on volumes
+16:11
+and volumes of textbooks they'll actually make take actions and make decisions for you in the context of a
+16:17
+set of parameter parameters and goals so my example here would be if you want to go on a vacation you might use chat GPT
+16:25
+to inform you of the most attractive Caribbean island with the best food and
+16:31
+the easiest flight times and the best climate but if you used an agentic AI
+16:36
+platform it would book the reservations for you it would make the restaurant reservations pay for the tickets
+16:43
+purchase the you know the particular seats that you like best that your family likes best purchase the hotels
+16:49
+that you like best book The massages for you and all the other amenities and do the whole thing end to end so that's the
+16:55
+agentic world and it does that over a range of modalities you can imagine what this means because
+17:03
+previously investors like myself at flybridge and Alo at ignia we would
+17:08
+invest in software companies that we thought would be very disruptive and the software industry is a multi hundred
+17:14
+billion dollar industry but if you think about what the agentic AI capabilities
+17:19
+allow it allows these startups and perhaps some of you to not only go after the software budgets but to go after the
+17:26
+entire budget the Staffing budget and the human resource budgets and so here in this example one of my colleagues did
+17:34
+this analysis of software spend in payroll automation across hundreds of vertical Industries and she described
+17:41
+that yes the software opportunity is 260 billion but if the people were automated
+17:49
+and the AI agents did the work then it could be a multi-trillion dollar for
+17:55
+trillion dollar opportunity ahead and this is what we're seeing in startups today everyone this is happening on the
+18:02
+front lines and it's happening for our portfolio companies it's happening across other parts of the ecosystem in
+18:08
+startup land and it's certainly happening here at Harvard Business School where the standard startup Paradigm of raise a two or three or four
+18:16
+million do seed round hire 10 12 14 people and go chase the first product
+18:21
+release and go chase the first million of ARR of of annual recurring Revenue
+18:27
+instead entrepreneurs are hiring two or three people one head of engineering and
+18:33
+a handful of agents to do the code writing one head of sales and a handful of agents to help with sales development
+18:39
+sales engineering one head of marketing and a handful of AI agents to help with
+18:45
+copyright design execution of campaigns measuring those campaigns and then
+18:50
+affecting the implementation of those campaigns and changing the product Sam Alman has this quote which I think is a
+18:57
+is a really provocative one where he says look in my group of founder friends we have a betting pool when will the
+19:04
+first solo entrepreneur one person billion doll company be created and I
+19:09
+don't know if that's going to be 2025 but there will be 100 person billion doll companies created this year
+19:16
+probably 10 person 20 person billion dollar company created next year in
+19:21
+2026 and this solo entrepreneur that could be a 2027 maybe 2028 event we're
+19:27
+not far from that the U one of the partners from andrees has this quote which uh we hear about
+19:34
+all the time in my partnership as well I've lost count of the number of startups that have gone from0 to 10 million in annual recurring Revenue in
+19:41
+the last 12 months thanks to AI not by burning cash not by hiring more people
+19:47
+but by bringing on more agents by automating processes and workflows and being smarter at execution which led to
+19:54
+this New York Times article just a few days ago on how AI is changing how startup land build startups you may be
+20:00
+seeing this in your region you may be seeing this in your companies but it is for the companies on The Cutting Edge it
+20:06
+is incredible to see what they're achieving and yet with this what I tell
+20:11
+people is take a page from experimental design don't just sort of willy-nilly
+20:17
+run experiments but be very strategic and intentional and have a scientific approach what experiments do you want to
+20:24
+run what hypotheses do you want to test those hypotheses should have a huge
+20:29
+impact on your business model and then collect the data evaluate and learn we
+20:34
+can run more experiments with AI more efficiently and effectively than ever before but what experiments do you want
+20:40
+to run and what's the strategy behind those experiments that's inherently human and I have a case study here
+20:46
+Alvaro I'll skip over it just because I know there's a lot of questions and people here don't don't want to be um
+20:52
+PowerPoint or slide to death but in our portfolio there's examples of examples of companies that are using AI across
+20:59
+their goto Market functions across their customer service functions and certainly like Google in their software
+21:05
+development function to build more applications faster and better these
+21:10
+future capabilities they are coming and they are coming fast and if we see what
+21:17
+could be around the corner and this is from a former open AI technologist who wrote this incredible white paper about
+21:24
+what may lie ahead we may see the bending of the knowledge curve as the AI capabilities themselves are
+21:32
+able to do research recursively on how to improve themselves in the AI models
+21:37
+and so we're now at that point where if that PhD capability is in the hands of the AI tools and those tools are pointed
+21:44
+at computer science and the field of machine learning and AI itself as a
+21:49
+field you will see a recursive Loop where the AI is improving its own
+21:55
+capabilities and bending that curve and generating automated research and insights uh you know it's like having
+22:00
+the smartest human on the planet in your pocket if you can talk to it and it knows all the laws of physics all the
+22:07
+laws of chemistry all the laws of biology every single Nobel prize winning paper written in every subject and you
+22:14
+have that on your shoulder in your pocket as an adviser you know there's no telling what can be achieved so the the
+22:20
+questions I'd leave you with are as follows in the audience if you think about and evaluate your own scale of 1
+22:27
+to 10 capability an AI native level of proficiency you know where do you stand
+22:34
+secondly use the AI tools to help tutor you on AI create a custom tutor bot that
+22:42
+you can to that you can have as your personalized tutor that can speak to you or provide back and forth text that can
+22:49
+brief you on new developments when you hear about some Chinese open source company called Deep research doing some
+22:56
+deep seek doing some new crazy crazy thing when anthropic raises an
+23:01
+incredible amount of money and an incredible valuation has happened and was announced earlier today what does it
+23:07
+mean what are the implications ask the AI for that and then finally just how do you use the tools and embrace the tools
+23:13
+to become a a more effective leader in your organization and in your life so
+23:19
+that's the essence of the book Alvaro I'll I'll stop there um I got a lot more to say but I know we want to talk and
+23:25
+have some Q&A great and than thank you for that for that intro and Jeff and let's let's
+23:32
+get into some of the details of of of things that you you mentioned and I'd like to take a step back for a second um
+23:40
+for anybody that goes through through HBS and it's natural to understand what
+23:48
+an experiment experimentation machine is and the book is is called the experimentation machine but the audience
+23:55
+that we have in this in in in this firesight chat that is quite broad So
+24:01
+for anybody that hasn't really come across this this concept and how could
+24:08
+you explain to them and you mentioned a little bit but again what is an experimentation machine yeah it's a
+24:15
+great question and you and I teach this here at Harvard Business School in the last few years we've really been
+24:21
+hammering this home some of these ideas are rooted in 19th century 18th century
+24:28
+uh scientific discovery phase where scientists realized that there was a
+24:33
+whole world of knowledge out there that could be discovered through experiments and defining an experiment a scientific
+24:40
+experiment having a hypothesis or you know a belief about what might be the
+24:45
+case a question that you want to answer setting up and designing an experiment to answer that question to test that
+24:52
+hypothesis and then reading the results and learning from those results and iterating from there and one of the
+24:58
+things that Eric Reese who wrote The Lean Startup and Steve blank who uh wrote four steps to the Epiphany what
+25:05
+they did was they brought that notion of the experimentation mindset to the entrepreneurial community and over the
+25:11
+last 10 or 12 Years everybody in the entrepreneurial Community globally really Embraces that
+25:18
+orientation where you want to build a minimum viable product or an MVP to test
+25:24
+your hypothesis about what the customers might like or not like we can theorize it but don't spend two or three years
+25:30
+building it put it out there in two or three weeks or months and then see how the customers react and then iterate
+25:37
+from there and it's it's a different mindset because in the early days of a company or in the early days as an
+25:43
+entrepreneur you want to maximize learning not maximize metrics you're not
+25:48
+trying to knock the ball out of the park you're trying to set up a situation where you're really trying to maximize
+25:54
+learning and so the essence of the book is taking that experiment mindset and putting it on steroids
+26:01
+recognizing that AI allows you to run design and execute more experiments than ever before and now the key when you
+26:09
+have this in more almost infinite experimentation capacity now the key is using strategic
+26:16
+reasoning and thinking to sequence those experiments and decide what experiments
+26:22
+you should run that will reveal the most interesting outcomes that will lead to the most enduring valuable company that
+26:28
+you can build so that's sort of a a complete summary of the experimentation mindset and how I think about it in the
+26:35
+context of AI and why I titled the book that way now this again is an invitation
+26:41
+and you know I love the fact that you bring in a scientific approach towards
+26:47
+learning which at the end of the day what we want to create a startup or not
+26:52
+a startup is a learning machine um where you have hypothesis and and you run
+26:59
+experiments to to to learn from those experiments and eventually prove your
+27:04
+hypothesis or not right so I think that mindset it's a very interesting mindset
+27:09
+to have not only for startups again we have a broad audience here but if you can bring that that uh um that
+27:17
+perspective even to a traditional company I think it can give you a tremendous a tremendous hedge I
+27:24
+love yeah go ahead I'll give you just an example of that there's a company that
+27:29
+everybody on this line knows booking.com 100 billion plus market cap leader in
+27:35
+travel they own kayak and uh all sorts of other interesting Assets in the world
+27:40
+of of travel and they Pride themselves on running thousands of experiments
+27:46
+every day when they try different value propositions language imagery
+27:54
+colors different features of different hotels or different airlines or different experiences that they're
+28:00
+highlighting and they run these continuously again thousands and thousands per day in order to drive
+28:07
+greater optimization of their results and it's proven to be wildly successful
+28:13
+and we backed a entrepreneurial team that came out of booking.com at about two or three years
+28:19
+ago and we watched them operate and their speed of execution was nothing like we'd ever seen and as we talked to
+28:27
+them and realized this this approach it's not just a uh you know nice words
+28:32
+on a page it's a mindset and a religion because you can sit in a room and debate should we go left or should we go right
+28:39
+and the experimentation mindset is I don't know and I don't really care let's design an experiment Let's test and
+28:47
+let's look at the data and it'll tell us go left or go right let's stop debating let's just run the experiment read the
+28:52
+data make a decision and move on and that's what I think is the beauty of of this mindset
+28:58
+yeah and and I I'll underline exactly what you said which is an experimentation mindset is that the
+29:04
+fault that theault thinking of you know again let's do an experiment about this
+29:11
+and in the book you you have a quote which I think it's interesting that says anyone approaching building and running
+29:17
+a startup as they would a normal business is doomed to fail and I would that what what I think is behind that
+29:25
+quote is anyone that is that is approaching ing on building a running startup without an experimentation
+29:31
+mindset and I would make it even further I think for the for for the large
+29:37
+corporation of today and tomorrow you have to have an experimentation mindset because it's not about who's right it's
+29:44
+about how to run the experiments so that and the data will tell us what is right
+29:49
+um now of course um let's get into AI which is you've told us what all this is
+29:56
+is is about but but tell us how this experimentation machine how this
+30:02
+experimentation mindset can actually benefit from introducing AI into these
+30:09
+processes sure so what I see our best Founders doing and we now as a firm only
+30:16
+invest in AI companies and that's been the case for a number of years and I
+30:22
+would say at Harvard 90% of the entrepreneurs are AI native today and
+30:28
+this is the first class this year this moment is the first class I've seen of
+30:33
+AI native entrepreneurs and what they are doing is using the tools to work through
+30:43
+every step of the ideation process the customer Discovery process the go to market process and the discovery of a
+30:50
+profitable business model and you and I know that our colleague Tom Eisenman
+30:55
+created this diamond Square framework which goes through each of the components of the business model and our
+31:02
+students and our Founders are applying the AI tools to every single component
+31:07
+every step of the way they're even doing it before they get started we talk a lot about the zero to one process we have
+31:14
+many many students and Founders who are going from the negative one to the negative 1 to zero process and applying
+31:21
+the AI tools they're using it for research for customer Discovery they're
+31:26
+transcribing their customer interviews and recording them and throwing them into a notebook LM which is a tool that
+31:33
+Google offers for free that allows you to put a corpus of knowledge and then train chat Bots against that knowledge
+31:40
+they're they're they're creating personas of their customer using AI so that their team can have 7 by 24
+31:48
+conversations with their customers and ask questions about their requirements and their needs and test different value
+31:53
+propositions and different features against each other they're certainly building and talk more I know about
+31:59
+building with the AI tools like Google and others are and they're even executing amazing goto Market strategies
+32:05
+to enhance the capacity of their sales team so this process of leveraging the
+32:11
+modern tools and having these experiments across all elements of the business model is happening
+32:17
+today yep no I and and um um like you
+32:23
+I've become a huge fan of the diamond Square created by by by Tom and I love
+32:28
+how you put it in the book which at the end of the day another way to to to represent the the the Diamond square is
+32:36
+what every startup needs is build a product acquire customers satisy
+32:41
+customers and make money so in this in this H framework um where can you give
+32:49
+us some examples and maybe for example in goto Market in in examples that
+32:55
+you've seen you talked about what some students are are doing but tell us companies are actually using AI to be H
+33:03
+much more effective in in in in the in the goto Market which in this is the
+33:09
+acquired customer part um sure so I'll tell you what some of our portfolio
+33:14
+companies are doing so many of our companies sales organizations before
+33:19
+they reach out to a prospect they would do research on that Prospect well if you're reaching out to
+33:27
+a public company there's quarterly earnings calls there's press releases across the slew of products there's
+33:34
+competitive analysis there's trade show information there's sponsored content
+33:41
+there's a whole bunch of content that's out there about these companies and there are tools now that allow you to
+33:47
+draw from that content to enrich and your data set for
+33:53
+prospecting help determine and qualify and score your prospects and then brief
+34:00
+your sales team before they walk into a sales call then there's a set of tools
+34:05
+that allow you to generate demos and build personalized demos for each
+34:11
+individual Prospect and so some of our portfolio companies and this company Topline Pro is one of them that I
+34:17
+mentioned earlier has created thousands of personalized demos with an AI Avatar
+34:23
+representing a sales representative who speaks directly to the customer shows
+34:29
+them a product with their content and allows the prospect to get a sense of
+34:34
+what the quality of the work is going to look like and then all these marketing
+34:41
+campaigns and customer success and everything else there's a ton of AI tools now available to help automate
+34:47
+those as well so we're seeing even for mature companies these tools being used
+34:52
+I have a portfolio company that had 1,500 employees in
+34:59
+2023 and has 1100 employees today but has grown Revenue 50% and what they've
+35:07
+effectively done is carved out a lot of their customer service team by
+35:14
+leveraging AI automation improve the efficiency of their sales team with this AI Automation
+35:20
+and certainly improve the efficiency of their software development team and improve their feature velocity with all
+35:27
+of these incredible AI software development and code generation tools so
+35:32
+it's not only our little startups that are early stage companies doing this as I showed you in the chart the two page
+35:37
+the the two person thre person five person startup doing more with less it's also the scale companies as you noted
+35:45
+that have even more at stake if they can Implement these tools effectively yep so I most of the
+35:52
+audience here in this firesight chat are from from from Emerging Markets so I'm
+35:57
+I'm sure many of the are are many of them are saying okay this all sounds great if you're a US company or if
+36:04
+you're a US startup right and and and and you're talking about go to market
+36:09
+and talking about understanding your your customer better and in in your book for example you you describe how you can
+36:18
+understand your customer better and and ask yourself questions like what does a
+36:24
+day-to-day in the customer's life look like and um what tasks do they perform
+36:30
+and what tools do they use where do they experience the most friction and frustration and those are
+36:37
+some questions that you ask which is a typical question that you will ask one of these
+36:44
+llms can you ask these questions if you ask these questions if you're an
+36:49
+Emerging Markets company are you going to get relevant information do they do they actually also work if you are not
+36:56
+operating in the US absolutely it's not only a question and
+37:01
+it's a great question Alo because I know this is the case from our conversations and my colleagues in the in the
+37:08
+international scene it's not only that the models are trained on specific
+37:15
+countries and use cases and content they're also multilingual and they're also multifaceted because if there's a
+37:22
+data set that you feel it's missing then you can add your data set to the model
+37:27
+model to improve the knowledge base and I gave this example of notebook LM and I
+37:32
+also could give an example of custom gpts that open AI allow and artifacts from Claude and the anthropic team in
+37:41
+the case of notebook LM if you have some specific customer data that only you
+37:46
+know and it's about your customers and the nuance and the earned secrets that you've built out over years and years
+37:52
+and years you can feed that into the model keep it very secure and proprietary and then derive insights
+37:59
+from the model and that can all be in Spanish language and you can derive and have conversations in Spanish or
+38:06
+Portuguese or English or Japanese or whatever language you want so it's a really it's an incredible Global tool
+38:13
+and that's why I find it so exciting you know if you just if those in the
+38:18
+audience just for fun just play with the chat GPT voice functionality ask it a
+38:24
+bunch of questions in whatever language you want ask it to read a bunch of documents and whatever language you want
+38:29
+and you'll be amazed at its capabilities and I think this is again an invitation which
+38:37
+is we all just need to start experimenting and interacting with these llms on a day-to-day basis and and and
+38:45
+and become AI a native because it eventually becomes second nature when just as a thought companion as you ask
+38:53
+if you get that that that habit I think it's is one of the important things now
+38:59
+let's let's touch on something else which is you've we've mentioned quite a bit about productivity the example of
+39:06
+the company that you mentioned that went from 1500 employees to 1100 and there are multiple examples and also in the in
+39:13
+the presentation that you you gave you talked a lot about productivity which is a huge huge benefit from from using
+39:21
+these tools but let's let's talk about speed um um in in the book you use the
+39:27
+term moving faster with AI so tell us why and how do you also obtain not only
+39:34
+productivity but speed it's a it's a great question because this is not just an efficiency
+39:41
+play it's a capabilities expansion play as I noted you know there two uh axes to
+39:47
+the chart and it's also a moment to accelerate your
+39:53
+execution and I remember in the early days of the internet we used to talk about internet time and we used to joke
+40:00
+that it was like dog years that every year in the internet in the 1996 9798
+40:05
+time frame it felt like seven years in uh in in regular years today every month
+40:13
+in the AI World feels like seven years the speed of execution that we're seeing
+40:18
+the best companies provide is an indication of the speed that all companies can execute on using these
+40:26
+tools now humans have to adjust their operating model in order to work with
+40:32
+the speed because usually the points of friction are are humans you know we're all we're all sort of take our time to
+40:40
+adjust new ways of doing things we're all very habitual we we all know the habits that's why Excel you mentioned
+40:47
+Excel earlier in the conversation Excel has reached its 30-year anniversary it's an incredibly popular product we're all
+40:54
+used to excel we're all used to using things in certain ways we're all used to certain tools and so we've got to adapt
+41:01
+and we have to build organizations that adapt and execute faster and I think the one of the most important ways to do
+41:08
+that as you noted earlier is around willingness to experiment and then willingness to make quick decisions to
+41:14
+scale those experiments if they succeed it's not just about running the experiment off to the side to test a
+41:21
+hypothesis it's Shifting the organization over to the new way of
+41:27
+doing things if that hypothesis proves out and that's a change management challenge for leaders uh but that's the
+41:34
+challenge I think ahead of us in the coming months and years um
+41:40
+now a lot of people when that when we have a conversations about AI The Human Side comes comes to play right and and
+41:49
+as one of your Stu students you quoted him in your book says why even have human founder right so so what's what's
+41:57
+The Human Side on all this I mean uh are we going to get rid of people because these these agents are becoming so smart
+42:04
+and they're going to make decisions for us and so what's the human element here
+42:10
+I think the human element is really going to be centered around strategy insights into markets
+42:16
+leadership is going to matter more and more taste and discernment
+42:23
+curation will matter more and more and some of the rot tasks can be automated
+42:30
+away you know there's that that famous sort of analysis of we don't need any
+42:35
+more Bank clerks anymore or tellers with the Advent of ATMs we are on the verge most likely of
+42:43
+getting rid of some Taxi Driver functionality with the age of whmo and
+42:50
+self-driving cars um we've reduced our the amount of people that work in the agriculture
+42:56
+industry as a result of automation on farms so we're going to see these big
+43:02
+shifts as a result of automation but I also think new opportunities are going to be created I don't think humans are
+43:08
+going to go away or need to go away I don't think work's going to go away or jobs are going to go away I think we're all just going to be more efficient
+43:15
+there's a a famous economist John Maynard KES when he was observing what was happening in the
+43:22
+industrial revolution in Britain uh he he said look this is so incredible ible
+43:27
+and we're going to all be so productive my grandchildren are going to work 20 hours a week well I don't know about you
+43:33
+Alo I don't work 20 hours a week nobody I know Works 20 hours a week um we're all working really hard despite all
+43:39
+these automation tools that we've benefited from over the last few decades despite the internet and the cloud and
+43:44
+mobile um I think AI is going to prove to be the same I think we're all just going to be doing more things and being
+43:49
+more efficient and and and Advent more capabilities and and we as humans are just going to be better and more
+43:55
+effective at lever these incredible new tools sorry I have to turn on the light
+44:02
+um so um you you say in your book we're still in the early Innings of the gentic
+44:09
+Revolution so if this is evolving so
+44:14
+fast why should I get into it now and not just wait once you know this this is
+44:20
+a little bit more mature why not why not wait why getting it right now yeah because you're
+44:26
+competive s are getting into it now and they're learning how to use these tools and as I said at the beginning it's a
+44:32
+little I'm self-conscious in writing an AI book given how fast it's all moving in five years the tools that I describe
+44:39
+in the book may may not still be around but the mindset of leveraging and using
+44:45
+the tools and building that muscle will absolutely still be around so my advice is build the muscle now don't wait it's
+44:53
+like when a a trainer and you have a conversation and you say hey I'm going
+44:58
+to run a marathon in a year why do I have to spend all that time in the gym getting ready I'll just train right
+45:04
+before the marathon that's not how it works you have to build up that muscle build up that capability build up that
+45:10
+stamina time and time again and be prepared when the uh when the race
+45:16
+begins to run that race agreed never never too early now
+45:23
+there are lot of Skeptics about AI for many reasons um um not only people thinking why
+45:31
+should I get that now which I think your your answer is is is is perfect um what
+45:37
+do you say to the Skeptics about AI there there's usually two types of
+45:44
+skeptical points that folks will make one is it's overhyped and it's a lot of Buzz and a
+45:51
+lot of froth but what's where's the real substance and I can tell you the
+45:57
+substance is in your phone on your laptop and in your car the AI capabilities are here and they're being
+46:03
+used now and if you look at the Magnificent Seven the seven most valuable companies in the world uh like
+46:11
+Google and Amazon and Facebook these are the smartest most sophisticated companies in the world they're growing
+46:16
+Revenue 20 30% year-over-year keeping headcount flat getting more efficient growing in valuation leveraging their
+46:23
+Network effects because of AI that's what they're doing so point one it's a bunch of Buzz a
+46:30
+bunch of hype look at the underlying metrics look at the productivity it's
+46:35
+real point two is there's a worry that people have that it's going to result in
+46:41
+Greater inequality a greater gap between the Hales and the Have Nots and that's a class statement and that's also a
+46:48
+geographical statement Emerging Markets versus uh you know the the sort of the
+46:54
+US's and the and the other uh develop developed markets and is the US the only
+47:00
+country maybe China as well that has these capabilities and they're going to exploit these capabilities and I think
+47:05
+those are all very fair risks I will also say that all the research shows that these capabilities
+47:12
+are having a massive impact on the bottom of the pyramid and having a massive impact on a broad swath of people and one research study I'll point
+47:20
+to which you know well from our colleague Professor Ram cunning from Harvard Business School where he looked
+47:26
+at Kenyan entrepreneurs using gen in their solo entrepreneur small business
+47:32
+context and they were able to dramatically improve their profitability and dramatically improve their
+47:38
+performance even as let's say relatively unsophisticated users of this technology
+47:45
+out in a developing country so the research is pretty clear this technology has an enormous impact on emerging
+47:52
+markets and on entrepreneurs that maybe leapfrogging some technology waves and getting right to this
+47:59
+one great so let's it's time for us to get we promise that we will get into Q&A at in the last 10 minutes um so there
+48:08
+are a few questions one related to opportunities to invest in this sector there's a little bit of the tone of the
+48:14
+question is have I missed the boat and is it too late to get to to get into
+48:20
+this um so where are where are some of those opportunities from your um and
+48:27
+from your perspective so obviously I have a skewed lens as a venture capitalist flybridge we invest in early
+48:34
+stage AI companies I can tell you we're we've never been more enthusiastic we think
+48:40
+the current cohort of companies we're investing in are as promising as ever before if you look back on History 12 13
+48:47
+years ago aen Lee a former Kleiner Perkins and venture capitalist coined this term the Unicorn club and profiled
+48:55
+the 20 or 30 or so companies that were in the club today the $1 billion unicorn
+49:00
+Club is numbered in the thousands and thousands and the 10 billion company is
+49:06
+the new Benchmark the decacorn and the hundred billion doll company the centac corn and we now even have a handful of
+49:12
+trillion dooll companies which was unimaginable 10 or 20 years ago and so
+49:17
+the provocative question I would ask is do you think they're going to be fewer hundred billion do companies fewer 10
+49:24
+billion doll companies created in the next 10 years compared to the last 10 years uh and do you think that the AI
+49:31
+Revolution is all played out I I don't think so I think we're in the second inning or third inning of this game to
+49:37
+use a baseball analogy out of nine innings or maybe a better football analogy for you like we're five or 10
+49:42
+minutes into the into the 90minut term on the pitch but we we got a long long way to go on this and I think a huge
+49:48
+amount of value is going to be created and as I noted not only disrupting the IT industry but eating into the
+49:54
+multi-trillion dollar Staffing industry behind it and and there's a there there are a
+50:01
+couple of questions related to large companies so one related to what are the challenges by large companies when when
+50:09
+they try to introduce Ai and then there's another question related to if you were a and appointed head of AI at a
+50:17
+Fortune 500 where where would you start to to start and to bring value let me do
+50:25
+the ladder and then I'll talk about obstacles so if I were the head of AI of a Fortune 500 I would mandate that all
+50:33
+of these tools would be available to everyone so the top capabilities from
+50:38
+the top companies I would release the constraints that many companies are
+50:43
+putting on their employees which was don't which is to not experiment to
+50:48
+not uh you know risk proprietary data getting out I would I want more
+50:53
+experiments I want more initiatives and then I would create um a reward
+51:00
+system for the most Innovative AI applications running pilots and then a
+51:05
+pipeline process to take those Pilots into production once they hit certain thresholds or metrics one of the things
+51:12
+I see we call it pilot hell for our portfolio companies is they get a pilot and they hit the metrics and they go
+51:19
+back to their Champions and say hey this thing works now what and the Champions say oh we hadn't thought about that we
+51:27
+don't know what to do we got to spin up new processes and create new committees and figure out how to take this thing
+51:33
+enterprise-wide I would pre-wire the enterprise-wide Playbook put it on the
+51:38
+Shelf if the pilot hits the threshold pull down the Playbook and get this thing deployed Enterprise wide so not
+51:45
+only bigger exper bigger and more experiments but faster enterprise-wide
+51:50
+deployment and then what are the obstacles I mentioned One Pilot hell and
+51:56
+this gap between pilots and deployment uh and then the other is training you
+52:01
+know we we need all of our if you have a 50,000 person company that you're running you need all 50,000 to be AI
+52:07
+native well how do you train 50,000 people to be AI native what I've seen some of our best big company CEOs do is
+52:14
+model that behavior themselves is to really show it and and live it and talk
+52:20
+about it all the time Mark Benny off at Salesforce does this beautifully he runs a software company obviously but he's
+52:26
+he's an incredible role model in that regard so I think really making sure
+52:32
+that your entire organization knows that this is a priority and it's not a toy
+52:37
+it's not a uh you know sort of a fad it's something that we need as a as a fundamental competitive
+52:44
+Advantage now there's a question for neither you or I are and experts on
+52:50
+private Equity but there's a question from what I would imagine as a private Equity investor and and he's asking or
+52:56
+she who how should they if you're a private investor how you should you be
+53:02
+thinking about this it's a great question one of our LPS is a runs a private Equity Firm and he put together
+53:10
+and hired an AI expert within the firm to help work through their portfolio many of these firms have portfolio
+53:17
+support teams and he hired an AI leader on that portfolio support team to sit
+53:22
+next to the talent leader and the marketing leader and the financing leader and that team is looking at internal
+53:31
+tools much like I described uh you know we as Venture capitalists are using and I know Alvaro is thinking about these
+53:37
+tools internally and then also uh working with the portfolio companies but
+53:43
+the real the really interesting unlock that I'm seeing and we've we've invested in this even from a venture standpoint
+53:48
+at flybridge is is there a world where you might instead of trying to sell
+53:53
+software to make services for firms more efficient might you build a Services
+54:00
+firm that's an AI native Services firm and you're seeing this in legal which we recently are involved with where we
+54:07
+invested in a law firm that's an AI native law firm and using these AI tools to be more efficient and effective in
+54:13
+drawing up contracts and doing contract reviews you see it in accounting you see it in other areas uh and finance and
+54:21
+financial services and Consulting where there are individuals who make $200,000
+54:26
+a year $300,000 a year who are doing things that are very repeatably
+54:32
+automated automatable and um and and applying judgment that can be replicated
+54:38
+with the AI tools so I think that's going to be a really interesting area for both wec's but also for the private
+54:43
+Equity World yep one one last question which I thought it was interesting is
+54:50
+um at at the Elementary and high school level how are we preparing the new
+54:58
+generations for this new world um again not neither you or I are experts on this
+55:05
+but your thoughts on this would are interesting you know last year at HBS
+55:11
+our students were told be careful be cautious don't violate any
+55:18
+rules this year they're being told Embrace extend experiment so there's
+55:24
+been a massive cultural shift here and I'm seeing that cultural shift in many other schools it's going to take a bit
+55:29
+longer and I'll just give you one example today uh founder friend of mine
+55:35
+was telling me about his 14-year-old son who has been using these tools to help
+55:40
+him in his studies he loaded into notebook LM all of his study guides and
+55:45
+textbooks and lesson plans and developed and asked it to develop sample tests to
+55:52
+help him prepare for his midterm exam it then he then took the sample tests and
+55:58
+it identified for him the areas that he didn't do as well in or was lacking in
+56:03
+his knowledge and then asked it to tutor him and create podcasts that would provide an audio an audio tutor for
+56:12
+those areas where he was missing in some of these had these knowledge gaps and It
+56:17
+sped up his understanding of this field and his Advanced his his studying incredibly rapidly that's I think the
+56:24
+future of what we're going to see in Elementary School Middle Schools and high schools personalized tutors tools
+56:31
+that allow for more effective knowledge transfer and coaching um Khan Academy
+56:36
+has been brilliant in in this area as a leader and if people haven't seen some of the videos that saw KH has created I
+56:43
+highly recommend them but I think we're going to see a world of everyone on the planet is going to have a private tutor
+56:48
+and those private tutors are going to know your history know your background be helping you in your Learning Journey
+56:54
+and really um enabling this opportunity of lifelong learning for all of
+56:59
+us this is I think a great way to to end this this far CH and and Jeff this is a
+57:08
+perfect example of an AI native person somebody that is bringing those tools
+57:14
+into their home into Parenthood there's no nothing more important in life
+57:19
+nothing more important than your family your kids and actually leveraging those
+57:25
+those tools for your your children to have a a better education and having that that the facto that habit of saying
+57:33
+how can I use this tool so that the education of my kids can um can be
+57:39
+better I think it's a great example and outside of thinking about big companies startups maybe you know one thing to
+57:46
+think about it is start at your home and Jeff thank you so much I also want to
+57:52
+thank the HBS club for Mexico to for co-hosting this also the Rock Center for
+57:59
+for entrepreneurship for co-hosting this and this has been great I've learned a lot and I hope it's been the same for
+58:07
+for and for everybody that has joined us thank you so much and look forward to seeing you soon thanks Al great to see
+58:14
+everybody thank you

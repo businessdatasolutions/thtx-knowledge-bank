@@ -1,0 +1,896 @@
+0:01
+[Music] Today we're going to learn three powerful techniques to build an AI agent, but all without writing a single
+0:08
+line of code. And yes, we'll be using plain English language and CLA commands from start to the end. And then we'll
+0:15
+take the agent that we built and then deployed to Cloud Run using just one CLA command. And to do this, we have Amit
+0:22
+here with us today who's an expert at creating context engineering workflows. So Ahmed, why don't we start by
+0:28
+explaining what key concepts you'll be showing us today? Hi Sa. Yeah, thanks so much for having
+0:33
+me. So we're going to cover three concepts today. Vibe coding, which is essentially giving an AI player
+Core Concepts
+0:39
+programmer your vibe or what you want to develop and having it go out and do that for you. The second is context
+0:45
+engineering. Sometimes these AI agents need more context in order to successfully develop features and write
+0:52
+code. And so we're going to see how the inclusion and creation of new documents
+0:57
+can help our AI agent have full context on the features that we're trying to develop. Finally, token optimization
+1:04
+will see our AI agent really drill down on the most necessary documents it should be focused on to complete its
+1:11
+feature development. Okay, but hold on. Before we go ahead and build this workflow, I think this
+1:17
+video needs to be free from buzzwords, right? So white coding has been around for a little bit now but context
+1:23
+engineering is relatively new. Uh why don't you go ahead and tell us in depth what the technical differences between
+1:29
+both these. Yeah so vibe coding is really good at sort of getting you up to a place where
+1:36
+you have a project and it's maybe like 80% of the way there. However, to get to that final 20%, really context
+1:42
+engineering is what kind of unlocks this for you because you don't have to reprompt your AI agent every time you
+1:49
+want to develop a new feature to tell it things like best practices, where it should store certain pieces of code in
+1:54
+different files or where it should find your documentation or how your API looks like. Essentially, you give it access to
+2:01
+all of those types of documents and context engineering just says that anytime your AI agent runs and develops
+2:06
+a new feature or writes new code, it can reference all of those documents to continue staying on track and developing
+2:12
+the best production scale software that you need. Okay, that makes sense. So, white coding
+2:18
+is essentially an AI pad programmer that you tell your natural language instructions to and then it goes and
+2:24
+creates code for you. Uh but context engineering is how you take that code and then make this a little bit more
+2:29
+better by removing the guesswork and giving it specific instructions or context. Well, I also heard the term
+2:37
+token optimization that you use. So what is that? Yeah, great question. So you essentially
+2:43
+through context engineering are putting together this like briefing packet for your AI agent anytime it has to run. So
+2:50
+it has all access to all of this information through all of these different documents. But over time, the briefing packet can become too large.
+2:57
+And so token optimization tries to reduce that by really giving your AI agent some direction on where it should
+3:03
+be focusing on because it's really easy for your context window for your AI agent to become really overloaded. So
+3:09
+you essentially just want to make sure that it only includes the necessary documents or information or context to
+3:15
+be able to complete its task. Fantastic. So white coding is for speed and context engineering is how you
+3:21
+improve the quality of the code created and token optimization is for efficiency
+3:26
+and to bring down the cost lower and I can't wait to see how all of this comes together. So Amed we're starting from a
+3:33
+completely blank slate here right completely blank. Let's dive right in.
+Setting up Gemini CLI in VS Code
+3:40
+So, in this demo, I want to show you how you can build an expense tracking agent with AI assistance. And we'll kind of go
+3:46
+from zero to deployment on Cloud Run um from start to finish. And we'll use vibe coding, context engineering, and token
+3:52
+optimization to get us there. Let's get started. You can see here that I have a blank slate on VS Code. And the first
+3:59
+thing that I want to do is install Gemini CLI, the extension. So, you can go to the extension tab here, type in
+4:04
+Gemini CLI, and you'll see Gemini CLI pop up. I already have it installed, but you'll have the little install button
+4:10
+here. You can run it. Now, we can just go back into our folder structure here. Um, so that we have our blank slate. I'm
+4:17
+going to remove it so we have some space. And then you can pop open the command panel and just type in Gemini
+4:23
+CLI. It gives you the option to run Gemini CLI in a little terminal. Um, it might pop up on the bottom side for you.
+4:29
+I have it configured to pop up on the right hand side here. And you'll see Gemini CLI pop up. You may be prompted
+4:35
+to log in if this is your first time using Gemini CLI. You can use whichever Gmail or Google account you have access
+4:42
+to. Um, and just make sure Gemini CLI is enabled and you should be good to go. You'll also see that we're working
+4:48
+within a blank directory. So, we have everything scaffolded ready for us to get started on developing our agent. So,
+4:55
+in order to actually start vibe coding, we want to make sure Gemini CLI or whatever agent we're working with has
+5:01
+access to all of the documentation and really understands how to develop an agent. And the way that we can do that
+Loading ADK Documentation for the Agent
+5:06
+is by pulling all the documentation for ADK. We're going to be using ADK for our agent in this demo. So, I'm just going
+5:13
+to pop open a new terminal here and copy and paste this command, which grabs all
+5:19
+of the ADK documentation. They prepared it inside of a txt file for us. Um, and
+5:25
+it's specifically for LLMs to use it for context engineering. So, we're just going to curl it and then put it into our directory. And within a couple
+5:31
+seconds, we can open up our directory structure. And we'll see this file popped open here. And if you open it,
+5:37
+you'll actually just see all of the text for the documentation for ADK has been updated since a few days ago. So,
+5:45
+so Ahmed, for those who don't know, what exactly is the LLM's full.txt? PXD.
+5:52
+Yeah, great question, Sitta. So, this gives us a nice little summary or
+5:57
+combined packet of all of the ADK documentation for us. Um, and they put it into this nice txt file, so it's as
+6:04
+small as possible. And then it gives your LLMs, in our case, uh, we're using Gemini CLI. It gives your Gemini CLI or
+6:11
+agent the ability to understand all of the documentation based on what's inside
+6:16
+of the txt file. So they've essentially taken all of the documentation on the ADK docs and then combined into this one
+6:23
+file that can then be used as easily as possible by your agent. So we're going to tell Gemini CLI that this LLM's
+6:29
+full.txt file exists, point it towards it, and then allow it to have full context on developing its ADK agent
+6:36
+using all of the information in this file. So, I'm just going to close this one here, and we can get into the fun
+6:41
+part, which is actually running Gemini CLI and telling it to actually build a new ADK agent for us. So, all the
+6:48
+commands that I'm going to be running, the prompts, and everything can be found in the description of this video below.
+6:54
+Feel free to take a look if you'd like to replicate this. However, with Vibe Coding, of course, you're bound to
+6:59
+experience your own journey when running through this. So the first thing we're going to do is tell Gemini CLI that we
+Vibe coding an Expense Tracker from Scratch
+7:06
+want to create a tracking agent for expenses. And we're going to give it some instructions. We're going to tell
+7:12
+it that we want to use UV for package management. We want to use um tool
+7:17
+functions and make sure that everything and all the functionality for our agent is consolidated into a tools file. Then
+7:24
+the ADK agent itself is a separate file. The entire prompt that I pasted into here can be found in the description box
+7:31
+below. And one of the most important things of this prompt is the LLM's hyphen full.txt
+7:37
+file. You're seeing that we're referencing it here at the bottom of our prompt. We're essentially telling Gemini
+7:43
+CLI that, hey, we want to build this entire thing, but I want you to look inside of this file to make sure that
+7:49
+you know how to build it and what the best practices are when working with ADK.
+7:55
+So you'll see here all we're saying in the beginning is to create a plan. Sorry. So you can see create a simple
+8:01
+implementation plan using Python ADK. This is very helpful when prompting your agent to create a plan beforehand. So
+8:06
+you can ensure that whatever it plans on doing looks good and before it actually
+8:12
+starts coding, you can approve or decline accordingly.
+8:17
+You'll see it came up with a plan. The full implementation plan has a project setup, dependencies, agent tool
+8:22
+implementation, testing, so on so forth. This looks good to me. So what I'll do is tell it to proceed. So I'll do is
+8:30
+great proceed with the implementations and again point it towards the LLM's hyphen full.txt file. After a few
+8:36
+seconds, it actually prompts me to allow execution of UV. We're using UV as a package manager here to manage our
+8:43
+entire project. With Gemini CLI, you have the option to tell it whether or not you want to allow
+8:48
+it to run certain things, create new files, read from files, execute certain commands. You can tell it to do it once,
+8:55
+uh, allow always, or just suggest changes. This case here, we want it to run, um, through the entire process
+9:01
+smoothly. So, I'm just going to tell it to always run. But obviously, you have full control as the person who's running
+9:08
+the the agent. But, in this case, we actually got a
+9:13
+good plan returned from the LLM in the first try, right? But this is usually not the case. we have some stumbles here
+9:20
+and there and then we have to debug our agent and then redirect its scores. So in these cases, how do we make sure to
+9:26
+capture all these tweaks um into our LLM as well? So it it is sure to not repeat
+9:31
+the same mistakes again. Yeah, great question. So there's a few ways of approaching this kind of plan
+9:37
+curation/ alteration before moving forward. You can essentially tell it to refine the plan based on some
+9:43
+requirements that you see were not included in the plan or you can tell it to output the plan to a file and that
+9:48
+way you can edit and modify the plan accordingly before moving forward. If you do the latter option where you tell
+9:55
+it to spit the plan out into a file first and foremost, you can go and edit it, but then when you go and tell it to
+10:01
+continue moving forward, uh you would just make sure it points to that file with the plan included.
+10:09
+So we'll see here if we pop open the main.py file, Gemini CLI actually has all the right ideas in spitting out the
+10:15
+correct code to the file, but it seems like it wasn't able to execute that last piece. So I'm going to tell it that, hey, Gemini CLI main. py seemed to have
+10:23
+the correct idea. Uh, but it didn't have that final update. So we're just going to point it to that file and make sure that it does absolutely capture
+10:30
+everything that it wanted to do initially.
+10:36
+Well, we're in the w coding land, so anything can happen, right? Totally.
+10:50
+Great. And you'll see Gemini CLI, one of the nice things when working with it, if you are sticking around while it's doing its thing, it has a a bunch of funny um
+10:58
+whims that it comes up with anytimes it anytime it runs. So, I'll go ahead and tell it to always allow during this
+11:05
+session. And you'll see here it actually created the um it created the agent successfully. So, I'm going to close the
+11:13
+terminal for now. Um we'll pop it back open in a moment and we'll take a look at this file. You'll see it did exactly
+11:19
+what we wanted it to. It created a class for expense so that it always has um some level of structure when it comes to
+11:25
+creating a new expense for our expense tracker. It has this um function here for add expense and then it has um the
+11:32
+agent itself which is very simple and then a tool attached to it which is the ad expense. Next thing I'm going to ask it to do is move that tool into its own
+Refactoring Code into Tools and Models
+11:39
+tools. py file and the reason we want to do this is so that whenever we have new tools as we continue creating new
+11:45
+features the agent has access to those new tools and we can have it all compartmentalized and in its own file so
+11:52
+we can continue to build upon it. Okay. Okay, so I'm telling it here to
+11:57
+move the data class and the tools to their own respective files so it's easier to work with as we continue
+12:03
+building new features which you'll see in a few short moments. We'll see here it was able to move the
+12:09
+model to its own model file and then tools to its own tools file.
+12:14
+The other thing I want to take a look at is the pi project.toml file. This should have some dependency Google ad for
+12:20
+example to get started. Uh so we're going to go ahead and just add that in another terminal. This one's pretty
+12:25
+simple. We can do Google uv add Google ad. This will add Google ad directly
+12:31
+into the dependencies for our pi project toml file. And this is really nice actually. You'll see that there are some
+12:36
+things that we're doing here that are kind of manual where you know obviously this for example and we're asking it to
+12:43
+move the tools and the model. However, when we create our best practices document um it'll inform Gemini CLI
+12:50
+going forward for every feature. anytime it adds a new dependency or it creates a new feature, it'll have full knowledge
+12:56
+on where to put the appropriate pieces of code and whether or not to update the dependencies inside the PI project to
+13:02
+mobile file. So you can see it's finally finished and
+13:07
+now we can move on to the next part. So as we know from ADK, some of the best practices when creating our agent is to
+13:14
+have all of our agent files inside of its own directory. So we're going to create a new directory called expense tracker.
+13:21
+and we're going to move main models and tools into there. So just move it
+13:28
+directly. That looks great. The next thing that we want to do is create av file. So I'll
+13:34
+just create that in the root folder env. And we'll copy and paste
+13:40
+some of these variables so that we can deploy successfully. We're going to use vertex AI. We're going to have our
+13:46
+project ID a mirage development for me. And then our location. I'm going to use
+13:52
+Europe West one. Save this. I'll just move the terminal
+13:58
+for now. And just to highlight why we're doing this, we're only setting the environment
+14:05
+variables because we need to authenticate to the model. So this would depend upon the model that we use u how
+14:10
+you authenticate as well. Yeah, that's correct. So um we want to make sure that we are using the correct
+14:16
+model and the correct service when we deploy it up to the cloud. Um additionally when we run it locally uh
+14:22
+if as long as we're logged in locally using Google cloud o we are able to use
+14:27
+vertex AI to coordinate with the model. So you'll see inside of this models file sorry inside of the main.py file you'll
+14:34
+see that the model that we're having access to is Gemini 2.5 flash and this is what we'll be using. So, in order to
+14:39
+access the deployed version of Gemini 2.5 Flash, we're going to be using Vert.Ex AI's deployed instance of it.
+14:46
+And to also call out the fact that even if you're not using Google Cloud or Vertex AI, you can still follow through
+14:52
+this video and then run the um agent because you can always swap these environment variables for your own
+14:58
+configuration. So, you can get an API key from Google AI Studio and then run this whole thing. Yeah, exactly. Good point, Sitta. Yeah.
+15:04
+And if you were going to use AI Studio, you would just make sure that your API key is inside of this ENV file and it
+15:10
+should work seamlessly. The last thing that we want to do is rename our agent file from main.py to agent.py.
+15:18
+We'll pop open our terminal again and continue moving forward. The next thing we want to make sure is that we're
+15:24
+logged in. So, I'm going do G-Cloud O login. Press enter. And on another
+15:31
+screen, it popped up for me. You should see it pop open in a browser for you.
+15:39
+Once logged in, you'll see it on the right hand side successfully show that message.
+15:44
+Okay, now we're at the fun part. We can actually run ADK web locally to see if this all works. Let's clear our terminal
+15:52
+here. And the first thing we're going to do here is uv run adk web. Press enter.
+15:57
+And you'll see here after a few short moments, it pops open with this URL. If you click on it, it'll open this up in a
+16:04
+new web browser. You'll see by default it has expense tracker and we can shoot it a simple message. So we'll see here
+Debugging Python code with Gemini CLI
+16:10
+we're running into an error. It says no module named tools. So let's take a look at our code and see what happened. We'll
+16:17
+pop this back open and close our terminal for the moment.
+16:23
+And we'll see here that inside of our agent. py file, it actually tries to reference tools as it's its own package.
+16:28
+However, because it's lo referencing a local file, we just have to make sure that we're referring to it like it's a
+16:34
+local file here and seems like that's good. Otherwise, in tools py, we also have to make sure
+16:41
+because it's importing models, we're importing that with a period at the beginning.
+16:46
+Sure, our relative imports are all good to go. So, we'll abort abort our ADK
+16:52
+web, run it again, then we can refresh the page.
+16:59
+Try it one more time. Press enter. And in a few short moments,
+17:05
+we should get a nice response. So, what would you like to do? Let's try and practice and see if it's able to
+17:12
+actually add an expense for us. So, we'll do add an expense 50 bucks for groceries.
+17:21
+short description of this expense for my weekly groceries.
+17:34
+Okay, so now we're running into another issue. Dict object has no attribute amount. So we'll copy this error and
+17:43
+feed it into Gemini CLI because this is a really good example of it creating something that doesn't really work. and
+17:49
+we'll see how it's able to fix it. So,
+17:59
+so I tell it this is the error I'm getting when it's trying to add an expense. I paste in the error and let's
+18:04
+see what it comes up with. Great. And so you'll see here that it actually saw
+18:09
+that this tool needs to be included at the top of this function in order for it to be treated as its own tool. So let's
+18:16
+try to run this one again and see what happens.
+18:29
+add an expense $50 for groceries description.
+18:39
+Okay, I'll copy this in case this doesn't work again. We can try one more time. Okay, so finally, we just want to
+18:45
+make sure that our tools are set up correctly. It seems as though this tool that it was added and you know this is a
+18:50
+really good practice when you're creating functions in Python for software engineering when it comes to agentic development. We want to make
+18:56
+sure that our arguments inside of the tools are as primitive as they can be and are treated separately instead of
+19:02
+being able to take an expense which is the object that we have in our side of our model. We want to make sure that the
+19:08
+arguments are the actual values itself and then we can cast it to expense.
+19:13
+So we fix that here and have amount float category string description string and then we can take that and use it
+19:20
+accordingly. Let's go ahead and save this and then we'll run our ADK agent
+19:25
+again and see what happens.
+19:33
+Pop this open. We'll grab my expense again.
+19:47
+And great, it looks like it was able to find the tool, successfully call it, execute it, and give us a response
+19:54
+saying successfully added expense, groceries of the week, 15 groceries. Let's try adding another expense.
+20:03
+120 bucks for utilities in the bills category. You'll see it's also able to successfully do that. And finally, we'll
+20:10
+ask it, what's my total spending?
+20:16
+So, you'll see it comes back with a response saying, I can only add expenses at the moment. I cannot track your total spending. So, let's go ahead and stop
+20:22
+our server and develop the feature that'll allow us to calculate total spending.
+20:30
+So, for a quick recap of what we've seen so far, we still haven't written a single line of code. Uh, it's insane,
+20:36
+right? We've been using Gemini CLI to build the agent to run it and to debug it successfully and we've got working
+20:42
+finally. So for the next section, will we be still using the same Gemini CLI or maybe with other techniques?
+20:48
+Yeah, totally. So we will still be using Gemini CLI and it's great to point out that it was able to do all of this with
+20:53
+just that one file and it was able to build an agent with tools, but we're
+20:58
+going to make it even more powerful with context engineering and token optimization in the next section.
+21:08
+Cool. So, we can jump back into our Gemini CLI and give it another prompt. I'm going to say that I want to add the
+21:15
+following functionality. Calculate my total spending, get spending by category, list recent expenses, and I
+21:21
+want it to say uh remember to add the tools to the agent once they're created. So, we wanted to create the tools and
+21:27
+then add it to the agent after. That functionality should give us enough to play around with the agent a little bit
+21:32
+more.
+21:38
+So, while that's running, we can take a look at what it's doing. The first thing we want to take a look at is the tools file. And we'll see here that it has an
+21:45
+in-memory database. It's really smart in kind of understanding that we're just building this as a proof of concept and it's not connected to a database. So, it
+21:51
+should have some local storage that it can use to store all the data for us, expenses in our case, to be able to pull
+21:58
+it back up and perform some computation on it. For example, calculate total spending should be able to pull up those expenses from where it's stored and then
+22:04
+show it to us. You'll see calculate total spending. It sums everything in the expense database. Get spending by
+22:10
+category finds all of the spending in each category that we've registered already and spits back out to us. And
+22:15
+then finally lists all recent expenses. We'll take a look at agent.py as well.
+22:21
+And you'll see here it followed our instructions correctly. It was able to import the tools and then throw it into
+22:27
+the tools array. So, looks like our agent should be ready to go. Let's try it out.
+22:39
+Another neat thing it did for us is it told us some prompts that we can give our agent in order to test some of the
+22:45
+functionality. So, what's my total spending? How much have I spent on food? And show me the last two expenses. This
+22:50
+is really nice and it's almost like a pair programmer where you're asking your programming friend to implement
+22:56
+something for you and then they interact with you by saying logically this is what I've implemented. This is how you
+23:02
+can test it. Go ahead and save this and then run it inside of the agent to see what it comes up with. Okay. Now that we
+23:08
+have our agent running, we can go back into ADK web and add some expenses.
+23:20
+Great. So, we did this in our previous step, but of course, because we refreshed and changed the agent, we got
+23:26
+to do this again. So, we're just going to add two expenses, and then we can ask it what our total spending is. And let's
+23:31
+see if this flow runs again this time. Great. You can see that it was able to
+23:37
+actually figure out which tool it should run from the new tools that it developed most recently. And then it gave us an
+23:44
+accurate number for what we've actually spent. 120 + 50 is 170 last time I
+23:49
+checked. Next thing we'll do is get spending by category. Press enter.
+23:56
+And it prompts us because it knows that by default we haven't given it a
+24:02
+category. So we can give it a category. We'll say utilities. Press enter.
+24:09
+And we'll see that it runs that function for us. And it says your total spending for utilities is $0. And this is quite
+24:14
+interesting because we said that utilities here is the name, but we put it in the bills category. So it was able
+24:21
+to differentiate that this specific expense isn't actually from the utilities, but it's in the category of
+24:26
+bills. So next, we'll ask it if it can give us our spending for the bills category.
+24:40
+So you see here it runs it successfully and it gives it back to us accurately. Your total spending for bills is 120
+24:46
+bucks. Finally, we'll ask it to list recent expenses
+24:54
+and it's able to successfully call that final function that it created. And here are your recent expenses. Groceries for
+25:01
+the week $50. Utilities 120. You can see here it took the description groceries for the week that I gave it. Similarly,
+25:07
+utilities which we didn't specify a description but it used some inference to find out that yes it should use that
+25:13
+for description. So far we've seen how to use Gemini CLA
+Why You Need Context Engineering
+25:19
+to create this agent and build tools and um you know get it working. But then
+25:24
+this raises the important question of why do we need context in this case? Like what more do we want to achieve
+25:30
+using context engineering? Yeah. So this is where context engineering can transform good code into
+25:37
+great code. So we're going to set up like three key files that will guide the AI. We're going to first set up a
+25:43
+gemini.md file which will include project standards and best practices, a PRD for which stands for product
+25:51
+requirements document and that'll be for developing new features and then a project structure summary. So right now
+25:58
+we have our entire directory with all of our files and anytime Gemini CLI runs it
+26:04
+has to build context on all those files. It has to look through all those files to see exactly where it needs to add
+26:10
+data start writing code remove code update delete add so on so forth. So it'
+26:16
+be really nice if we can create an overview project summary file that essentially includes a overview of what
+26:23
+all of those files are and what they're responsible for. So, we're just going to shut down our
+26:30
+ADK agent and we'll close all the files and we'll keep things a little neat and tidy.
+Creating Context Files: Gemini.md, PRD, & Summary
+26:36
+The first thing we're going to do is edit our Gemini MD file.
+26:42
+Once you install Gemini CLI, a Gemini MD file will be created for you inside of
+26:47
+your user directory inside of a hidden folder called Gemini. So, we'll just open that up. And by default, it'll be
+26:52
+blank. But for us, we just want to add some best practices for our expense tracker. So, I'm going to just paste all
+26:58
+of this in. If you scroll through here, you'll actually see it's just expense tracker agent, project context, project
+27:04
+overview, making sure to use specific Python styles, error handling, data storage, new features, whatever. And for
+27:10
+every project, you can add it directly into this Gemini.md file so that you have all of your best practices ready to
+27:15
+go anytime anyone develops with Gemini CLI for that specific project.
+27:23
+So, we'll just save that and close it.
+27:29
+The next thing we're going to do is create two folders. One of which will be a docs folder and then the other of
+27:34
+which will be an examples folder. We won't use the examples folder, but you can imagine that you can create new
+27:39
+examples inside of that folder and then give Gemini CLI that example anytime you
+27:45
+want to build something specific. So, create those two folders. Docs
+27:55
+and examples. And then the first one we're going to create is our PRD for our
+28:01
+new feature recurring expenses.
+28:10
+So create this file here and we'll paste in our entire PRD. A PRD stands for a product requirements document. And
+28:17
+historically, it's been the one document that ties engineering and product together. Product will come up with the
+28:23
+feature, come up with all of the different user flows, and then create a PRD, hand it off to the engineering team that that will then use it to compute
+28:29
+and develop the entire feature from start to finish. We can use the same structure for a PRD because it does a
+28:36
+really good job of essentially combining both product user flows and engineering implementation practices.
+28:44
+So, we save our PRD here and we can close it. We'll jump right back into Gemini CLI.
+28:51
+I've closed it to begin with because we edited the Gemini MD file. So, we got to pop it back open so that it has full
+28:58
+context.
+29:03
+We'll see here that it's actually using the one gemini.md file, but we can see exactly that context and make sure that
+29:09
+it has all the context that we want from that file before going forward. Just type memory forward/memory and then
+29:15
+show. I'll actually show you all the context it takes from the gemini.md file and any other file that you feed into it
+29:21
+before computing. The next thing that we want to do is
+29:27
+we're going to ask Gemini CLI to create a full snapshot of the entire directory
+29:32
+for us and then save it into a project summary file.
+29:38
+So once we run this, it essentially says analyze the current directory structure and create a concise summary that includes a tree of all the files, brief
+29:44
+description, key dependencies, and overall architectural pattern. This is going to be extremely helpful going
+29:50
+forward because Gemini CLI won't have to look through all of the files and understand exactly what every file does
+29:57
+in order to make changes, updates, deletions, creations in the future. All it needs to do is start with the summary
+30:03
+file, see what file is responsible for what, and then dive into that file directly.
+30:10
+This will help speed up our entire Gemini CLI development flow by introducing what we call token
+30:16
+optimization. So instead of taking every file and shoving in into the context window, it can just take the one project
+30:22
+summary file, find out which file it needs, then go and grab that file and then throw that into the context window
+30:28
+to then compute. So if we take a step back and look at all the files that we've created so far,
+30:35
+uh we've created three important files, right? First is the gemini.md which specifies the coding standards and this
+30:42
+is the file that will be used each and every time uh when the llm is invoked from the gemini cla and then we also
+30:48
+created a products requirement document or a prd file which describes what needs
+30:53
+to be done for this specific agent. So it might have very specific things like functionalities and features for this
+31:00
+agent, where to deploy it uh and all of the other quer but only for the specific agent that we're building. And then the
+31:06
+third file is the project summary file which we're also feeding into the Gemini CLI which basically tells us it is
+31:13
+snapshot of the whole uh project structure that we have so that the LLM doesn't have to go and then refer to the
+31:19
+project structure each time it's making a call and doing something. It can just refer to this one single file get an
+31:24
+overview of how the project is organized. Yeah, that's a good summary sitta. Exactly. So starting with the last one
+31:31
+that you mentioned, we can see here the Gemini CLI created a nice little file for us that includes the entire file
+31:36
+structure here and a description for every file that exists and all the dependencies and such. And this is a
+31:42
+really nice concise overview because every time Gemini CLI runs, it could essentially just grab this project summary, start there and then move on.
+31:49
+And then additionally, I created this PRD recurring expenses file which includes that requirements document for
+31:55
+that feature that we're going to implement next.
+Building Advanced Features with Context Engineering
+32:03
+Great. So, we're going to get to the next point where we actually ask Gemini CLI to use context engineering with all
+32:08
+the files we just created and create our next feature for us, recurring expenses.
+32:15
+So, I'm going to copy the next prompt, paste it in, and again, I'll point it to the LLM's full.txt file. But
+32:21
+essentially, I'm just saying I want to implement the recurring expenses feature described in. Then I point it to docs prduring expenses. Please review the PRD
+32:29
+and code structure inside a project summary file following the coding standards in gemini.mmd file. Extend the
+32:36
+agent py file and then update the data model and include proper error handling. You can see how everything is almost
+32:42
+coming together. Now we've included all of these files that we're going to use for feature development going forward.
+32:47
+And we don't want to have to repeat ourselves every time we develop a new feature inside of Gemini CLI. Obviously,
+32:53
+you can just go through all of these files, find all the information it needs, throw it into the context window, whatever is relevant, and then produce
+32:59
+some output for us.
+33:04
+Great. Gemini CLI seems to have successfully made this feature for us. So, let's dive into the code and see
+33:09
+what it did. Firstly, we'll take a look at the agent. py file. You'll see that it created
+33:15
+three new tools for us. The add recurring expense, list recurring expense, and project spending. And then it also threw those tools into the tools
+33:22
+array so the agent has access to them. In the tools file, you can see it created a new array for us specifically
+33:28
+for recurring expenses. And then it created three new functions for us. Add recurring expense, list recurring
+33:35
+expense, and then project spending so that we can see over time what our expenses look like. And then finally,
+33:40
+inside of the models file, it has a new class for us called recurring expense. So let's start up our agent and give
+33:47
+this one a whirl.
+33:58
+Great. It looks like ADK is running successfully. So, let's create our first
+34:03
+recurring expense. Add a recurring monthly expense, $1,200 for rent starting today, October 7th,
+34:10
+2025, and the description is rent payment for home. You'll see our agent was able to successfully find the tool
+34:17
+that it needed to run for adding this recurring expense and gave us some nice feedback saying that it was successfully able to run it and add that expense.
+34:24
+Let's do another add another recurring expense $15 for Netflix monthly subscription starting
+34:30
+today 2025 October 7th description entertainment and you'll see it successfully added it.
+34:36
+Then finally, I'm going to say project my spending for the next 3 months, and we'll see if it's able to calculate it
+34:42
+correctly for us. It finds the correct tool. Your projected spending for the next 3 months is $3,645.
+34:50
+So firstly, let's stop our agent from running. We'll close everything down.
+34:58
+But the key difference here is actually to call out what context engineering specifically performed here because in
+35:04
+both cases we end up having an agent that's working right. But if we look into the code that the agent created
+35:10
+this time around you can see more structure around it and more error handling. Um is it correct?
+35:17
+Yeah exactly. I think without context engineering, the Gemini CLI or any agent
+35:23
+may not be able to create very complex code that is integrated within
+35:28
+pre-existing files and follows best practices and examples from what we've
+35:34
+developed previously and so far we've seen how without
+35:39
+writing a single line of code mostly debugging but not writing code we've created a fully functional working agent
+35:45
+but I think for the next step we'll need a little bit of scaffolding um to make this agent deployable.
+Preparing for Cloud Run Deployment (Docker & Server)
+35:52
+Yeah, good point, Sita. So, getting into the final portion of this demo, we're going to deploy this agent because when
+35:58
+we deploy to Cloud Run, Cloud Run uses a Docker file and that Docker file needs to be configured specifically in order
+36:04
+to get this AI agent to run. So, these two simple files, which can be found in the description of this video, will
+36:09
+allow us to deploy successfully without any issues. So, let's dive in. The two files that
+36:15
+we're going to need, server.py py and docker file. Both of them are going to be in the root of our directory.
+36:21
+So create a new file server.py
+36:28
+and copy and paste this fast API scaffolding that'll help run our ADK agent on the web and give it access by
+36:35
+API as well.
+36:40
+Similarly, we'll create our Docker file,
+36:49
+paste this in, and we should be good to go.
+37:00
+So, I'm going to pop open the terminal here, and I'm going to configure G-Cloud to be pointed to the project that I want
+37:05
+to deploy this specific AI agent to. G-Cloud config set project amarrage
+37:10
+development. The other thing to call out here is if you're not using u G-Cloud internally,
+37:17
+you can also use the ADK deploy CLA command um which again will take both these files that you've created and
+37:23
+deploy it to Cloud Run. Yeah, exactly. You beat me right to it. I was going to just paste that command into the
+37:29
+terminal and you're correct. So, there are two ways of deploying this to Cloud Run. You can use G-Cloud run deploy or
+37:35
+you can use ADK's builtin tooling for deploying to Cloud Run. We're going to use ADK deploy cloud run and then we're
+37:42
+going to give it all the parameters that we need. So, we use uv run ADK deploy cloud run. We have to use uvun here
+One-Command Deploy to Google Cloud Run
+37:49
+because we're using uv as a package manager and ADK is installed locally within our directory. And then we give
+37:54
+it all the parameters that we want in order to deploy it. So Amari development for the project. Region is Europe West
+38:00
+one. Service name, expense tracker, agent, app name, expense tracker. We're going to say that we want it to have a
+38:05
+UI. And then we're going to point it to the folder in which the agent lives in. So expense tracker agent. py. Press
+38:12
+enter. And we're going to give that a moment to run.
+38:18
+Great. It looks like it's successfully deployed. If you see this service URL here, it just means that this is the URL
+38:24
+that we can use to access our AI agent. So, I'm going to copy this and paste it into a new tab here. And you'll see
+38:30
+successfully our AI agent has been deployed and is available and running.
+38:38
+And just to make sure all of the most recent feature development is deployed successfully, we can add the same prompt
+38:45
+that we did before. Add a recurring monthly expense 1,200 and see if it's able to pull up that tool. Success.
+38:50
+Great. Runs super quickly as well. I'm not sure if you saw that. And so just like that, you've been able to use
+38:55
+Gemini CLI, an AI agent, to develop a new ADK agent that can track your expenses for you and deploy it with one
+39:02
+command. And also just to call out, this is not the local host URL that we're running
+39:08
+the uh ADK web from, but this is the cloudr run endpoint. Yeah, that's correct. You can see it
+39:13
+from this URL here. But more importantly, if we jump into the cloud console, you can see the expense tracker
+39:19
+agent running successfully and it has its own URL. You pop this open, it'll pop open the same ADK web we were just
+39:25
+in. Uh, and we can play around with our expense tracker there.
+Recap
+39:31
+Thank you, Emit. That was a great demo. And to recap what we just saw, first we used white coding to describe an expense
+39:38
+tracking agent in natural language. And Jenna actually took our natural language instructions and created a fully
+39:44
+functional ADK agent. Yeah, that's right. It like scaffolded everything from scratch, right? And then we followed context
+39:51
+engineering practices to create three key files. The gemi.m MD to describe our coding standards, a product requirements
+39:58
+do talk which described the feature and what we wanted to build today. And then a third project summary.md which
+40:05
+provided an architecture overview. And these were super crucial to improve uh
+40:10
+the LLN's coding standards even higher. Yeah. And you can imagine that any subsequent feature you build, you can
+40:17
+create a PRD for it which acts as its own documentation in the end and allows the Gemini CLI to develop the entire
+40:23
+feature from start to finish. Right. And finally, we also packaged the whole agent using a single CLA command
+40:30
+ADK deploy to deploy to Cloud Run. Yeah, that's right. and we saw it deploy successfully within a few minutes and we
+40:35
+were able to access it on the cloud. All right, with that we'll move on to our next section which is the inch talk.
+40:41
+So we've looked at the internet and got some community questions around the topics we've discussed today. Are you
+40:46
+ready? Totally. [Music]
+Community questions
+40:53
+The first question is is rag obsolete with a million token context windows.
+40:58
+Should I still use rag and vector databases? Yeah, I think that's a good point and a very good question. So, it's
+41:05
+important to know that when you are deciding between using some of these tools, context engineering and feeding
+41:10
+everything into a context window comes with its own cost associated with it too, such as, you know, speed and
+41:16
+effectiveness. On top of that, as well, rag is really good for proprietary data. If you do have specific data that you
+41:22
+don't need to be sent to the cloud or have an agent process through, you can have your database that just stores that
+41:28
+data and then you can pull it and then you can pull the relevant chunk and then feed it in as context for the LLM to
+41:34
+answer. I guess in that perspective, we're also encouraging to use context engineering
+41:39
+on top of the rack data itself because then you will only need to extract specific pieces of information rather
+41:44
+than feeding your entire rack data to the LLM. Yeah, exactly. And we saw that in
+41:49
+practice today when we went through our demo, seeing how useful even just creating a summary file can be for our
+41:56
+agent to sift through many different files. So as context engineering becomes much wider and your project becomes
+42:01
+larger, you want to ensure that your AI agent is kind of dialed in on the to on the specific files that it needs to
+42:07
+pull. Absolutely. All right. Second question is how to manage context overload?
+42:14
+Should I use techniques like context summarization? Yeah, we saw a little bit of this through like our to token optimization
+42:21
+technique by summarizing all of our documents or all of our files into the one project summary. I think that there
+42:28
+are some really good kind of points in the right direction and research that a lot of companies are doing and trying to
+42:33
+solve a little bit about how to avoid inflation of this context window. But I
+42:38
+think the best way to accomplish it now is to ensure that your AI agent has a really good direction. Whether that
+42:44
+means pointing it to the right file yourself or creating that project summary file that continues to be right
+42:49
+fine-tuned and updated as time goes on so your AI agent really knows where to dial its attention into.
+42:55
+And would you also recommend using uh long form memory and persistence to handle context window and summarization?
+43:03
+Yeah, so I think with long-term memory there is this ability to ensure that your data is kind of being persistent
+43:09
+and stored. However, if your data continues to change as time goes on, that long-term memory, you just have to
+43:15
+make sure that that's also updated. So, if a file changes, your directory structure changes, you delete a file, or
+43:21
+you include new PRDs, for example, you want to ensure that your database is also updated. So, if you are, you know,
+43:28
+summarizing some stuff using ADK's ability to interact with Vert.exai's XAI's memory bank, then you want to
+43:35
+ensure that whatever you're building, if it's a summary for a file, can be saved as a memory inside of memory bank that
+43:40
+can then be pulled up afterwards. But I guess from what you're saying, it looks like it's a little bit trickier than uh
+43:46
+usually would do because all of this context and everything is like rapidly changing for a development environment.
+43:51
+So, um I guess it's trickier then. Yeah. No, I was just going to say, yeah, totally. Especially if documentation is
+43:57
+getting updated on an ongoing basis or new articles are coming out, you want to ensure that all of those things are being pulled in in real time so that
+44:03
+your AI agent can perform effectively for the task that you have in hand. And for the next question, what metric
+44:10
+should I use to track context retrieval? Or in other words, how do I measure the
+44:16
+efficacy of the returned context? Yeah, I think this one's a bit tricky, but a lot of people have been using ragbased
+44:21
+techniques to try to achieve this because of course you're trying to pull relevant documents or relevant pieces of documents to inform your AI agent. So
+44:28
+you can use context retrieval or context precision, both of which try to aim to
+44:34
+identify the correct documents on a within a spread of available documents.
+44:39
+Have you picked out the seven best documents that pertain to this specific topic when there are eight documents
+44:45
+that exist? And for the final question, what are some of the tips to do for token optimization other than the ones
+44:52
+we've discussed today? Yeah, I think this one's a little bit tricky as well and there's some nuances,
+44:57
+but realistically, if you're building and working within a project and there's a lot of vibe coding or vibe
+45:04
+creation happening, you will have and you will end up generating a good amount of documentation and resources. the
+45:11
+documentation and resources. You're going to use them to inform your vibe coding agent, but you don't want to
+45:17
+throw all of those resources in every time. And that's where kind of drilling
+45:22
+down into the most relevant documents is super necessary. So whether that be
+45:28
+including a step for your AI agent before actually processing what you want it to by selecting the most correct
+45:34
+documents and or just pointing it to the right documents may be a helpful approach in fine-tuning or reducing the
+45:43
+search area of all the documents that you have so that your AI agent can just focus on the one or two documents that
+45:49
+are helpful for completing its task. Sounds good. Well, looks like that's all
+45:54
+the questions we had for today. Well, thank you very much Amit. It was really fun watching you build something
+Resources
+46:00
+entirely from scratch. Yeah, thanks so much for having me SA. And I do want to note that Gemini CLI is
+46:05
+open source and has a very generous free tier. ADK, the development kit that we worked with today for our agent is also
+46:12
+open source. And finally, Google Cloud Run has a super generous free tier and you can deploy all of your applications
+46:18
+for free because it's a serverless platform. That was a good call out. And for the viewers, thank you for watching. Let us
+46:25
+know in the comments if you use any of these wipe coding or context engineering practices in your own development
+46:30
+workflows. And for more in-depth videos on context engineering topics like memory, check out the videos linked in
+46:36
+the description. And until next time, happy building.
+46:44
+[Music]
