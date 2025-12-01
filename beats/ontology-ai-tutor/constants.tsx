@@ -31,7 +31,11 @@ export const UI_TEXT = {
     correct: "Correct Choice",
     incorrect: "Incorrect Choice",
     conceptNote: "Concept Note",
-    conceptText: "Remember: **Data** is the Noun (Information), **Logic** is the Reasoning (Model), and **Action** is the Verb (Execution). All three must be connected to create business value.",
+    conceptText: (
+      <>
+        Remember: <strong>Data</strong> is the Noun (Information), <strong>Logic</strong> is the Reasoning (Model), and <strong>Action</strong> is the Verb (Execution). All three must be connected to create business value.
+      </>
+    ),
     finish: "Finish Case Study",
     nextStage: "Go to Next Stage",
     retry: "Try Again",
@@ -66,7 +70,11 @@ export const UI_TEXT = {
     correct: "Juiste Keuze",
     incorrect: "Onjuiste Keuze",
     conceptNote: "Concept Note",
-    conceptText: "Onthoud: **Data** is het zelfstandig naamwoord (Informatie), **Logic** is de redenering (Model), en **Action** is het werkwoord (Uitvoering). Alle drie moeten verbonden zijn om bedrijfswaarde te creëren.",
+    conceptText: (
+      <>
+        Onthoud: <strong>Data</strong> is het zelfstandig naamwoord (Informatie), <strong>Logic</strong> is de redenering (Model), en <strong>Action</strong> is het werkwoord (Uitvoering). Alle drie moeten verbonden zijn om bedrijfswaarde te creëren.
+      </>
+    ),
     finish: "Rond case study af",
     nextStage: "Ga naar volgende stap",
     retry: "Probeer Opnieuw",
