@@ -19,7 +19,7 @@ const StageSelector: React.FC<Props> = ({ stage, selectedOptionId, onSelect, isP
       [options[i], options[j]] = [options[j], options[i]];
     }
     return options;
-  }, [stage.id, stage.options]);
+  }, [stage.id]);
 
   return (
     <div className="space-y-6 animate-fadeIn">
