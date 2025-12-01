@@ -16,14 +16,23 @@ Interactieve AI-tutoring applicatie voor Business Management studenten om het Pa
 ### Articles
 Collectie van artikelen en research papers over AI en business transformatie:
 
-#### 10X Thinking with AI
-- **10X Thinking with AI Tutorial** - Complete business leader's guide met Warner & Wäger framework integratie
-- **Warner & Wäger (2019)** - Building dynamic capabilities for digital transformation
-- **Transcript** - Experimentation Machine fireside chat
+**[→ Browse volledig artikel-overzicht](./articles/_index.md)**
 
-#### AI Solutions Architect
-- **What is the role of an AI Solutions Architect in 2025?**
-- **Transcript** - Vibe context engineering
+#### Leadership & Strategy
+- **10X Thinking with AI Tutorial** - Complete business leader's guide met Warner & Wäger framework integratie
+  - [Lees Markdown](./articles/leadership-and-strategy/10x-thinking-with-ai-tutorial.md) | [Download PDF](./articles/leadership-and-strategy/10x-thinking-with-ai-tutorial.pdf)
+- **What Executives Get Wrong About AI** - Executive perspectieven op AI-adoptie
+  - [Download PDF](./articles/leadership-and-strategy/what-executives-get-wrong-about-ai.pdf)
+- **Warner & Wäger (2019)** - Building dynamic capabilities for digital transformation (academische basis)
+  - [Download PDF](./articles/leadership-and-strategy/warner-wager-2019-building-dynamic-capabilities.pdf)
+- **Experimentation Machine Transcript** - Jeff Bussgang fireside chat over AI-gedreven experimentatie
+  - [Lees Transcript](./articles/leadership-and-strategy/transcripts/experimentation-machine-10x-thinking.txt)
+
+#### AI Architecture & Implementation
+- **AI Solutions Architect Role in 2025** - Definitie van het AI solutions architect beroep
+  - [Download PDF](./articles/ai-architecture-and-implementation/ai-solutions-architect-role-2025.pdf)
+- **Vibe Context Engineering Transcript** - Technische aanpak voor AI agent ontwikkeling
+  - [Lees Transcript](./articles/ai-architecture-and-implementation/transcripts/vibe-context-engineering-ai-agents.txt)
 
 ### Frameworks
 Visuele frameworks en modellen:
@@ -100,7 +109,7 @@ npm run dev
 | Component | Status | Live URL |
 |-----------|--------|----------|
 | Ontology AI Tutor | ✅ Live | [View App](https://businessdatasolutions.github.io/thtx-knowledge-bank/) |
-| 10X Thinking Tutorial | ✅ Complete | [View Article](./articles/10X-thinking/10X_Thinking_with_AI_Tutorial.md) |
+| 10X Thinking Tutorial | ✅ Complete | [View Article](./articles/leadership-and-strategy/10x-thinking-with-ai-tutorial.md) |
 | AI Risk-Value Matrix | ✅ Complete | [View Framework](./frameworks/ai-risk-value-matrix.html) |
 
 ## 🤝 Contributing
