@@ -41,10 +41,14 @@ export function createUserPrompt(source: ParseResult, options?: {
   targetAudience?: string;
   xAxisConcept?: string;
   yAxisConcept?: string;
+  customInstructions?: string;
 }): string {
   const audience = options?.targetAudience || 'executives en technisch leiders';
   const xAxisHint = options?.xAxisConcept ? `\n- Overweeg "${options.xAxisConcept}" als X-as concept` : '';
   const yAxisHint = options?.yAxisConcept ? `\n- Overweeg "${options.yAxisConcept}" als Y-as concept` : '';
+  const customInstructionsSection = options?.customInstructions
+    ? `\n\n## Aanvullende instructies van de gebruiker\n\n${options.customInstructions}\n`
+    : '';
 
   return `## Bronmateriaal
 
@@ -162,7 +166,7 @@ Genereer een Strategic Framework Beat op basis van dit bronmateriaal.
    - bottom-left: bg-amber-100
    - bottom-right: bg-green-100
 6. **Taal**: Zakelijk Nederlands, concreet en praktisch
-
+${customInstructionsSection}
 Genereer nu de complete JSON:`;
 }
 

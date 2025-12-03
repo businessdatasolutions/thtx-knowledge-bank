@@ -103,6 +103,22 @@ export const filesApi = {
       children: response.tree.map(mapItem),
     };
   },
+
+  /** Get all files (not directories) from the tree, flattened */
+  getAllFiles: async (basePath = 'articles'): Promise<FileEntry[]> => {
+    const tree = await filesApi.getTree(basePath);
+    const files: FileEntry[] = [];
+
+    const collectFiles = (entry: FileEntry) => {
+      if (!entry.isDirectory) {
+        files.push(entry);
+      }
+      entry.children?.forEach(collectFiles);
+    };
+
+    collectFiles(tree);
+    return files;
+  },
 };
 
 // ============================================================================
@@ -141,6 +157,7 @@ export interface PrepareRequest {
   scenarioCount?: number;
   xAxisConcept?: string;
   yAxisConcept?: string;
+  customInstructions?: string;
 }
 
 export interface PrepareResponse {
@@ -196,6 +213,82 @@ export const generatorApi = {
   ): Promise<any> => {
     return new Promise((resolve, reject) => {
       fetch(`${API_BASE}/generate/ai`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      }).then(async (response) => {
+        const reader = response.body?.getReader();
+        const decoder = new TextDecoder();
+
+        if (!reader) {
+          reject(new Error('No response body'));
+          return;
+        }
+
+        let buffer = '';
+        let result: any = null;
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split('\n\n');
+          buffer = lines.pop() || '';
+
+          for (const line of lines) {
+            if (!line.trim()) continue;
+
+            const eventMatch = line.match(/^event: (\w+)\ndata: (.+)$/s);
+            if (eventMatch) {
+              const [, eventType, dataStr] = eventMatch;
+              try {
+                const eventData = JSON.parse(dataStr);
+
+                switch (eventType) {
+                  case 'progress':
+                    onProgress(eventData.message || eventData.step);
+                    break;
+                  case 'content':
+                    result = eventData;
+                    break;
+                  case 'complete':
+                    resolve(result || eventData);
+                    return;
+                  case 'error':
+                  case 'validation_error':
+                    reject(new Error(eventData.message || JSON.stringify(eventData.errors)));
+                    return;
+                }
+              } catch (e) {
+                console.error('Failed to parse SSE data:', dataStr);
+              }
+            }
+          }
+        }
+
+        // If we get here without a result, resolve with what we have
+        if (result) {
+          resolve(result);
+        } else {
+          reject(new Error('No content received'));
+        }
+      }).catch((err) => {
+        reject(err);
+      });
+    });
+  },
+
+  /**
+   * Refine content via chat using Server-Sent Events
+   * Returns the refined content on success
+   */
+  refine: (
+    data: { currentContent: any; userRequest: string; templateType: string },
+    onProgress: (message: string) => void
+  ): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      fetch(`${API_BASE}/generate/refine`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),

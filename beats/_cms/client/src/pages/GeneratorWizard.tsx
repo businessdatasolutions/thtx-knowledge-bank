@@ -12,8 +12,12 @@ import {
   Loader2,
   Copy,
   Check,
+  Eye,
+  Code,
 } from 'lucide-react';
 import { filesApi, generatorApi, type FileEntry } from '../api/client';
+import { BeatPreview } from '../components/preview';
+import { ChatRefinementPanel } from '../components/ChatRefinementPanel';
 
 type Step = 'source' | 'template' | 'options' | 'generate' | 'review';
 
@@ -34,6 +38,7 @@ interface GeneratorState {
   scenarioCount: number;
   xAxisConcept: string;
   yAxisConcept: string;
+  customInstructions: string;
 }
 
 export default function GeneratorWizard() {
@@ -49,16 +54,19 @@ export default function GeneratorWizard() {
     scenarioCount: 4,
     xAxisConcept: '',
     yAxisConcept: '',
+    customInstructions: '',
   });
 
   // Generation state
   const [isGenerating, setIsGenerating] = useState(false);
   const [generationProgress, setGenerationProgress] = useState<string[]>([]);
   const [generatedContent, setGeneratedContent] = useState<any>(null);
+  const [originalContent, setOriginalContent] = useState<any>(null);
   const [generationError, setGenerationError] = useState<string | null>(null);
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [showPreview, setShowPreview] = useState(false);
 
   // File selection state
   const [files, setFiles] = useState<FileEntry[]>([]);
@@ -75,10 +83,10 @@ export default function GeneratorWizard() {
     }
   }, [searchParams]);
 
-  // Load available files
+  // Load available files (all files from tree, flattened)
   useEffect(() => {
     filesApi
-      .list()
+      .getAllFiles()
       .then(setFiles)
       .catch(console.error)
       .finally(() => setLoadingFiles(false));
@@ -173,6 +181,7 @@ export default function GeneratorWizard() {
             state.templateType === 'strategic-framework'
               ? state.yAxisConcept
               : undefined,
+          customInstructions: state.customInstructions || undefined,
         },
         (progress) => {
           setGenerationProgress((prev) => [...prev, progress]);
@@ -180,6 +189,7 @@ export default function GeneratorWizard() {
       );
 
       setGeneratedContent(result);
+      setOriginalContent(result); // Store original for reset functionality
       setGenerationProgress((prev) => [...prev, '✅ Generatie voltooid!']);
     } catch (error: any) {
       setGenerationError(error.message || 'Generation failed');
@@ -454,6 +464,28 @@ export default function GeneratorWizard() {
                   </div>
                 </>
               )}
+
+              {/* Custom Instructions */}
+              <div>
+                <label className="block text-sm font-medium text-primary-700 mb-2">
+                  Extra instructies (optioneel)
+                </label>
+                <textarea
+                  value={state.customInstructions}
+                  onChange={(e) =>
+                    setState((prev) => ({
+                      ...prev,
+                      customInstructions: e.target.value,
+                    }))
+                  }
+                  placeholder="Bijv: Focus op praktische voorbeelden, gebruik informele toon, benadruk ROI aspecten, voeg concrete cijfers toe waar mogelijk..."
+                  rows={4}
+                  className="w-full px-4 py-2 border border-primary-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 resize-none"
+                />
+                <p className="text-xs text-primary-400 mt-1">
+                  Geef extra context of instructies mee aan de AI voor het genereren
+                </p>
+              </div>
             </div>
           </div>
         );
@@ -560,72 +592,132 @@ export default function GeneratorWizard() {
       case 'review':
         return (
           <div className="space-y-6">
-            <div>
-              <h2 className="text-xl font-semibold text-primary-900 mb-2">
-                Review en opslaan
-              </h2>
-              <p className="text-primary-500">
-                Controleer de gegenereerde content en sla op naar de catalog.
-              </p>
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-xl font-semibold text-primary-900 mb-2">
+                  Review en opslaan
+                </h2>
+                <p className="text-primary-500">
+                  Controleer de gegenereerde content en sla op naar de catalog.
+                </p>
+              </div>
+
+              {/* Preview toggle */}
+              {generatedContent && (
+                <div className="flex items-center gap-2 bg-primary-100 rounded-lg p-1">
+                  <button
+                    onClick={() => setShowPreview(false)}
+                    className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors flex items-center gap-1.5 ${
+                      !showPreview
+                        ? 'bg-white text-primary-900 shadow-sm'
+                        : 'text-primary-500 hover:text-primary-700'
+                    }`}
+                  >
+                    <Code className="w-4 h-4" />
+                    JSON
+                  </button>
+                  <button
+                    onClick={() => setShowPreview(true)}
+                    className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors flex items-center gap-1.5 ${
+                      showPreview
+                        ? 'bg-white text-primary-900 shadow-sm'
+                        : 'text-primary-500 hover:text-primary-700'
+                    }`}
+                  >
+                    <Eye className="w-4 h-4" />
+                    Preview
+                  </button>
+                </div>
+              )}
             </div>
 
             {generatedContent && (
               <>
-                {/* Content preview */}
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-sm font-medium text-primary-700">
-                      Gegenereerde JSON
-                    </h3>
-                    <button
-                      onClick={handleCopyJSON}
-                      className="text-sm text-accent-600 hover:text-accent-700 flex items-center gap-1"
-                    >
-                      {copied ? (
-                        <>
-                          <Check className="w-4 h-4" />
-                          Gekopieerd
-                        </>
-                      ) : (
-                        <>
-                          <Copy className="w-4 h-4" />
-                          Kopieer JSON
-                        </>
-                      )}
-                    </button>
+                {/* Live Preview */}
+                {showPreview ? (
+                  <div className="border border-primary-200 rounded-lg overflow-hidden" style={{ height: '500px' }}>
+                    <BeatPreview
+                      content={generatedContent}
+                      templateType={state.templateType}
+                    />
                   </div>
-                  <pre className="text-xs text-primary-600 bg-primary-50 p-4 rounded-lg max-h-64 overflow-auto font-mono">
-                    {JSON.stringify(generatedContent, null, 2)}
-                  </pre>
-                </div>
-
-                {/* Validation summary */}
-                <div className="bg-primary-50 rounded-lg p-4 space-y-2">
-                  <h3 className="text-sm font-medium text-primary-700 mb-2">
-                    Validatie
-                  </h3>
-                  <div className="flex items-center gap-2 text-sm">
-                    <CheckCircle className="w-4 h-4 text-green-500" />
-                    <span className="text-primary-700">
-                      Metadata: {generatedContent.metadata?.title}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <CheckCircle className="w-4 h-4 text-green-500" />
-                    <span className="text-primary-700">
-                      Template type:{' '}
-                      {generatedContent.metadata?.templateType}
-                    </span>
-                  </div>
-                  {state.templateType === 'concept-tutorial' && (
-                    <div className="flex items-center gap-2 text-sm">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                      <span className="text-primary-700">
-                        Scenarios: {generatedContent.scenarios?.length || 0}
-                      </span>
+                ) : (
+                  <>
+                    {/* Content preview */}
+                    <div>
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-sm font-medium text-primary-700">
+                          Gegenereerde JSON
+                        </h3>
+                        <button
+                          onClick={handleCopyJSON}
+                          className="text-sm text-accent-600 hover:text-accent-700 flex items-center gap-1"
+                        >
+                          {copied ? (
+                            <>
+                              <Check className="w-4 h-4" />
+                              Gekopieerd
+                            </>
+                          ) : (
+                            <>
+                              <Copy className="w-4 h-4" />
+                              Kopieer JSON
+                            </>
+                          )}
+                        </button>
+                      </div>
+                      <pre className="text-xs text-primary-600 bg-primary-50 p-4 rounded-lg max-h-64 overflow-auto font-mono">
+                        {JSON.stringify(generatedContent, null, 2)}
+                      </pre>
                     </div>
-                  )}
-                </div>
+
+                    {/* Validation summary */}
+                    <div className="bg-primary-50 rounded-lg p-4 space-y-2">
+                      <h3 className="text-sm font-medium text-primary-700 mb-2">
+                        Validatie
+                      </h3>
+                      <div className="flex items-center gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-green-500" />
+                        <span className="text-primary-700">
+                          Metadata: {generatedContent.metadata?.title}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-green-500" />
+                        <span className="text-primary-700">
+                          Template type:{' '}
+                          {generatedContent.metadata?.templateType}
+                        </span>
+                      </div>
+                      {state.templateType === 'concept-tutorial' && (
+                        <div className="flex items-center gap-2 text-sm">
+                          <CheckCircle className="w-4 h-4 text-green-500" />
+                          <span className="text-primary-700">
+                            Scenarios: {generatedContent.scenarios?.length || 0}
+                          </span>
+                        </div>
+                      )}
+                      {state.templateType === 'strategic-framework' && (
+                        <div className="flex items-center gap-2 text-sm">
+                          <CheckCircle className="w-4 h-4 text-green-500" />
+                          <span className="text-primary-700">
+                            Quadrants: {generatedContent.framework?.quadrants?.length || 0}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  </>
+                )}
+
+                {/* Chat Refinement Panel */}
+                {!saveSuccess && (
+                  <ChatRefinementPanel
+                    content={generatedContent}
+                    templateType={state.templateType}
+                    onContentUpdate={setGeneratedContent}
+                    originalContent={originalContent}
+                  />
+                )}
 
                 {/* Save button */}
                 {!saveSuccess ? (

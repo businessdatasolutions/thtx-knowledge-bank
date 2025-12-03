@@ -162,6 +162,7 @@ generatorRouter.post('/ai', async (req, res, next) => {
       scenarioCount,
       xAxisConcept,
       yAxisConcept,
+      customInstructions,
     } = req.body;
 
     // Check for API key
@@ -184,6 +185,7 @@ generatorRouter.post('/ai', async (req, res, next) => {
       scenarioCount,
       xAxisConcept,
       yAxisConcept,
+      customInstructions,
     };
 
     const preparation = await prepareGeneration(options);
@@ -201,7 +203,7 @@ generatorRouter.post('/ai', async (req, res, next) => {
     let fullResponse = '';
 
     const stream = await anthropic.messages.stream({
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-sonnet-4-5-20250929',
       max_tokens: 16000,
       system: preparation.prompts.system,
       messages: [{ role: 'user', content: preparation.prompts.user }],
@@ -251,6 +253,124 @@ generatorRouter.post('/ai', async (req, res, next) => {
       success: true,
       valid: true,
     });
+
+    res.end();
+  } catch (error: any) {
+    sendEvent('error', { message: error.message });
+    res.end();
+  }
+});
+
+/**
+ * Refine generated content via chat
+ * POST /api/generate/refine
+ *
+ * This endpoint uses Server-Sent Events (SSE) for streaming progress.
+ */
+generatorRouter.post('/refine', async (req, res, next) => {
+  // Set up SSE headers
+  res.setHeader('Content-Type', 'text/event-stream');
+  res.setHeader('Cache-Control', 'no-cache');
+  res.setHeader('Connection', 'keep-alive');
+  res.flushHeaders();
+
+  const sendEvent = (type: string, data: any) => {
+    res.write(`event: ${type}\ndata: ${JSON.stringify(data)}\n\n`);
+  };
+
+  try {
+    const { currentContent, userRequest, templateType } = req.body;
+
+    if (!currentContent || !userRequest || !templateType) {
+      sendEvent('error', { message: 'currentContent, userRequest, and templateType are required' });
+      return res.end();
+    }
+
+    // Check for API key
+    const apiKey = process.env.ANTHROPIC_API_KEY;
+    if (!apiKey) {
+      sendEvent('error', { message: 'ANTHROPIC_API_KEY not configured' });
+      return res.end();
+    }
+
+    sendEvent('progress', { step: 'refining', message: 'Verwerken van wijziging...' });
+
+    const anthropic = new Anthropic({ apiKey });
+
+    // Build refinement prompt
+    const systemPrompt = `Je bent een expert content editor voor THTX Beats.
+Je taak is om bestaande Beat content aan te passen op basis van feedback van de gebruiker.
+
+## Regels
+1. Behoud de exacte JSON structuur - verander geen veldnamen of structuur
+2. Pas alleen de inhoud aan waar de gebruiker om vraagt
+3. Behoud de kwaliteit en consistentie van de content
+4. Alle tekst moet in het Nederlands blijven
+5. Genereer ALLEEN de complete aangepaste JSON, geen uitleg`;
+
+    const userPrompt = `## Huidige Content
+
+\`\`\`json
+${JSON.stringify(currentContent, null, 2)}
+\`\`\`
+
+## Gewenste Aanpassing
+
+${userRequest}
+
+---
+
+Genereer de complete aangepaste JSON:`;
+
+    let fullResponse = '';
+
+    const stream = await anthropic.messages.stream({
+      model: 'claude-sonnet-4-5-20250929',
+      max_tokens: 16000,
+      system: systemPrompt,
+      messages: [{ role: 'user', content: userPrompt }],
+    });
+
+    for await (const event of stream) {
+      if (event.type === 'content_block_delta' && event.delta.type === 'text_delta') {
+        fullResponse += event.delta.text;
+        // Send progress updates periodically
+        if (fullResponse.length % 500 < 10) {
+          sendEvent('progress', {
+            step: 'refining',
+            message: `Aanpassen... (${fullResponse.length} chars)`,
+          });
+        }
+      }
+    }
+
+    sendEvent('progress', { step: 'validating', message: 'Valideren van aangepaste content...' });
+
+    // Extract JSON from response
+    let jsonContent = fullResponse;
+    const jsonMatch = fullResponse.match(/```(?:json)?\s*([\s\S]*?)\s*```/);
+    if (jsonMatch) {
+      jsonContent = jsonMatch[1];
+    }
+
+    let content;
+    try {
+      content = JSON.parse(jsonContent);
+    } catch (e) {
+      sendEvent('error', { message: 'Kon AI response niet parsen als JSON', raw: fullResponse.slice(0, 500) });
+      return res.end();
+    }
+
+    // Validate the refined content
+    const errors = validateContent(content, templateType as TemplateType);
+    if (errors.length > 0) {
+      sendEvent('validation_error', { errors, content });
+      return res.end();
+    }
+
+    // Send the refined content
+    sendEvent('content', content);
+    sendEvent('complete', { success: true });
 
     res.end();
   } catch (error: any) {

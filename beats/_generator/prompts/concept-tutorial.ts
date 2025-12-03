@@ -43,10 +43,14 @@ export function createUserPrompt(source: ParseResult, options?: {
   targetAudience?: string;
   focusTopics?: string[];
   scenarioCount?: number;
+  customInstructions?: string;
 }): string {
   const audience = options?.targetAudience || 'executives en technisch leiders';
   const focusTopics = options?.focusTopics?.join(', ') || 'de belangrijkste concepten';
   const scenarioCount = options?.scenarioCount || 4;
+  const customInstructionsSection = options?.customInstructions
+    ? `\n\n## Aanvullende instructies van de gebruiker\n\n${options.customInstructions}\n`
+    : '';
 
   return `## Bronmateriaal
 
@@ -167,7 +171,7 @@ Genereer een Concept Tutorial Beat op basis van dit bronmateriaal.
 4. **Feedback**: Geef educatieve uitleg, niet alleen "goed" of "fout"
 5. **Taal**: Alles in zakelijk Nederlands, geen jargon zonder uitleg
 6. **Icons**: Gebruik: BookOpen, Target, TrendingUp, Users, Settings, BarChart3, Lightbulb, Zap
-
+${customInstructionsSection}
 Genereer nu de complete JSON:`;
 }
 

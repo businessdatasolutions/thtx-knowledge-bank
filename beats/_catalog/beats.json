@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2024-12-03",
+  "lastUpdated": "2025-12-03",
   "baseUrl": "https://businessdatasolutions.github.io/thtx-knowledge-bank",
   "beats": [
     {
@@ -10,8 +10,34 @@
       "publishDate": "2024-11-01",
       "templateType": "concept-tutorial",
       "path": "/",
-      "tags": ["onderwijs", "palantir", "ontology", "data", "besluitvorming"],
+      "tags": [
+        "onderwijs",
+        "palantir",
+        "ontology",
+        "data",
+        "besluitvorming"
+      ],
       "featured": true,
+      "published": true
+    },
+    {
+      "id": "ai-adoptie-risico-waarde-matrix",
+      "title": "AI Adoptie: Risico vs Waarde Matrix",
+      "description": "Strategisch framework voor het positioneren van AI-initiatieven op basis van implementatierisico en waardepotentieel",
+      "author": "THTX",
+      "publishDate": "2025-12-03",
+      "templateType": "strategic-framework",
+      "path": "/ai-adoptie-risico-waarde-matrix/",
+      "published": true
+    },
+    {
+      "id": "ai-experimentatie-framework",
+      "title": "AI Experimentatie & Waardecreatie Framework",
+      "description": "Strategisch framework voor het positioneren van AI-experimenten op basis van risico en waardepotentieel",
+      "author": "THTX",
+      "publishDate": "2025-12-03",
+      "templateType": "strategic-framework",
+      "path": "/ai-experimentatie-framework/",
       "published": true
     }
   ]
