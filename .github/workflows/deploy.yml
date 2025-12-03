@@ -29,7 +29,7 @@ jobs:
         with:
           node-version: '20'
 
-      # Build Ontology AI Tutor (main Beat at root)
+      # Build Ontology AI Tutor (main Beat at root - special case)
       - name: Install Tutor dependencies
         working-directory: ./beats/ontology-ai-tutor
         run: npm ci
@@ -39,6 +39,28 @@ jobs:
         run: npm run build
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      # Build all other Beats (those with package.json, excluding _ prefixed dirs)
+      - name: Build all Beats
+        run: |
+          for beat_dir in ./beats/*/; do
+            beat_name=$(basename "$beat_dir")
+            # Skip underscore-prefixed directories and ontology-ai-tutor (already built)
+            if [[ "$beat_name" == _* ]] || [[ "$beat_name" == "ontology-ai-tutor" ]]; then
+              echo "Skipping $beat_name"
+              continue
+            fi
+            # Only build if package.json exists
+            if [[ -f "$beat_dir/package.json" ]]; then
+              echo "Building $beat_name..."
+              cd "$beat_dir"
+              npm install
+              npm run build
+              cd - > /dev/null
+            else
+              echo "No package.json in $beat_name, skipping"
+            fi
+          done
 
       # Build Catalog
       - name: Install Catalog dependencies
@@ -53,13 +75,35 @@ jobs:
       - name: Prepare deployment directory
         run: |
           mkdir -p ./deploy
-          # Copy tutor to root
+
+          # Copy tutor to root (main/default beat)
           cp -r ./beats/ontology-ai-tutor/dist/* ./deploy/
+
+          # Copy all other Beat dist folders to their own subdirectories
+          for beat_dir in ./beats/*/; do
+            beat_name=$(basename "$beat_dir")
+            # Skip underscore-prefixed directories and ontology-ai-tutor (already at root)
+            if [[ "$beat_name" == _* ]] || [[ "$beat_name" == "ontology-ai-tutor" ]]; then
+              continue
+            fi
+            # Only copy if dist exists
+            if [[ -d "$beat_dir/dist" ]]; then
+              echo "Copying $beat_name to /deploy/$beat_name/"
+              mkdir -p "./deploy/$beat_name"
+              cp -r "$beat_dir/dist/"* "./deploy/$beat_name/"
+            fi
+          done
+
           # Copy catalog to /catalog subdirectory
           mkdir -p ./deploy/catalog
           cp -r ./beats/_catalog/dist/* ./deploy/catalog/
+
           # Create .nojekyll to prevent Jekyll processing
           touch ./deploy/.nojekyll
+
+          # List deployment structure
+          echo "Deployment structure:"
+          find ./deploy -type d | head -20
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
