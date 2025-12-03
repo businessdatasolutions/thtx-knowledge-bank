@@ -6,6 +6,7 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { fileURLToPath } from 'url';
 import { parseSourceMaterial, parseContent, type ParseResult } from './parsers';
 import { generatePrompts } from './prompts';
 import type {
@@ -14,6 +15,9 @@ import type {
   ConceptTutorialContent,
   StrategicFrameworkContent,
 } from './types';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export interface GeneratorOptions {
   /** Path to source material file */
@@ -134,6 +138,52 @@ function validateContent(
 }
 
 /**
+ * Copy template scaffold files to Beat directory.
+ * Replaces {{BEAT_ID}} and {{BEAT_TITLE}} placeholders.
+ */
+async function copyScaffold(
+  templateType: TemplateType,
+  beatDir: string,
+  beatId: string,
+  beatTitle: string
+): Promise<void> {
+  const templatesDir = path.resolve(__dirname, '../_templates');
+  const scaffoldDir = path.join(templatesDir, templateType, 'scaffold');
+
+  // Check if scaffold directory exists
+  try {
+    await fs.promises.access(scaffoldDir);
+  } catch {
+    console.warn(`Scaffold directory not found: ${scaffoldDir}`);
+    return;
+  }
+
+  // Read all scaffold files
+  const scaffoldFiles = await fs.promises.readdir(scaffoldDir);
+
+  for (const filename of scaffoldFiles) {
+    const sourcePath = path.join(scaffoldDir, filename);
+    const destPath = path.join(beatDir, filename);
+
+    const stat = await fs.promises.stat(sourcePath);
+    if (stat.isDirectory()) {
+      // Skip directories (we don't have nested scaffold dirs)
+      continue;
+    }
+
+    // Read file content
+    let content = await fs.promises.readFile(sourcePath, 'utf-8');
+
+    // Replace placeholders
+    content = content.replace(/\{\{BEAT_ID\}\}/g, beatId);
+    content = content.replace(/\{\{BEAT_TITLE\}\}/g, beatTitle);
+
+    // Write to destination
+    await fs.promises.writeFile(destPath, content, 'utf-8');
+  }
+}
+
+/**
  * Save generated Beat to disk.
  */
 async function saveBeat(
@@ -145,7 +195,15 @@ async function saveBeat(
   // Create directory
   await fs.promises.mkdir(beatDir, { recursive: true });
 
-  // Save content as constants.tsx
+  // Copy scaffold files from template
+  await copyScaffold(
+    beat.metadata.templateType as TemplateType,
+    beatDir,
+    beat.metadata.id,
+    beat.metadata.title
+  );
+
+  // Save content as constants.tsx (overwrites scaffold placeholder)
   const constantsContent = `/**
  * ${beat.metadata.title}
  *
