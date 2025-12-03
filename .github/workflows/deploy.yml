@@ -1,11 +1,11 @@
-name: Deploy Ontology AI Tutor to GitHub Pages
+name: Deploy THTX Beats to GitHub Pages
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'beats/ontology-ai-tutor/**'
+      - 'beats/**'
   workflow_dispatch:
 
 permissions:
@@ -28,18 +28,38 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: 'beats/ontology-ai-tutor/package-lock.json'
 
-      - name: Install dependencies
+      # Build Ontology AI Tutor (main Beat at root)
+      - name: Install Tutor dependencies
         working-directory: ./beats/ontology-ai-tutor
         run: npm ci
 
-      - name: Build
+      - name: Build Tutor
         working-directory: ./beats/ontology-ai-tutor
         run: npm run build
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      # Build Catalog
+      - name: Install Catalog dependencies
+        working-directory: ./beats/_catalog
+        run: npm ci
+
+      - name: Build Catalog
+        working-directory: ./beats/_catalog
+        run: npm run build
+
+      # Combine outputs into single deployment directory
+      - name: Prepare deployment directory
+        run: |
+          mkdir -p ./deploy
+          # Copy tutor to root
+          cp -r ./beats/ontology-ai-tutor/dist/* ./deploy/
+          # Copy catalog to /catalog subdirectory
+          mkdir -p ./deploy/catalog
+          cp -r ./beats/_catalog/dist/* ./deploy/catalog/
+          # Create .nojekyll to prevent Jekyll processing
+          touch ./deploy/.nojekyll
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -47,7 +67,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './beats/ontology-ai-tutor/dist'
+          path: './deploy'
 
   deploy:
     environment:

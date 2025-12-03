@@ -1,0 +1,18 @@
+{
+  "lastUpdated": "2024-12-03",
+  "baseUrl": "https://businessdatasolutions.github.io/thtx-knowledge-bank",
+  "beats": [
+    {
+      "id": "ontology-ai-tutor",
+      "title": "Ontology AI Tutor",
+      "description": "Interactieve tutorial voor Business Management studenten over het Palantir Ontology framework en datagedreven besluitvorming.",
+      "author": "THTX",
+      "publishDate": "2024-11-01",
+      "templateType": "concept-tutorial",
+      "path": "/",
+      "tags": ["onderwijs", "palantir", "ontology", "data", "besluitvorming"],
+      "featured": true,
+      "published": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@thtx/shared",
+  "version": "1.0.0",
+  "description": "Shared components, styles, types, and utilities for THTX Beats",
+  "private": true,
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    "./components": "./components/index.ts",
+    "./styles": "./styles/brand.ts",
+    "./types": "./types/common.ts",
+    "./utils": "./utils/index.ts"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "lucide-react": "^0.555.0"
+  }
+}

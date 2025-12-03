@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  cms:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3002"
+    environment:
+      - NODE_ENV=production
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+    volumes:
+      # Mount articles directory for file browsing
+      - ../../articles:/app/articles:ro
+      # Mount beats directory for output
+      - ../:/app/beats
+    restart: unless-stopped
+
+  # Development mode with hot reload
+  cms-dev:
+    image: node:20-alpine
+    working_dir: /app
+    ports:
+      - "3002:3002"
+      - "3003:3003"
+    environment:
+      - NODE_ENV=development
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+    volumes:
+      # Mount source code
+      - .:/app
+      # Mount articles directory
+      - ../../articles:/app/../../articles:ro
+      # Mount beats directory
+      - ../:/app/..
+      # Named volume for node_modules to avoid overwriting
+      - cms_node_modules:/app/node_modules
+      - cms_client_node_modules:/app/client/node_modules
+    command: sh -c "npm install && npm run dev"
+    profiles:
+      - dev
+
+volumes:
+  cms_node_modules:
+  cms_client_node_modules:

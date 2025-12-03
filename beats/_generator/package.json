@@ -1,0 +1,22 @@
+{
+  "name": "thtx-beat-generator",
+  "version": "1.0.0",
+  "description": "CLI tool for generating THTX Beats from source material",
+  "type": "module",
+  "main": "generator.ts",
+  "bin": {
+    "beat-gen": "./cli.ts"
+  },
+  "scripts": {
+    "generate": "npx tsx cli.ts",
+    "generate:interactive": "npx tsx cli.ts --interactive",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/react": "^19.2.7",
+    "tsx": "^4.7.0",
+    "typescript": "~5.8.2"
+  }
+}
