@@ -76,6 +76,39 @@ const CaseSummary: React.FC<Props> = ({ caseStudy, choices, lang, onBack }) => {
            </p>
         </div>
 
+        {/* Reflection Prompts */}
+        <div className="bg-amber-50 p-6 rounded-xl border-l-4 border-amber-500 mb-8">
+           <h3 className="font-bold text-amber-900 mb-4 text-lg">
+             {lang === 'NL' ? 'Reflecteer op je beslissing' : 'Reflect on your decision'}
+           </h3>
+           <div className="space-y-3">
+             <div className="flex items-start gap-3">
+               <span className="text-2xl flex-shrink-0">💡</span>
+               <p className="text-slate-700 leading-relaxed">
+                 {lang === 'NL'
+                   ? 'Waarom moesten Data, Logic én Action allemaal verbonden zijn voor deze workflow?'
+                   : 'Why did Data, Logic, and Action all need to be connected for this workflow?'}
+               </p>
+             </div>
+             <div className="flex items-start gap-3">
+               <span className="text-2xl flex-shrink-0">🔗</span>
+               <p className="text-slate-700 leading-relaxed">
+                 {lang === 'NL'
+                   ? 'Hoe zou deze Ontology-workflow er in jouw stage-bedrijf uitzien?'
+                   : 'How would this Ontology workflow look in your internship company?'}
+               </p>
+             </div>
+             <div className="flex items-start gap-3">
+               <span className="text-2xl flex-shrink-0">⚡</span>
+               <p className="text-slate-700 leading-relaxed">
+                 {lang === 'NL'
+                   ? 'Wat gebeurt er als één van de drie elementen (Data/Logic/Action) ontbreekt?'
+                   : 'What happens if one of the three elements (Data/Logic/Action) is missing?'}
+               </p>
+             </div>
+           </div>
+        </div>
+
         {/* Footer */}
         <div className="text-center">
            <button 

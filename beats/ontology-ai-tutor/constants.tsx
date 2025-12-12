@@ -311,15 +311,15 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
                 description: 'Real-time risicovrije rentes, market risk premiums en historische operationele cashflows.',
                 category: 'DATA',
                 isCorrect: true,
-                feedback: 'Correct. Om waarde te modelleren, heb je semantische objecten nodig die de marktcondities (Rentes) en de operationele realiteit (Cashflows) vertegenwoordigen. Dit vormt de basis voor de "Investment Decision" in financiële theorie.'
+                feedback: 'Correct. Om waarde te modelleren, heb je semantische objecten nodig die de marktcondities (Rentes) en de operationele realiteit (Cashflows) vertegenwoordigen. Dit vormt de basis voor de "Investment Decision" in financiële theorie. De Ontology integreert deze data uit heterogene bronnen (marktdata feeds, ERP-systemen, treasury platforms) in een uniform semantisch model, zodat Logic-modellen er direct mee kunnen werken.'
               },
               {
                 id: 'd2',
-                label: 'Voorraad kantoorartikelen',
-                description: 'Een complete inventaris van pennen, papier en nietmachines in het hoofdkantoor.',
+                label: 'Historische bedrijfsprestaties (jaarverslagen)',
+                description: 'Geaggregeerde financiële ratio\'s en narratieve beschrijvingen uit de laatste 5 jaarverslagen van het bedrijf zelf.',
                 category: 'DATA',
                 isCorrect: false,
-                feedback: 'Incorrect. Hoewel dit data is, is het irrelevant voor de "Investment Decision". De Ontology focust op relevantie—ruis filteren om objecten aan te wijzen die waarde creëren.'
+                feedback: 'Incorrect. Hoewel bedrijfsprestatie relevant lijkt, zijn jaarverslagen retrospectief en geaggregeerd. Voor een DCF-analyse heb je toekomstgerichte, granulaire operationele cashflows nodig, niet historische samenvattingen. Bovendien zijn statische PDF-rapporten "Data Graves" die niet real-time aan logic-modellen gebonden kunnen worden.'
               },
               {
                 id: 'd3',
@@ -350,7 +350,7 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
                 description: 'Discounted Cash Flow analyse die corrigeert voor het specifieke risicoprofiel (Bèta) van de nieuwe asset.',
                 category: 'LOGIC',
                 isCorrect: true,
-                feedback: 'Correct. Deze logic asset berekent het "drempelrendement" en "Net Present Value (NPV)". In de Ontology wordt dit model behandeld als een "tool" die AI of mensen kunnen aanroepen om te redeneren over de data.'
+                feedback: 'Correct. Deze logic asset berekent het "drempelrendement" en "Net Present Value (NPV)". In de Ontology wordt dit model behandeld als een "tool" die AI of mensen kunnen aanroepen om te redeneren over de data. Via "logic binding" kan deze DCF-functie draaien in verschillende omgevingen (cloud-based Python workbench, on-premises Excel-model, of SaaS treasury platform) en toch uniform toegankelijk zijn via de Ontology-laag.'
               },
               {
                 id: 'l2',
@@ -409,11 +409,11 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
               },
               {
                 id: 'a4',
-                label: 'Een blogpost schrijven',
-                description: 'Kondig het idee aan op de bedrijfsblog.',
+                label: 'Automatisch investment memo genereren voor compliance',
+                description: 'Trigger een workflow die een gestandaardiseerd memo genereert voor het compliance team ter goedkeuring.',
                 category: 'ACTION',
                 isCorrect: false,
-                feedback: 'Incorrect. Dit is communicatie, geen operationele executie. De "Action" in de Ontology verwijst naar het veranderen van de status van bedrijfssystemen (bijv. de transactie uitvoeren).'
+                feedback: 'Incorrect. Hoewel dit operationeler is dan een blogpost, introduceert het nog steeds vertraging door menselijke goedkeuring te vereisen. De Ontology "Action" betekent directe write-back naar transactiesystemen (binnen governance guardrails), niet wachten op compliance. In een goed ontworpen systeem zijn compliance-regels al gebakken in de Logic-laag.'
               }
             ]
           }
@@ -458,11 +458,11 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
               },
               {
                 id: 'cd4',
-                label: 'Social media sentiment scraper',
-                description: 'Zoeken naar iedereen die het woord "Bank" heeft getweet in het afgelopen uur.',
+                label: 'Geaggregeerde klanttevredenheidsscores per regio',
+                description: 'Een maandelijkse NPS (Net Promoter Score) rapportage per regionale vestiging, gebaseerd op surveys.',
                 category: 'DATA',
                 isCorrect: false,
-                feedback: 'Incorrect. Hoewel potentieel interessant, is dit ongestructureerde ruis. Zonder het te koppelen aan specifieke klantaccounts, kun je geen operationele actie ondernemen om ze te behouden.'
+                feedback: 'Incorrect. NPS-scores zijn waardevol voor strategische trends, maar ze zijn te geaggregeerd en te traag voor operationele churn-preventie. Je hebt granulaire, klant-specifieke data nodig (instantie-niveau) en real-time signalen, niet maandelijkse regionale gemiddelden. Tegen de tijd dat je een lage NPS ziet, zijn individuele hoogwaardige klanten al vertrokken.'
               }
             ]
           },
@@ -551,7 +551,7 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
         title: 'Supply chain: crisisbestrijding',
         description: 'Beheer een plotseling grondstoffentekort voor chirurgische maskers.',
         icon: 'factory',
-        context: `Titan Industries wordt geconfronteerd met een verstoring bij een grote leverancier voor grondstoffen die nodig zijn voor chirurgische maskers. De vraag escaleert. Je moet de Enterprise Ontology gebruiken om dit op te lossen zonder andere productielijnen te breken.`,
+        context: `Titan Industries wordt geconfronteerd met een verstoring bij een grote leverancier voor grondstoffen die nodig zijn voor chirurgische maskers. De vraag escaleert. Je moet de Enterprise Ontology gebruiken om dit op te lossen zonder andere productielijnen te breken. Gebaseerd op het Titan Industries voorbeeld uit het Palantir Ontology artikel (Krishnaswamy, 2024).`,
         summary: 'Je hebt een veerkrachtige supply chain gedemonstreerd. Door operationele data samen te brengen, scenario\'s te simuleren en direct terug te schrijven naar het ERP, heb je een crisis opgelost zonder menselijke latentie of foutgevoelige communicatie.',
         stages: {
           data: {
@@ -577,11 +577,11 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
               },
               {
                 id: 'd3',
-                label: 'Satellietbeelden van parkeerplaatsen',
-                description: 'Beelden die tonen hoeveel auto\'s er geparkeerd staan bij de fabriek.',
+                label: 'Handmatige logboeken van magazijnmedewerkers',
+                description: 'Excel-spreadsheets die elke shift handmatig worden bijgewerkt door magazijnmanagers met hun beste schatting van voorraadniveaus.',
                 category: 'DATA',
                 isCorrect: false,
-                feedback: 'Incorrect. Hoewel soms nuttig voor macro-trends, is deze data te abstract om een specifiek grondstoffentekort voor een specifieke productielijn op te lossen.'
+                feedback: 'Incorrect. Hoewel deze data lijkt op wat je nodig hebt, zijn handmatige logboeken notoir onbetrouwbaar en niet real-time. Ze reflecteren de waarneming van gisteren, niet de huidige realiteit. Voor supply chain crisis management heb je live, geautomatiseerde feeds nodig uit je ERP/WMS systemen, niet handmatige schattingen die verouderd zijn zodra ze worden ingevoerd.'
               },
               {
                 id: 'd4',
@@ -643,7 +643,7 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
                 description: 'Update automatisch het Warehouse Management System en de productieschema\'s met het nieuwe plan.',
                 category: 'ACTION',
                 isCorrect: true,
-                feedback: 'Correct. Dit sluit effectief de loop. De beslissing genomen in de analyselaag wordt teruggeschreven naar de fysieke systemen (Warehouse/ERP) die de fabriek draaien, wat verzekert dat het plan daadwerkelijk wordt uitgevoerd.'
+                feedback: 'Correct. Dit sluit effectief de loop. De beslissing genomen in de analyselaag wordt teruggeschreven naar de fysieke systemen (Warehouse/ERP) die de fabriek draaien, wat verzekert dat het plan daadwerkelijk wordt uitgevoerd. In de praktijk worden dit soort kritieke acties eerst "staged" als scenarios—een veilige sandbox waarin teams de gevolgen kunnen analyseren (welke orders worden vertraagd? welke kosten ontstaan?) voordat ze de beslissing committen. Dit combineert snelheid met governance.'
               },
               {
                 id: 'a2',
@@ -655,11 +655,11 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
               },
               {
                 id: 'a3',
-                label: 'Plak een post-it',
-                description: 'Plak een fysiek briefje op de magazijndeur.',
+                label: 'Activeer dashboard alert voor magazijnmedewerkers',
+                description: 'Trigger een real-time notificatie op de dashboards in het magazijn die medewerkers wijst op het reallocatieplan.',
                 category: 'ACTION',
                 isCorrect: false,
-                feedback: 'Incorrect. Dit is volledig losgekoppeld van de digitale onderneming. Het creëert een enorm gat tussen de beslissing in de software en de realiteit op de vloer.'
+                feedback: 'Incorrect. Hoewel een real-time alert beter is dan een e-mail, vereist dit nog steeds dat mensen de notificatie lezen en handmatig het plan uitvoeren. Dit introduceert vertraging en menselijke fouten. De Ontology write-back moet direct naar de systemen (WMS, ERP) die de voorraad en productie besturen, niet naar een dashboard voor mensen.'
               },
               {
                 id: 'a4',
@@ -790,11 +790,11 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
               },
               {
                 id: 'ea4',
-                label: 'Keycard toegang blokkeren',
-                description: 'Sluit ze preventief buiten het gebouw.',
+                label: 'Plan automatisch exit interview bij volgende one-on-one',
+                description: 'Trigger automatisch een agenda-item voor een exit interview gesprek bij de eerstvolgende reguliere one-on-one meeting.',
                 category: 'ACTION',
                 isCorrect: false,
-                feedback: 'Incorrect. Dit is een vijandige actie gebaseerd op een waarschijnlijkheid. De Ontology helpt mensen *in staat te stellen* betere beslissingen te nemen, niet schadelijke acties te automatiseren zonder review.'
+                feedback: 'Incorrect. Dit is passief en reactief management. Een exit interview plan je wanneer iemand al besloten heeft te vertrekken, niet als preventieve maatregel. Als de medewerker nu risico loopt, wil je ze *behouden* met een retentie-gesprek en aanbod, niet voorbereiden op hun vertrek. De Ontology moet proactieve interventies triggeren, niet defensieve exit-procedures.'
               }
             ]
           }
@@ -897,7 +897,7 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
                 description: 'Start automatisch een uitverkoopcampagne in het e-commerce systeem voor oude voorraad en maak tickets aan voor kapotte machines.',
                 category: 'ACTION',
                 isCorrect: true,
-                feedback: 'Correct. Dit is kinetische finance. Het systeem detecteert een financieel probleem en triggert een operationele oplossing (Verkoop/Reparatie) via write-back naar de relevante systemen.'
+                feedback: 'Correct. Dit is kinetische finance. Het systeem detecteert een financieel probleem en triggert een operationele oplossing (Verkoop/Reparatie) via write-back naar de relevante systemen. Door scenarios te gebruiken, kan een financial controller eerst de impact simuleren ("Als we deze voorraad afprijzen met 30%, hoeveel cash genereren we vs. hoeveel marge verliezen we?") voordat de clearance-campagne live gaat.'
               },
               {
                 id: 'da2',
@@ -950,15 +950,15 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
                 description: 'Real-time risk-free rates, market risk premiums, and historical operational cashflows.',
                 category: 'DATA',
                 isCorrect: true,
-                feedback: 'Correct. To model value, you need semantic objects representing market conditions (Rates) and operational reality (Cashflows). This forms the basis for the "Investment Decision" in finance theory.'
+                feedback: 'Correct. To model value, you need semantic objects representing market conditions (Rates) and operational reality (Cashflows). This forms the basis for the "Investment Decision" in finance theory. The Ontology integrates this data from heterogeneous sources (market data feeds, ERP systems, treasury platforms) into a uniform semantic model, enabling Logic models to work with it directly.'
               },
               {
                 id: 'd2',
-                label: 'Office Supply Inventory',
-                description: 'A complete inventory of pens, paper, and staplers in the headquarters.',
+                label: 'Historical company performance (annual reports)',
+                description: 'Aggregated financial ratios and narrative descriptions from the last 5 annual reports of the company itself.',
                 category: 'DATA',
                 isCorrect: false,
-                feedback: 'Incorrect. While this is data, it is irrelevant to the "Investment Decision". The Ontology focuses on relevance—filtering noise to focus on objects that drive value.'
+                feedback: 'Incorrect. While company performance seems relevant, annual reports are retrospective and aggregated. For DCF analysis you need forward-looking, granular operational cashflows, not historical summaries. Moreover, static PDF reports are "Data Graves" that cannot be bound to logic models in real-time.'
               },
               {
                 id: 'd3',
@@ -989,7 +989,7 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
                 description: 'Discounted Cash Flow analysis adjusting for the specific risk profile (Beta) of the new asset.',
                 category: 'LOGIC',
                 isCorrect: true,
-                feedback: 'Correct. This logic asset calculates the "Hurdle Rate" and "Net Present Value (NPV)". In the Ontology, this model is treated as a "tool" that AI or humans can call upon to reason about the data.'
+                feedback: 'Correct. This logic asset calculates the "Hurdle Rate" and "Net Present Value (NPV)". In the Ontology, this model is treated as a "tool" that AI or humans can call upon to reason about the data. Through "logic binding," this DCF function can run in different environments (cloud-based Python workbench, on-premises Excel model, or SaaS treasury platform) yet remain uniformly accessible via the Ontology layer.'
               },
               {
                 id: 'l2',
@@ -1048,11 +1048,11 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
               },
               {
                 id: 'a4',
-                label: 'Write a Blog Post',
-                description: 'Announce the idea on the company blog.',
+                label: 'Auto-generate investment memo for compliance review',
+                description: 'Trigger a workflow that generates a standardized memo for the compliance team to approve.',
                 category: 'ACTION',
                 isCorrect: false,
-                feedback: 'Incorrect. This is communication, not operational execution. "Action" in the Ontology refers to changing the state of business systems (e.g., executing the trade).'
+                feedback: 'Incorrect. While this is more operational than a blog post, it still introduces latency by requiring human approval. The Ontology "Action" means direct write-back to transactional systems (within governance guardrails), not waiting for compliance. In a well-designed system, compliance rules are already baked into the Logic layer.'
               }
             ]
           }
@@ -1097,11 +1097,11 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
               },
               {
                 id: 'cd4',
-                label: 'Social Media Sentiment Scraper',
-                description: 'Searching for anyone who tweeted the word "Bank" in the last hour.',
+                label: 'Aggregated customer satisfaction scores by region',
+                description: 'Monthly NPS (Net Promoter Score) reporting per regional branch, based on surveys.',
                 category: 'DATA',
                 isCorrect: false,
-                feedback: 'Incorrect. While potentially interesting, this is unstructured noise. Without linking it to specific customer accounts, you cannot take operational action to retain them.'
+                feedback: 'Incorrect. NPS scores are valuable for strategic trends, but they are too aggregated and too slow for operational churn prevention. You need granular, customer-specific data (instance-level) and real-time signals, not monthly regional averages. By the time you see a low NPS, individual high-value customers have already left.'
               }
             ]
           },
@@ -1190,7 +1190,7 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
         title: 'Supply Chain: Crisis Response',
         description: 'Manage a sudden raw material shortage for surgical masks.',
         icon: 'factory',
-        context: `Titan Industries faces a disruption at a major supplier for raw materials needed for surgical masks. Demand is escalating. You must use the Enterprise Ontology to resolve this without breaking other production lines.`,
+        context: `Titan Industries faces a disruption at a major supplier for raw materials needed for surgical masks. Demand is escalating. You must use the Enterprise Ontology to resolve this without breaking other production lines. Based on the Titan Industries example from the Palantir Ontology article (Krishnaswamy, 2024).`,
         summary: 'You have demonstrated a resilient supply chain. By bringing operational data together, simulating allocation scenarios, and writing back to the ERP instantly, you solved a crisis without human latency or error-prone manual communication.',
         stages: {
           data: {
@@ -1216,11 +1216,11 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
               },
               {
                 id: 'd3',
-                label: 'Satellite Imagery of Parking Lots',
-                description: 'Images showing how many cars are parked at the manufacturing plant.',
+                label: 'Manual warehouse staff logbooks',
+                description: 'Excel spreadsheets manually updated each shift by warehouse managers with their best estimate of inventory levels.',
                 category: 'DATA',
                 isCorrect: false,
-                feedback: 'Incorrect. While sometimes useful for macro trends, this data is too abstract to resolve a specific raw material shortage for a specific production line.'
+                feedback: 'Incorrect. While this data seems like what you need, manual logbooks are notoriously unreliable and not real-time. They reflect yesterday\'s observation, not current reality. For supply chain crisis management you need live, automated feeds from your ERP/WMS systems, not manual estimates that are stale the moment they are entered.'
               },
               {
                 id: 'd4',
@@ -1282,7 +1282,7 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
                 description: 'Automatically update the Warehouse Management System and production schedules with the new plan.',
                 category: 'ACTION',
                 isCorrect: true,
-                feedback: 'Correct. This effectively closes the loop. The decision made in the analysis layer is written back to the physical systems (Warehouse/ERP) that run the factory, ensuring the plan is actually executed.'
+                feedback: 'Correct. This effectively closes the loop. The decision made in the analysis layer is written back to the physical systems (Warehouse/ERP) that run the factory, ensuring the plan is actually executed. In practice, these types of critical actions are first "staged" as scenarios—a safe sandbox where teams can analyze the consequences (which orders get delayed? what costs arise?) before committing the decision. This combines speed with governance.'
               },
               {
                 id: 'a2',
@@ -1294,11 +1294,11 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
               },
               {
                 id: 'a3',
-                label: 'Post a Sticky Note',
-                description: 'Stick a physical note on the warehouse door.',
+                label: 'Trigger dashboard alert for warehouse staff',
+                description: 'Activate a real-time notification on warehouse dashboards informing staff of the reallocation plan.',
                 category: 'ACTION',
                 isCorrect: false,
-                feedback: 'Incorrect. This is completely disconnected from the digital enterprise. It creates a massive gap between the decision in software and reality on the floor.'
+                feedback: 'Incorrect. While a real-time alert is better than email, this still requires humans to read the notification and manually execute the plan. This introduces latency and human error. Ontology write-back should go directly to the systems (WMS, ERP) that control inventory and production, not to a dashboard for people.'
               },
               {
                 id: 'a4',
@@ -1429,11 +1429,11 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
               },
               {
                 id: 'ea4',
-                label: 'Revoke Keycard Access',
-                description: 'Lock them out of the building preemptively.',
+                label: 'Auto-schedule exit interview at next one-on-one',
+                description: 'Automatically trigger an agenda item for an exit interview discussion at the next regular one-on-one meeting.',
                 category: 'ACTION',
                 isCorrect: false,
-                feedback: 'Incorrect. This is a hostile action based on a probability. The Ontology helps *enable* humans to make better decisions, not automate harmful actions without review.'
+                feedback: 'Incorrect. This is passive and reactive management. You schedule exit interviews when someone has already decided to leave, not as a preventive measure. If the employee is at risk now, you want to *retain* them with a retention conversation and offer, not prepare for their departure. The Ontology should trigger proactive interventions, not defensive exit procedures.'
               }
             ]
           }
@@ -1536,7 +1536,7 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
                 description: 'Automatically execute a "Flash Sale" campaign in the e-commerce system for old stock and create tickets for broken machines.',
                 category: 'ACTION',
                 isCorrect: true,
-                feedback: 'Correct. This is kinetic finance. The system detects a financial drag and triggers an operational solution (Sale/Repair) via write-back to the relevant systems.'
+                feedback: 'Correct. This is kinetic finance. The system detects a financial drag and triggers an operational solution (Sale/Repair) via write-back to the relevant systems. Using scenarios, a financial controller can first simulate the impact ("If we discount this inventory by 30%, how much cash do we generate vs. how much margin do we lose?") before the clearance campaign goes live.'
               },
               {
                 id: 'da2',
