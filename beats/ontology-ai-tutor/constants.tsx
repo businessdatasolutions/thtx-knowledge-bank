@@ -298,7 +298,7 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
         description: 'Bepaal of er geïnvesteerd moet worden in een volatiele asset class.',
         icon: 'trending-up',
         context: 'Jouw firma wil de bedrijfswaarde maximaliseren. Je staat voor de beslissing om te investeren in een nieuwe asset class die een hoog rendement belooft, maar aanzienlijke volatiliteit met zich meebrengt. Je moet bepalen of deze investering voldoet aan de "hurdle rate" en de trade uitvoeren.',
-        summary: 'Je hebt met succes een beslissingsgerichte workflow gebouwd. In plaats van te vertrouwen op statische Excel-sheets en memo\'s, heb je live marktdata verbonden aan een DCF Logic Asset, en onmiddellijke executie mogelijk gemaakt via write-back. Dit vermindert latentie en financieel risico.',
+        summary: 'Je hebt met succes een beslissingsgerichte workflow gebouwd. In plaats van te vertrouwen op statische Excel-sheets en memo\'s, heb je live marktdata verbonden aan een DCF Logic Asset, en onmiddellijke executie mogelijk gemaakt via write-back. Dit vermindert vertraging en financieel risico.',
         stages: {
           data: {
             id: 'inv-data',
@@ -362,11 +362,11 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
               },
               {
                 id: 'l3',
-                label: 'LLM-gebaseerde markthallucinatie',
-                description: 'Een Large Language Model vragen om exacte toekomstige aandelenkoersen te voorspellen op basis van nieuwsheadlines.',
+                label: 'LLM-gebaseerde marktvoorspelling',
+                description: 'Een Large Language Model gebruiken om toekomstige aandelenkoersen te voorspellen door nieuwsheadlines, earnings calls en analisten-rapporten te analyseren.',
                 category: 'LOGIC',
                 isCorrect: false,
-                feedback: 'Incorrect. Dit is een veelvoorkomende valkuil. LLM\'s zijn niet-deterministisch en kunnen hallucineren. Voor financiële hurdles heb je deterministische, wiskundige logica nodig (Logic Assets).'
+                feedback: 'Incorrect. Hoewel LLMs waardevol kunnen zijn voor het verwerken van ongestructureerde data (nieuwsartikelen, sentiment), zijn ze **niet-deterministisch** en kunnen hallucineren bij numerieke voorspellingen. Voor financiële hurdle rate berekeningen heb je **deterministische, wiskundige logica** nodig (zoals DCF) die transparant, reproduceerbaar en auditable is. LLMs kunnen deze modellen *aanvullen* (bijv. voor risico-narratieven), maar niet vervangen.'
               },
               {
                 id: 'l4',
@@ -552,7 +552,7 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
         description: 'Beheer een plotseling grondstoffentekort voor chirurgische maskers.',
         icon: 'factory',
         context: `Titan Industries wordt geconfronteerd met een verstoring bij een grote leverancier voor grondstoffen die nodig zijn voor chirurgische maskers. De vraag escaleert. Je moet de Enterprise Ontology gebruiken om dit op te lossen zonder andere productielijnen te breken. Gebaseerd op het Titan Industries voorbeeld uit het Palantir Ontology artikel (Krishnaswamy, 2024).`,
-        summary: 'Je hebt een veerkrachtige supply chain gedemonstreerd. Door operationele data samen te brengen, scenario\'s te simuleren en direct terug te schrijven naar het ERP, heb je een crisis opgelost zonder menselijke latentie of foutgevoelige communicatie.',
+        summary: 'Je hebt een veerkrachtige supply chain gedemonstreerd. Door operationele data samen te brengen, scenario\'s te simuleren en direct terug te schrijven naar het ERP, heb je een crisis opgelost zonder menselijke vertraging of foutgevoelige communicatie.',
         stages: {
           data: {
             id: 'titan-data',
@@ -648,10 +648,10 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
               {
                 id: 'a2',
                 label: 'Genereer een CSV rapport',
-                description: 'Download een spreadsheet en e-mail deze naar de vloermanager van de fabriek.',
+                description: 'Download een spreadsheet en e-mail deze naar de floor manager.',
                 category: 'ACTION',
                 isCorrect: false,
-                feedback: 'Incorrect. CSV\'s en e-mails zijn "Digital Exhaust". Ze verbreken de chain of custody. Als de manager de e-mail mist, faalt de actie. Systemen moeten met systemen praten.'
+                feedback: 'Incorrect. CSV\'s en e-mails zijn "digital exhaust". Ze verbreken de chain of custody. Als de manager de e-mail mist, faalt de actie. Systemen moeten met systemen praten.'
               },
               {
                 id: 'a3',
@@ -664,7 +664,7 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
               {
                 id: 'a4',
                 label: 'E-mail instructies naar plant manager',
-                description: 'Stuur een prioriteitsmail met details over het reallocatieplan naar de vloermanager voor handmatige uitvoering.',
+                description: 'Stuur een prioriteitsmail met details over het reallocatieplan naar de floor manager voor handmatige uitvoering.',
                 category: 'ACTION',
                 isCorrect: false,
                 feedback: 'Incorrect. Dit introduceert vertraging en menselijke fouten. In een crisis kun je niet wachten tot een e-mail gelezen wordt. De Ontology stelt business users in staat om goedgekeurde acties direct uit te voeren.'
@@ -1001,11 +1001,11 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
               },
               {
                 id: 'l3',
-                label: 'LLM-based Market Hallucination',
-                description: 'Asking a Large Language Model to predict exact future stock prices based on news headlines.',
+                label: 'LLM-based market forecasting',
+                description: 'Using a Large Language Model to predict future stock prices by analyzing news headlines, earnings calls, and analyst reports.',
                 category: 'LOGIC',
                 isCorrect: false,
-                feedback: 'Incorrect. This is a common pitfall. LLMs are non-deterministic and can hallucinate. For financial hurdles, you need deterministic, mathematical logic (Logic Assets).'
+                feedback: 'Incorrect. While LLMs can be valuable for processing unstructured data (news articles, sentiment), they are **non-deterministic** and can hallucinate with numerical predictions. For financial hurdle rate calculations you need **deterministic, mathematical logic** (like DCF) that is transparent, reproducible, and auditable. LLMs can *complement* these models (e.g., for risk narratives), but not replace them.'
               },
               {
                 id: 'l4',
@@ -1290,7 +1290,7 @@ export const getCaseStudies = (lang: Language): CaseStudy[] => {
                 description: 'Download a spreadsheet and email it to the factory floor manager.',
                 category: 'ACTION',
                 isCorrect: false,
-                feedback: 'Incorrect. CSVs and emails are "Digital Exhaust". They break the chain of custody. If the manager misses the email, the action fails. Systems must talk to systems.'
+                feedback: 'Incorrect. CSVs and emails are "digital exhaust". They break the chain of custody. If the manager misses the email, the action fails. Systems must talk to systems.'
               },
               {
                 id: 'a3',
