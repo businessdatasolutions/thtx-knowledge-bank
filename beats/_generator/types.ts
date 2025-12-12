@@ -89,6 +89,25 @@ export interface Scenario {
 }
 
 // ============================================================================
+// Golden Circle Structure (Sinek)
+// ============================================================================
+
+/**
+ * A Golden Circle section (WHY, HOW, or WHAT).
+ * Used for structured intro/context content with scannable format.
+ */
+export interface GoldenCircleSection {
+  /** Section headline - max 15 words, engaging */
+  headline: string;
+  /** Section paragraph - max 100 words, context-setting */
+  paragraph: string;
+  /** Key points - 3-5 bullet points, each max 20 words */
+  keyPoints: string[];
+  /** Optional steps (mainly for HOW section) */
+  steps?: string[];
+}
+
+// ============================================================================
 // Content Types (for generated output)
 // ============================================================================
 
@@ -98,26 +117,48 @@ export interface Scenario {
 export interface ConceptTutorialContent {
   metadata: BeatMetadata;
   intro: {
-    headline: string;
-    subheadline: string;
-    conceptText: string;
-    keyPoints: string[];
-  };
-  labels: {
-    startButton: string;
-    continueButton: string;
-    finishButton: string;
-    restartButton: string;
-    scenariosTitle: string;
-    progressLabel: string;
-    summaryTitle: string;
-    stageLabels: string[];
+    /** WHY - Why this concept matters */
+    why: GoldenCircleSection;
+    /** HOW - The approach */
+    how: GoldenCircleSection;
+    /** WHAT - What you will learn/practice */
+    what: GoldenCircleSection;
+    /** Key takeaways - 3-5 main insights */
+    keyTakeaways: string[];
   };
   scenarios: Scenario[];
-  summary: {
+  ui: {
     title: string;
-    insights: string[];
-    callToAction: string;
+    subtitle: string;
+    backToDashboard: string;
+    nextStage: string;
+    complete: string;
+    startExploring: string;
+    introTitle: string;
+    introSubtitle: string;
+    whyTitle: string;
+    howTitle: string;
+    whatTitle: string;
+    keyTakeawaysTitle: string;
+    dashboardTitle: string;
+    dashboardSubtitle: string;
+    scenarioCompleted: string;
+    scenariosCompleted: string;
+    scenarioProgress: string;
+    stage: string;
+    of: string;
+    selectOption: string;
+    summaryTitle: string;
+    summarySubtitle: string;
+    yourChoices: string;
+    retrospective: string;
+    backToScenarios: string;
+    stageLabels: {
+      data: string;
+      logic: string;
+      action: string;
+    };
+    loading: string;
   };
 }
 
@@ -141,24 +182,41 @@ export interface StrategicFrameworkContent {
     };
     quadrants: Array<{
       id: string;
-      position: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
+      position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
       title: string;
       description: string;
-      characteristics: string[];
-      strategies: string[];
       examples: string[];
+      color: string;
+      icon?: string;
+      recommendations?: string[];
     }>;
   };
   context: {
-    introduction: string;
-    whenToUse: string[];
-    limitations: string[];
+    /** WHY - Why this framework matters */
+    why: GoldenCircleSection;
+    /** HOW - How the framework works */
+    how: GoldenCircleSection;
+    /** WHAT - What you will learn */
+    what: GoldenCircleSection;
+    /** Key takeaways - 3-5 main insights */
+    keyTakeaways: string[];
   };
-  labels: {
-    exploreButton: string;
-    backButton: string;
-    characteristicsLabel: string;
-    strategiesLabel: string;
-    examplesLabel: string;
+  ui: {
+    title: string;
+    subtitle: string;
+    backToIntro: string;
+    backToFramework: string;
+    explore: string;
+    whyTitle: string;
+    howTitle: string;
+    whatTitle: string;
+    keyTakeawaysTitle: string;
+    startExploring: string;
+    selectQuadrant: string;
+    clickToExplore: string;
+    examplesTitle: string;
+    recommendationsTitle: string;
+    positionLabel: string;
+    loading: string;
   };
 }

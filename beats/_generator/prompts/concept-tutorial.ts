@@ -9,17 +9,39 @@ import type { ParseResult } from '../parsers';
 /**
  * System prompt for the AI to understand the Concept Tutorial format.
  */
-export const SYSTEM_PROMPT = `Je bent een expert content generator voor THTX Beats - interactieve leercontainers voor executives en technisch leiders.
+export const SYSTEM_PROMPT = `Je bent een expert content generator voor THTX Section 10X Briefings - interactieve leercontainers voor executives en technisch leiders.
 
-Je taak is om bronmateriaal te transformeren naar een gestructureerde "Concept Tutorial" Beat.
+Je taak is om bronmateriaal te transformeren naar een gestructureerde "Concept Tutorial" Briefing.
 
 ## Concept Tutorial Structuur
 
 Een Concept Tutorial heeft 4 weergaven:
-1. **INTRO** - Theorie uitleg in 3 tabbed secties (WAAROM / HOE / WAT)
+1. **INTRO** - Uitleg via Golden Circle (WHY → HOW → WHAT) met scanbare bullet points
 2. **DASHBOARD** - Overzicht van 3-5 scenario's
 3. **SCENARIO** - Interactieve 3-stappen simulatie (Data → Logica → Actie)
 4. **SUMMARY** - Samenvatting van keuzes
+
+## INTRO View - Golden Circle Structuur (Sinek)
+
+De INTRO moet gestructureerd zijn volgens Sinek's Golden Circle:
+
+1. **WHY** - Waarom dit concept belangrijk is
+   - headline: Max 15 woorden, pakkend
+   - paragraph: Max 100 woorden, context-gevend
+   - keyPoints: 3-5 bullet points, elk max 20 woorden
+
+2. **HOW** - De aanpak
+   - headline: Max 15 woorden
+   - paragraph: Max 100 woorden
+   - keyPoints: 3-5 bullet points
+   - steps: Optionele stappen (als relevant)
+
+3. **WHAT** - Wat je gaat oefenen
+   - headline: Max 15 woorden
+   - paragraph: Max 100 woorden
+   - keyPoints: 3-5 bullet points
+
+4. **Key Takeaways** - 3-5 hoofdinzichten
 
 ## Vereisten voor Scenarios
 
@@ -87,25 +109,37 @@ Genereer een Concept Tutorial Beat op basis van dit bronmateriaal.
     "templateType": "concept-tutorial"
   },
   "intro": {
-    "sections": [
-      {
-        "id": "waarom",
-        "tabLabel": "WAAROM",
-        "title": "Waarom dit belangrijk is",
-        "content": "Uitleg over het belang van dit concept..."
-      },
-      {
-        "id": "hoe",
-        "tabLabel": "HOE",
-        "title": "Hoe het werkt",
-        "content": "Uitleg over de aanpak..."
-      },
-      {
-        "id": "wat",
-        "tabLabel": "WAT",
-        "title": "Wat je leert",
-        "content": "Concrete leerdoelen..."
-      }
+    "why": {
+      "headline": "Pakkende headline over waarom dit concept cruciaal is (max 15 woorden)",
+      "paragraph": "Korte context-gevende paragraaf die de urgentie en relevantie uitlegt. Maximaal 100 woorden.",
+      "keyPoints": [
+        "Eerste key point over het waarom (max 20 woorden)",
+        "Tweede key point over het probleem",
+        "Derde key point over de impact"
+      ]
+    },
+    "how": {
+      "headline": "Pakkende headline over de aanpak (max 15 woorden)",
+      "paragraph": "Korte uitleg van de methodiek. Maximaal 100 woorden.",
+      "keyPoints": [
+        "Eerste key point over de aanpak",
+        "Tweede key point over het proces",
+        "Derde key point over de implementatie"
+      ]
+    },
+    "what": {
+      "headline": "Pakkende headline over wat je gaat oefenen (max 15 woorden)",
+      "paragraph": "Korte beschrijving van de oefeningen. Maximaal 100 woorden.",
+      "keyPoints": [
+        "Eerste key point over de scenario's",
+        "Tweede key point over de vaardigheden",
+        "Derde key point over de toepasbaarheid"
+      ]
+    },
+    "keyTakeaways": [
+      "Belangrijkste inzicht 1",
+      "Belangrijkste inzicht 2",
+      "Belangrijkste inzicht 3"
     ]
   },
   "scenarios": [
@@ -165,12 +199,19 @@ Genereer een Concept Tutorial Beat op basis van dit bronmateriaal.
 
 ### Richtlijnen
 
-1. **Intro secties**: Maak ze concreet en relevant voor de doelgroep
-2. **Scenario's**: Baseer ze op realistische zakelijke situaties uit het bronmateriaal
-3. **Opties**: Maak alle opties plausibel - niet te voor de hand liggend
-4. **Feedback**: Geef educatieve uitleg, niet alleen "goed" of "fout"
-5. **Taal**: Alles in zakelijk Nederlands, geen jargon zonder uitleg
-6. **Icons**: Gebruik: BookOpen, Target, TrendingUp, Users, Settings, BarChart3, Lightbulb, Zap
+1. **Golden Circle Intro**: Structureer de intro volgens WHY → HOW → WHAT
+   - WHY: Urgentie, probleem, waarom nu leren
+   - HOW: Aanpak, methodiek, hoe de scenario's werken
+   - WHAT: Concrete oefeningen, wat je gaat doen
+2. **Tekstlengtes**: Strikt aanhouden!
+   - Headlines: max 15 woorden
+   - Paragraphs: max 100 woorden
+   - Key points: 3-5 items, elk max 20 woorden
+3. **Scenario's**: Baseer ze op realistische zakelijke situaties uit het bronmateriaal
+4. **Opties**: Maak alle opties plausibel - niet te voor de hand liggend
+5. **Feedback**: Geef educatieve uitleg, niet alleen "goed" of "fout"
+6. **Taal**: Alles in zakelijk Nederlands, geen jargon zonder uitleg
+7. **Icons**: Gebruik: BookOpen, Target, TrendingUp, Users, Settings, BarChart3, Lightbulb, Zap
 ${customInstructionsSection}
 Genereer nu de complete JSON:`;
 }

@@ -6,21 +6,36 @@
  * theory sections and interactive scenarios.
  */
 
-import type { ReactNode } from 'react';
 import type { BeatMetadata, Scenario } from '../../_shared/types/common';
 
 /**
- * A section within the intro/theory view.
+ * A Golden Circle section (WHY, HOW, or WHAT).
+ * Used for structured intro content with scannable format.
  */
-export interface IntroSection {
-  /** Unique identifier */
-  id: string;
-  /** Short label for tab navigation (e.g., "WAAROM", "HOE", "WAT") */
-  tabLabel: string;
-  /** Full section title */
-  title: string;
-  /** Section content - can be JSX for rich content or string for simple text */
-  content: ReactNode | string;
+export interface GoldenCircleSection {
+  /** Section headline - max 15 words, engaging */
+  headline: string;
+  /** Section paragraph - max 100 words, context-setting */
+  paragraph: string;
+  /** Key points - 3-5 bullet points, each max 20 words */
+  keyPoints: string[];
+  /** Optional steps (mainly for HOW section) */
+  steps?: string[];
+}
+
+/**
+ * Intro content using Golden Circle structure (Sinek).
+ * WHY → HOW → WHAT
+ */
+export interface IntroContent {
+  /** WHY - Why this concept matters, the problem it solves */
+  why: GoldenCircleSection;
+  /** HOW - The approach, how the concept works */
+  how: GoldenCircleSection;
+  /** WHAT - What you will learn/practice, concrete outcomes */
+  what: GoldenCircleSection;
+  /** Key takeaways - 3-5 main insights */
+  keyTakeaways: string[];
 }
 
 /**
@@ -36,9 +51,13 @@ export interface ConceptTutorialLabels {
   complete: string;
   startExploring: string;
 
-  // Intro view
+  // Intro view - Golden Circle sections
   introTitle: string;
   introSubtitle: string;
+  whyTitle: string;
+  howTitle: string;
+  whatTitle: string;
+  keyTakeawaysTitle: string;
 
   // Dashboard view
   dashboardTitle: string;
@@ -77,11 +96,8 @@ export interface ConceptTutorialContent {
   /** Beat metadata for catalog and identification */
   metadata: BeatMetadata;
 
-  /** Intro/theory section content */
-  intro: {
-    /** Array of tabbed sections (typically 3: WHY, HOW, WHAT) */
-    sections: IntroSection[];
-  };
+  /** Intro content using Golden Circle structure */
+  intro: IntroContent;
 
   /** Interactive scenarios */
   scenarios: Scenario[];
@@ -102,9 +118,13 @@ export const DEFAULT_NL_LABELS: ConceptTutorialLabels = {
   complete: 'Afronden',
   startExploring: 'Start verkenning',
 
-  // Intro view
+  // Intro view - Golden Circle sections
   introTitle: 'Welkom',
   introSubtitle: 'Begin met de theorie',
+  whyTitle: 'Waarom dit belangrijk is',
+  howTitle: 'De aanpak',
+  whatTitle: 'Wat je gaat oefenen',
+  keyTakeawaysTitle: 'Belangrijkste inzichten',
 
   // Dashboard view
   dashboardTitle: 'Scenario\'s',
@@ -156,9 +176,44 @@ export function validateContent(content: ConceptTutorialContent): string[] {
     errors.push('Invalid templateType: must be "concept-tutorial"');
   }
 
-  // Validate intro sections
-  if (!content.intro?.sections || content.intro.sections.length === 0) {
-    errors.push('At least one intro section is required');
+  // Validate intro - Golden Circle structure
+  if (!content.intro) {
+    errors.push('Missing intro');
+  } else {
+    // Validate WHY section
+    if (!content.intro.why) {
+      errors.push('Missing intro.why');
+    } else {
+      if (!content.intro.why.headline) errors.push('Missing intro.why.headline');
+      if (!content.intro.why.paragraph) errors.push('Missing intro.why.paragraph');
+      if (!content.intro.why.keyPoints || content.intro.why.keyPoints.length < 3) {
+        errors.push('intro.why.keyPoints must have at least 3 items');
+      }
+    }
+    // Validate HOW section
+    if (!content.intro.how) {
+      errors.push('Missing intro.how');
+    } else {
+      if (!content.intro.how.headline) errors.push('Missing intro.how.headline');
+      if (!content.intro.how.paragraph) errors.push('Missing intro.how.paragraph');
+      if (!content.intro.how.keyPoints || content.intro.how.keyPoints.length < 3) {
+        errors.push('intro.how.keyPoints must have at least 3 items');
+      }
+    }
+    // Validate WHAT section
+    if (!content.intro.what) {
+      errors.push('Missing intro.what');
+    } else {
+      if (!content.intro.what.headline) errors.push('Missing intro.what.headline');
+      if (!content.intro.what.paragraph) errors.push('Missing intro.what.paragraph');
+      if (!content.intro.what.keyPoints || content.intro.what.keyPoints.length < 3) {
+        errors.push('intro.what.keyPoints must have at least 3 items');
+      }
+    }
+    // Validate key takeaways
+    if (!content.intro.keyTakeaways || content.intro.keyTakeaways.length < 3) {
+      errors.push('intro.keyTakeaways must have at least 3 items');
+    }
   }
 
   // Validate scenarios
@@ -202,7 +257,7 @@ export function validateContent(content: ConceptTutorialContent): string[] {
 export function createContent(
   partial: Partial<ConceptTutorialContent> & {
     metadata: BeatMetadata;
-    intro: { sections: IntroSection[] };
+    intro: IntroContent;
     scenarios: Scenario[];
   }
 ): ConceptTutorialContent {

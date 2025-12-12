@@ -8,10 +8,9 @@
  * - SUMMARY: Results and retrospective
  */
 
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { BookOpen, CheckCircle, ArrowRight, RotateCcw } from 'lucide-react';
-import { Button, Card, TabGroup, ProgressBar } from '../../_shared/components';
-import { shuffle } from '../../_shared/utils';
+import { Button, Card, GoldenCircleSection, KeyTakeawaysCard } from '../../_shared/components';
 import type { Option, ViewState } from '../../_shared/types/common';
 import type { ConceptTutorialContent } from './schema';
 import StageSelector from './components/StageSelector';
@@ -43,9 +42,6 @@ export const ConceptTutorialTemplate: React.FC<ConceptTutorialTemplateProps> = (
   const [activeScenarioId, setActiveScenarioId] = useState<string | null>(null);
   const [completedScenarios, setCompletedScenarios] = useState<string[]>([]);
 
-  // Intro state
-  const [activeTabId, setActiveTabId] = useState(intro.sections[0]?.id || '');
-
   // Scenario state
   const [currentStageIndex, setCurrentStageIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<Option | null>(null);
@@ -60,12 +56,6 @@ export const ConceptTutorialTemplate: React.FC<ConceptTutorialTemplateProps> = (
   const currentStage = activeScenario?.stages[currentStageIndex];
   const stageKeys: StageKey[] = ['data', 'logic', 'action'];
   const currentStageKey = stageKeys[currentStageIndex] || 'data';
-
-  // Tab configuration for intro
-  const tabs = intro.sections.map(section => ({
-    id: section.id,
-    label: section.tabLabel,
-  }));
 
   // Handlers
   const handleStartExploring = () => {
@@ -113,8 +103,6 @@ export const ConceptTutorialTemplate: React.FC<ConceptTutorialTemplateProps> = (
 
   // Render helpers
   const renderIntroView = () => {
-    const activeSection = intro.sections.find(s => s.id === activeTabId);
-
     return (
       <div className="flex flex-col h-full">
         {/* Header */}
@@ -123,32 +111,47 @@ export const ConceptTutorialTemplate: React.FC<ConceptTutorialTemplateProps> = (
           <p className="text-slate-600 mt-1">{ui.introSubtitle}</p>
         </div>
 
-        {/* Tab navigation */}
-        <div className="px-8 pt-4 bg-white">
-          <TabGroup
-            tabs={tabs}
-            activeTab={activeTabId}
-            onChange={setActiveTabId}
-            variant="underline"
-          />
-        </div>
-
         {/* Content */}
         <div className="flex-1 overflow-y-auto px-8 py-6">
-          {activeSection && (
-            <div className="max-w-3xl">
-              <h2 className="text-xl font-semibold text-slate-800 mb-4">
-                {activeSection.title}
-              </h2>
-              <div className="prose prose-slate">
-                {typeof activeSection.content === 'string' ? (
-                  <p>{activeSection.content}</p>
-                ) : (
-                  activeSection.content
-                )}
-              </div>
-            </div>
-          )}
+          <div className="max-w-3xl space-y-6">
+            {/* WHY Section */}
+            <GoldenCircleSection
+              type="why"
+              title={ui.whyTitle}
+              headline={intro.why.headline}
+              paragraph={intro.why.paragraph}
+              keyPoints={intro.why.keyPoints}
+              steps={intro.why.steps}
+            />
+
+            {/* HOW Section */}
+            <GoldenCircleSection
+              type="how"
+              title={ui.howTitle}
+              headline={intro.how.headline}
+              paragraph={intro.how.paragraph}
+              keyPoints={intro.how.keyPoints}
+              steps={intro.how.steps}
+            />
+
+            {/* WHAT Section */}
+            <GoldenCircleSection
+              type="what"
+              title={ui.whatTitle}
+              headline={intro.what.headline}
+              paragraph={intro.what.paragraph}
+              keyPoints={intro.what.keyPoints}
+              steps={intro.what.steps}
+            />
+
+            {/* Key Takeaways */}
+            {intro.keyTakeaways && intro.keyTakeaways.length > 0 && (
+              <KeyTakeawaysCard
+                title={ui.keyTakeawaysTitle}
+                takeaways={intro.keyTakeaways}
+              />
+            )}
+          </div>
         </div>
 
         {/* Footer */}

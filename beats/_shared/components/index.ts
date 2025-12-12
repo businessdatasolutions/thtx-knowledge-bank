@@ -23,3 +23,11 @@ export type { NavigationProps } from './Navigation';
 // TabGroup
 export { TabGroup } from './TabGroup';
 export type { TabGroupProps, Tab } from './TabGroup';
+
+// GoldenCircleSection
+export { GoldenCircleSection } from './GoldenCircleSection';
+export type { GoldenCircleSectionProps, GoldenCircleSectionType } from './GoldenCircleSection';
+
+// KeyTakeawaysCard
+export { KeyTakeawaysCard } from './KeyTakeawaysCard';
+export type { KeyTakeawaysCardProps } from './KeyTakeawaysCard';

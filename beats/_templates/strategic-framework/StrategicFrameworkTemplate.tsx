@@ -8,8 +8,8 @@
  */
 
 import React, { useState } from 'react';
-import { ArrowRight, ChevronLeft, Lightbulb, Target, List } from 'lucide-react';
-import { Button, Card } from '../../_shared/components';
+import { ArrowRight, ChevronLeft } from 'lucide-react';
+import { Button, Card, GoldenCircleSection, KeyTakeawaysCard } from '../../_shared/components';
 import type { StrategicFrameworkContent, Quadrant } from './schema';
 import InteractiveMatrix from './components/InteractiveMatrix';
 import QuadrantDetail from './components/QuadrantDetail';
@@ -64,53 +64,43 @@ export const StrategicFrameworkTemplate: React.FC<StrategicFrameworkTemplateProp
 
         {/* Content */}
         <div className="flex-1 overflow-y-auto px-8 py-6">
-          <div className="max-w-3xl space-y-8">
-            {/* Introduction */}
-            <section>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
-                  <Lightbulb className="w-5 h-5 text-blue-600" />
-                </div>
-                <h2 className="text-xl font-semibold text-slate-800">{ui.introTitle}</h2>
-              </div>
-              <div className="prose prose-slate">
-                <p className="text-slate-700 leading-relaxed">{context.introduction}</p>
-              </div>
-            </section>
+          <div className="max-w-3xl space-y-6">
+            {/* WHY Section */}
+            <GoldenCircleSection
+              type="why"
+              title={ui.whyTitle}
+              headline={context.why.headline}
+              paragraph={context.why.paragraph}
+              keyPoints={context.why.keyPoints}
+              steps={context.why.steps}
+            />
 
-            {/* How to use */}
-            <section>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
-                  <Target className="w-5 h-5 text-purple-600" />
-                </div>
-                <h2 className="text-xl font-semibold text-slate-800">{ui.howToUseTitle}</h2>
-              </div>
-              <div className="prose prose-slate">
-                <p className="text-slate-700 leading-relaxed">{context.howToUse}</p>
-              </div>
-            </section>
+            {/* HOW Section */}
+            <GoldenCircleSection
+              type="how"
+              title={ui.howTitle}
+              headline={context.how.headline}
+              paragraph={context.how.paragraph}
+              keyPoints={context.how.keyPoints}
+              steps={context.how.steps}
+            />
 
-            {/* Key takeaways (if provided) */}
+            {/* WHAT Section */}
+            <GoldenCircleSection
+              type="what"
+              title={ui.whatTitle}
+              headline={context.what.headline}
+              paragraph={context.what.paragraph}
+              keyPoints={context.what.keyPoints}
+              steps={context.what.steps}
+            />
+
+            {/* Key Takeaways */}
             {context.keyTakeaways && context.keyTakeaways.length > 0 && (
-              <section>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center">
-                    <List className="w-5 h-5 text-green-600" />
-                  </div>
-                  <h2 className="text-xl font-semibold text-slate-800">{ui.keyTakeawaysTitle}</h2>
-                </div>
-                <ul className="space-y-2">
-                  {context.keyTakeaways.map((takeaway, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <span className="w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center text-sm font-medium flex-shrink-0">
-                        {index + 1}
-                      </span>
-                      <span className="text-slate-700">{takeaway}</span>
-                    </li>
-                  ))}
-                </ul>
-              </section>
+              <KeyTakeawaysCard
+                title={ui.keyTakeawaysTitle}
+                takeaways={context.keyTakeaways}
+              />
             )}
 
             {/* Framework preview */}

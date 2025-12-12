@@ -9,16 +9,38 @@ import type { ParseResult } from '../parsers';
 /**
  * System prompt for the AI to understand the Strategic Framework format.
  */
-export const SYSTEM_PROMPT = `Je bent een expert content generator voor THTX Beats - interactieve leercontainers voor executives en technisch leiders.
+export const SYSTEM_PROMPT = `Je bent een expert content generator voor THTX Section 10X Briefings - interactieve leercontainers voor executives en technisch leiders.
 
-Je taak is om bronmateriaal te transformeren naar een gestructureerd "Strategic Framework" Beat.
+Je taak is om bronmateriaal te transformeren naar een gestructureerde "Strategic Framework" Briefing.
 
 ## Strategic Framework Structuur
 
 Een Strategic Framework heeft 3 weergaven:
-1. **INTRO** - Uitleg van het framework met context en instructies
+1. **INTRO** - Uitleg via Golden Circle (WHY → HOW → WHAT) met scanbare bullet points
 2. **FRAMEWORK** - Interactieve 2x2 matrix met klikbare kwadranten
 3. **DETAIL** - Diepgaande informatie per kwadrant
+
+## INTRO View - Golden Circle Structuur (Sinek)
+
+De INTRO moet gestructureerd zijn volgens Sinek's Golden Circle:
+
+1. **WHY** - Waarom dit framework belangrijk is
+   - headline: Max 15 woorden, pakkend
+   - paragraph: Max 100 woorden, context-gevend
+   - keyPoints: 3-5 bullet points, elk max 20 woorden
+
+2. **HOW** - Hoe het framework werkt
+   - headline: Max 15 woorden
+   - paragraph: Max 100 woorden
+   - keyPoints: 3-5 bullet points
+   - steps: Optionele stappen (als relevant)
+
+3. **WHAT** - Wat je leert/bereikt
+   - headline: Max 15 woorden
+   - paragraph: Max 100 woorden
+   - keyPoints: 3-5 bullet points
+
+4. **Key Takeaways** - 3-5 hoofdinzichten
 
 ## Vereisten voor de Matrix
 
@@ -143,10 +165,40 @@ Genereer een Strategic Framework Beat op basis van dit bronmateriaal.
     ]
   },
   "context": {
-    "introduction": "Uitgebreide introductie die uitlegt waarom dit framework relevant is, waar het vandaan komt, en hoe het zich verhoudt tot strategische besluitvorming...",
-    "howToUse": "Instructies voor het gebruik: hoe bepaal je je positie, wat betekenen de kwadranten, en hoe kun je het framework gebruiken voor besluitvorming...",
+    "why": {
+      "headline": "Pakkende headline over waarom dit framework belangrijk is (max 15 woorden)",
+      "paragraph": "Korte context-gevende paragraaf die de urgentie en relevantie uitlegt. Maximaal 100 woorden.",
+      "keyPoints": [
+        "Eerste key point over het waarom (max 20 woorden)",
+        "Tweede key point over het probleem dat dit framework oplost",
+        "Derde key point over de impact van niet handelen"
+      ]
+    },
+    "how": {
+      "headline": "Pakkende headline over hoe het framework werkt (max 15 woorden)",
+      "paragraph": "Korte uitleg van de aanpak en methodiek. Maximaal 100 woorden.",
+      "keyPoints": [
+        "Eerste key point over de aanpak",
+        "Tweede key point over het proces",
+        "Derde key point over de implementatie"
+      ],
+      "steps": [
+        "Optionele stap 1",
+        "Optionele stap 2",
+        "Optionele stap 3"
+      ]
+    },
+    "what": {
+      "headline": "Pakkende headline over wat je leert/bereikt (max 15 woorden)",
+      "paragraph": "Korte beschrijving van de concrete outcomes. Maximaal 100 woorden.",
+      "keyPoints": [
+        "Eerste key point over de outcome",
+        "Tweede key point over de resultaten",
+        "Derde key point over de toepasbaarheid"
+      ]
+    },
     "keyTakeaways": [
-      "Belangrijkste inzicht 1",
+      "Belangrijkste inzicht 1 uit het hele framework",
       "Belangrijkste inzicht 2",
       "Belangrijkste inzicht 3"
     ]
@@ -156,16 +208,24 @@ Genereer een Strategic Framework Beat op basis van dit bronmateriaal.
 
 ### Richtlijnen
 
-1. **Assen**: Kies twee dimensies die een zinvolle strategische spanning creëren
-2. **Kwadranten**: Elk kwadrant moet een herkenbare strategische positie zijn
-3. **Voorbeelden**: Geef concrete, herkenbare voorbeelden voor elke positie
-4. **Aanbevelingen**: Maak ze actionable - wat moet iemand in die positie doen?
-5. **Kleuren**: Gebruik de standaard Tailwind kleuren:
+1. **Golden Circle Context**: Structureer de intro volgens WHY → HOW → WHAT
+   - WHY: Urgentie, probleem, waarom nu handelen
+   - HOW: Aanpak, methodiek, hoe het werkt
+   - WHAT: Concrete outcomes, wat je leert/bereikt
+2. **Tekstlengtes**: Strikt aanhouden!
+   - Headlines: max 15 woorden
+   - Paragraphs: max 100 woorden
+   - Key points: 3-5 items, elk max 20 woorden
+3. **Assen**: Kies twee dimensies die een zinvolle strategische spanning creëren
+4. **Kwadranten**: Elk kwadrant moet een herkenbare strategische positie zijn
+5. **Voorbeelden**: Geef concrete, herkenbare voorbeelden voor elke positie
+6. **Aanbevelingen**: Maak ze actionable - wat moet iemand in die positie doen?
+7. **Kleuren**: Gebruik de standaard Tailwind kleuren:
    - top-left: bg-purple-100
    - top-right: bg-blue-100
    - bottom-left: bg-amber-100
    - bottom-right: bg-green-100
-6. **Taal**: Zakelijk Nederlands, concreet en praktisch
+8. **Taal**: Zakelijk Nederlands, concreet en praktisch
 ${customInstructionsSection}
 Genereer nu de complete JSON:`;
 }

@@ -64,15 +64,32 @@ export interface Framework {
 }
 
 /**
- * Context/introduction content.
+ * A Golden Circle section (WHY, HOW, or WHAT).
+ */
+export interface GoldenCircleSection {
+  /** Section headline - max 15 words, engaging */
+  headline: string;
+  /** Section paragraph - max 100 words, context-setting */
+  paragraph: string;
+  /** Key points - 3-5 bullet points, each max 20 words */
+  keyPoints: string[];
+  /** Optional steps (mainly for HOW section) */
+  steps?: string[];
+}
+
+/**
+ * Context/introduction content using Golden Circle structure (Sinek).
+ * WHY → HOW → WHAT
  */
 export interface FrameworkContext {
-  /** Introduction text explaining the framework */
-  introduction: string;
-  /** Instructions on how to use the framework */
-  howToUse: string;
-  /** Optional key takeaways */
-  keyTakeaways?: string[];
+  /** WHY - Why this framework matters, the problem it solves */
+  why: GoldenCircleSection;
+  /** HOW - How the framework works, the approach */
+  how: GoldenCircleSection;
+  /** WHAT - What you will learn, concrete outcomes */
+  what: GoldenCircleSection;
+  /** Key takeaways - 3-5 main insights */
+  keyTakeaways: string[];
 }
 
 /**
@@ -86,9 +103,10 @@ export interface StrategicFrameworkLabels {
   backToFramework: string;
   explore: string;
 
-  // Intro view
-  introTitle: string;
-  howToUseTitle: string;
+  // Intro view - Golden Circle sections
+  whyTitle: string;
+  howTitle: string;
+  whatTitle: string;
   keyTakeawaysTitle: string;
   startExploring: string;
 
@@ -133,9 +151,10 @@ export const DEFAULT_NL_LABELS: StrategicFrameworkLabels = {
   backToFramework: 'Terug naar framework',
   explore: 'Verkennen',
 
-  // Intro view
-  introTitle: 'Over dit framework',
-  howToUseTitle: 'Hoe te gebruiken',
+  // Intro view - Golden Circle sections
+  whyTitle: 'Waarom dit framework',
+  howTitle: 'Hoe het werkt',
+  whatTitle: 'Wat je leert',
   keyTakeawaysTitle: 'Belangrijkste inzichten',
   startExploring: 'Start verkenning',
 
@@ -222,9 +241,44 @@ export function validateContent(content: StrategicFrameworkContent): string[] {
     }
   }
 
-  // Validate context
-  if (!content.context?.introduction) {
-    errors.push('Missing context.introduction');
+  // Validate context - Golden Circle structure
+  if (!content.context) {
+    errors.push('Missing context');
+  } else {
+    // Validate WHY section
+    if (!content.context.why) {
+      errors.push('Missing context.why');
+    } else {
+      if (!content.context.why.headline) errors.push('Missing context.why.headline');
+      if (!content.context.why.paragraph) errors.push('Missing context.why.paragraph');
+      if (!content.context.why.keyPoints || content.context.why.keyPoints.length < 3) {
+        errors.push('context.why.keyPoints must have at least 3 items');
+      }
+    }
+    // Validate HOW section
+    if (!content.context.how) {
+      errors.push('Missing context.how');
+    } else {
+      if (!content.context.how.headline) errors.push('Missing context.how.headline');
+      if (!content.context.how.paragraph) errors.push('Missing context.how.paragraph');
+      if (!content.context.how.keyPoints || content.context.how.keyPoints.length < 3) {
+        errors.push('context.how.keyPoints must have at least 3 items');
+      }
+    }
+    // Validate WHAT section
+    if (!content.context.what) {
+      errors.push('Missing context.what');
+    } else {
+      if (!content.context.what.headline) errors.push('Missing context.what.headline');
+      if (!content.context.what.paragraph) errors.push('Missing context.what.paragraph');
+      if (!content.context.what.keyPoints || content.context.what.keyPoints.length < 3) {
+        errors.push('context.what.keyPoints must have at least 3 items');
+      }
+    }
+    // Validate key takeaways
+    if (!content.context.keyTakeaways || content.context.keyTakeaways.length < 3) {
+      errors.push('context.keyTakeaways must have at least 3 items');
+    }
   }
 
   // Validate UI labels
