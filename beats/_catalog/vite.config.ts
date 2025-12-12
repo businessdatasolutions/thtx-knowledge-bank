@@ -4,7 +4,7 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/thtx-knowledge-bank/catalog/',
+  base: '/thtx-knowledge-bank/',
   build: {
     outDir: 'dist',
   },
