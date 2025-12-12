@@ -76,14 +76,14 @@ jobs:
         run: |
           mkdir -p ./deploy
 
-          # Copy tutor to root (main/default beat)
-          cp -r ./beats/ontology-ai-tutor/dist/* ./deploy/
+          # Copy catalog to root (landing page)
+          cp -r ./beats/_catalog/dist/* ./deploy/
 
-          # Copy all other Beat dist folders to their own subdirectories
+          # Copy all Beat dist folders to their own subdirectories
           for beat_dir in ./beats/*/; do
             beat_name=$(basename "$beat_dir")
-            # Skip underscore-prefixed directories and ontology-ai-tutor (already at root)
-            if [[ "$beat_name" == _* ]] || [[ "$beat_name" == "ontology-ai-tutor" ]]; then
+            # Skip underscore-prefixed directories
+            if [[ "$beat_name" == _* ]]; then
               continue
             fi
             # Only copy if dist exists
@@ -93,10 +93,6 @@ jobs:
               cp -r "$beat_dir/dist/"* "./deploy/$beat_name/"
             fi
           done
-
-          # Copy catalog to /catalog subdirectory
-          mkdir -p ./deploy/catalog
-          cp -r ./beats/_catalog/dist/* ./deploy/catalog/
 
           # Create .nojekyll to prevent Jekyll processing
           touch ./deploy/.nojekyll
