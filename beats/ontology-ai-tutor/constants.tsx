@@ -97,8 +97,8 @@ export const getTheorySections = (lang: Language): TheorySection[] => {
         content: (
           <div className="space-y-6">
             <p>
-              Als toekomstige leiders leren jullie data te analyseren om beslissingen te nemen. In de moderne onderneming zijn 
-              <strong> traditionele analytics echter vaak losgekoppeld van de operatie</strong>. Dashboards laten zien wat er gisteren is gebeurd, 
+              Als toekomstige leiders leren jullie data te analyseren om beslissingen te nemen. In veel van de huidige organisaties zijn
+              <strong> traditionele analytics echter vaak losgekoppeld van de operatie</strong>. Dashboards laten zien wat er gisteren is gebeurd,
               maar helpen zelden om direct beslissingen uit te voeren of terug te schrijven (write-back) naar de systemen die het bedrijf draaiende houden.
             </p>
             <p>
