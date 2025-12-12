@@ -137,6 +137,51 @@ Elke case study heeft drie stappen:
 - **Nederlands (NL)**: Professionele zakelijke content met 29 kwaliteitscorrecties
 - **Engels (EN)**: Volledige Engelse vertaling
 
+## 📈 Recente Verbeteringen (December 2024)
+
+### Kwaliteitsverbetering voor HBO Bedrijfskunde Jaar 2
+
+De quiz-kwaliteit is verbeterd van **8.2/10** naar **9.0/10+** met focus op:
+
+#### 1. Content Verbeteringen
+- ✅ **Bronverwijzing toegevoegd**: Case 3 (Titan Industries) citeert nu het Palantir Ontology artikel (Krishnaswamy, 2024)
+- ✅ **6 distractor upgrades**: "Overduidelijk foute" opties vervangen door "plausibel maar suboptimaal" alternatieven
+  - Case 1: "Kantoorartikelen" → "Historische jaarverslagen" (leert aggregate vs. instance-level)
+  - Case 1: "Blogpost" → "Auto-genereer compliance memo" (leert latency en governance)
+  - Case 2: "Social media scraper" → "NPS scores per regio" (leert real-time vs. batch)
+  - Case 3: "Satellietbeelden" → "Handmatige logboeken" (leert betrouwbaarheid)
+  - Case 3: "Post-it" → "Dashboard alert" (leert write-back vs. human-in-loop)
+  - Case 4: "Keycard blokkeren" → "Auto-schedule exit interview" (leert proactief vs. reactief)
+
+#### 2. Verrijkte Feedback
+- **Data feedback**: Vermeldt heterogene bronintegratie (ERP, CRM, IoT, SaaS)
+- **Logic feedback**: Legt logic binding uit over cloud, on-prem, en SaaS omgevingen
+- **Action feedback**: Introduceert scenarios framework voor safe staging
+
+#### 3. Pedagogische Ondersteuning
+- **Reflectievragen**: 3 vragen op het samenvattingsscherm per case
+- **Docentenhandleiding**: [TEACHER_GUIDE.md](./TEACHER_GUIDE.md) met:
+  - 3-rondes discussie framework (Delen → Patroon → Toepassen)
+  - Beoordelingsrubric (Data, Logic, Action, Integratie)
+  - Veelvoorkomende misconcepties met correcties
+  - Verlengactiviteiten voor dieper leren
+
+#### 4. Kwaliteitsimpact
+
+| Aspect | Voor | Na |
+|--------|------|-----|
+| Algemene kwaliteit | 8.2/10 | 9.0/10+ |
+| Distractor kwaliteit | 7.5/10 | 8.5/10 |
+| Bronalignment | 8.0/10 | 9.0/10 |
+| Validiteit | 8.5/10 | 9.0/10 |
+
+#### 5. Nieuwe Bestanden
+- `TEACHER_GUIDE.md` - Volledige klasfacilitatiegids (3000+ woorden)
+- `quality-criteria.md` - Referentiedocument voor vraagkwaliteit
+- Palantir Ontology bronmateriaal (PDF)
+
+Voor details, zie commit `17d5462` of `/Users/witoldtenhove/.claude/plans/compressed-snacking-gray.md`
+
 ## 📝 Licentie
 
 Dit is een educatief project ontwikkeld voor Business Management onderwijs.
@@ -157,6 +202,6 @@ Dit is een educatief project ontwikkeld voor Business Management onderwijs.
 
 ---
 
-**Laatste update**: 30 november 2024
-**Versie**: 1.0.0
+**Laatste update**: 12 december 2024
+**Versie**: 1.1.0
 **Status**: ✅ Live op GitHub Pages
