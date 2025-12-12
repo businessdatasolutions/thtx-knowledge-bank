@@ -94,7 +94,7 @@ const CaseSummary: React.FC<Props> = ({ caseStudy, choices, lang, onBack }) => {
                <span className="text-2xl flex-shrink-0">🔗</span>
                <p className="text-slate-700 leading-relaxed">
                  {lang === 'NL'
-                   ? 'Hoe zou deze Ontology-workflow er in jouw stage-bedrijf uitzien?'
+                   ? 'Hoe zou deze Ontology-workflow er in jouw toekomstige stage-organisatie uit kunnen zien?'
                    : 'How would this Ontology workflow look in your internship company?'}
                </p>
              </div>
