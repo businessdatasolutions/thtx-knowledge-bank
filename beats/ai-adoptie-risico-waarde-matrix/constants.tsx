@@ -108,13 +108,66 @@ export const BEAT_CONTENT = {
     ]
   },
   "context": {
-    "introduction": "In het huidige AI-tijdperk staan executives voor de uitdaging om te bepalen welke AI-initiatieven prioriteit verdienen in een omgeving van schijnbaar oneindige mogelijkheden. Jeff Bussgang's observatie dat 'founders die AI gebruiken founders zullen vervangen die dat niet doen' creëert urgentie, maar niet elke AI-investering levert dezelfde waarde op. Dit framework biedt een systematische manier om AI-opportuniteiten te evalueren door twee kritieke dimensies tegen elkaar af te wegen: implementatierisico en waardepotentieel. Het helpt leaders om de 'experimentele doorbraken' te identificeren die onmiddellijke actie rechtvaardigen, terwijl ze tegelijkertijd strategische investeringen plannen die 10X resultaten kunnen opleveren. Gebaseerd op de principes van experimentele bedrijfsvoering en strategische vernieuwing, stelt dit framework executives in staat om AI-adoptie te benaderen als een portfolio van experimenten met verschillende risico-waarde profielen.",
-    "howToUse": "Begin met het in kaart brengen van uw huidige AI-initiatieven en potentiële projecten op de matrix. Evalueer elk initiatief op implementatierisico (technische complexiteit, organisatorische weerstand, investeringsvereisten) en waardepotentieel (potentiële ROI, strategische impact, concurrentievoordeel). Start altijd met 'Experimentele Doorbraken' - deze bieden snelle wins die organisationeel momentum creëren. Gebruik successen in dit kwadrant om draagvlak te bouwen voor 'Strategische Investeringen'. Behandel 'Efficiency Optimalisatie' als ondersteunende initiatieven die parallel kunnen lopen. Vermijd of herdefinieer projecten in de 'Vermijd Valkuilen' categorie. Review de matrix maandelijks - AI-technologie evolueert zo snel dat projecten tussen kwadranten kunnen verschuiven. Gebruik het framework ook voor budgetalloca​tie: 60% naar experimentele doorbraken, 30% naar strategische investeringen, 10% naar efficiency optimalisatie, 0% naar valkuilen.",
+    "why": {
+      "headline": "Strategische prioritering in het AI-tijdperk",
+      "paragraph": "In het huidige AI-tijdperk staan executives voor de uitdaging om te bepalen welke AI-initiatieven prioriteit verdienen in een omgeving van schijnbaar oneindige mogelijkheden. Jeff Bussgang's observatie dat 'founders die AI gebruiken founders zullen vervangen die dat niet doen' creëert urgentie, maar niet elke AI-investering levert dezelfde waarde op.",
+      "keyPoints": [
+        "Dit framework biedt een systematische manier om AI-opportuniteiten te evalueren door implementatierisico en waardepotentieel tegen elkaar af te wegen",
+        "Het helpt leaders om 'experimentele doorbraken' te identificeren die onmiddellijke actie rechtvaardigen",
+        "Tegelijkertijd kunnen strategische investeringen worden gepland die 10X resultaten kunnen opleveren",
+        "Gebaseerd op principes van experimentele bedrijfsvoering en strategische vernieuwing"
+      ]
+    },
+    "how": {
+      "headline": "Van evaluatie naar actie: de matrix gebruiken",
+      "paragraph": "Begin met het in kaart brengen van uw huidige AI-initiatieven en potentiële projecten op de matrix. Evalueer elk initiatief op implementatierisico (technische complexiteit, organisatorische weerstand, investeringsvereisten) en waardepotentieel (potentiële ROI, strategische impact, concurrentievoordeel).",
+      "keyPoints": [
+        "Start altijd met 'Experimentele Doorbraken' - deze bieden snelle wins die organisationeel momentum creëren",
+        "Gebruik successen om draagvlak te bouwen voor 'Strategische Investeringen'",
+        "Behandel 'Efficiency Optimalisatie' als ondersteunende initiatieven die parallel kunnen lopen",
+        "Vermijd of herdefinieer projecten in de 'Vermijd Valkuilen' categorie"
+      ],
+      "steps": [
+        "Breng huidige en potentiële AI-initiatieven in kaart",
+        "Evalueer elk initiatief op implementatierisico en waardepotentieel",
+        "Positioneer initiatieven in de juiste kwadrant",
+        "Prioriteer op basis van kwadrant: 60% experimentele doorbraken, 30% strategische investeringen, 10% efficiency",
+        "Review de matrix maandelijks - AI-technologie evolueert snel"
+      ]
+    },
+    "what": {
+      "headline": "Portfolio-denken voor AI-adoptie",
+      "paragraph": "Dit framework stelt executives in staat om AI-adoptie te benaderen als een portfolio van experimenten met verschillende risico-waarde profielen. Het biedt duidelijkheid over waar te beginnen, waar zwaar in te investeren, en wat te vermijden.",
+      "keyPoints": [
+        "Inzicht in welke AI-initiatieven onmiddellijke actie rechtvaardigen",
+        "Strategische budgetallocatie: focus middelen waar ze het meest impact hebben",
+        "Vermijden van kostbare valkuilen die organisaties afleiden van waardevolle AI-investeringen",
+        "Een gemeenschappelijke taal voor AI-prioritering binnen de organisatie"
+      ]
+    },
     "keyTakeaways": [
       "Niet alle AI-initiatieven zijn gelijk - strategische prioritering op basis van risico-waarde verhouding is essentieel voor succesvol leiderschap",
       "Begin altijd met laagrisicoexperimenten om organisationeel momentum te creëren voordat je grote strategische investeringen doet",
       "Vermijd AI-projecten met hoge implementatierisico's en beperkte waarde - deze leiden tot frustratie en kunnen bredere AI-adoptie ondermijnen"
     ]
+  },
+  "ui": {
+    "title": "AI Adoptie Matrix",
+    "subtitle": "Strategisch framework voor het prioriteren van AI-initiatieven",
+    "backToIntro": "Terug naar introductie",
+    "backToFramework": "Terug naar matrix",
+    "explore": "Verkennen",
+    "whyTitle": "Waarom dit framework",
+    "howTitle": "Hoe het werkt",
+    "whatTitle": "Wat je leert",
+    "keyTakeawaysTitle": "Belangrijkste inzichten",
+    "startExploring": "Start verkenning",
+    "selectQuadrant": "Selecteer een kwadrant",
+    "clickToExplore": "Klik op een kwadrant om meer te leren",
+    "examplesTitle": "Voorbeelden",
+    "recommendationsTitle": "Aanbevelingen",
+    "positionLabel": "Positie",
+    "loading": "Laden..."
   }
 } as const;
 

@@ -104,7 +104,7 @@ export const BEAT_CONTENT = {
         "id": "learning-labs",
         "position": "bottom-right",
         "title": "Learning Labs - Capability Building",
-        "description": "Dit kwadrant omvat hoogrisico experimenten met beperkte directe business impact, maar significant leerwaarde. Deze initiatieven bouwen organisatorische 'AI muscle' - de capaciteit om in de toekomst complexe AI-projecten uit te voeren. Ze ontwikkelen technische vaardigheden, testen nieuwe technologieën, en verkennen emerging capabilities zonder directe P&L druk. Dit zijn 'optionele waardes' - investeringen die toekomstige strategic bets mogelijk maken. Ze zijn geschikt voor R&D budgetten, innovatielabs, of als side-projects voor high-performers. Het doel is niet onmiddellijke ROI maar capability development. Deze experimenten passen bij de 'Digital Sensing' capability - het systematisch scannen van de technologische horizon voor toekomstige opportuniteiten.",
+        "description": "Dit kwadrant omvat hoogrisico experimenten met beperkte directe business impact, maar significant leerwaarde. Deze initiatieven bouwen organisatorische 'AI muscle' en creëren waarde die nog niet wordt herkend - omdat we de toekomstige wereld en haar behoeften niet kunnen voorspellen. Door te experimenteren met emerging capabilities ontstaan soms serendipiteitsmomenten: compleet verrassende ontdekkingen die waardevoller blijken dan het oorspronkelijke doel. Dit zijn 'optionele waardes' - investeringen die toekomstige strategic bets mogelijk maken. Ze zijn geschikt voor R&D budgetten, innovatielabs, of als side-projects. Het doel is niet onmiddellijke ROI maar capability development en het systematisch scannen van de technologische horizon ('Digital Sensing').",
         "examples": [
           "Proof-of-concepts met cutting-edge AI-agents zonder duidelijk businesscase",
           "Experimentele integraties van nieuwe foundation models (GPT, Claude, Gemini)",
@@ -126,15 +126,67 @@ export const BEAT_CONTENT = {
     ]
   },
   "context": {
-    "introduction": "We bevinden ons in het tijdperk van de '10X Leader' - waarbij business leaders die AI effectief inzetten 10 keer productiever zijn dan hun peers die dit niet doen. Dit is geen hyperbool: Google schrijft 25% van hun code met AI, Amazon bespaarde 4.500 ontwikkelaarsjarendien, en Klarna verdubbelde hun groei door volledige AI-gedreven platformharmonisatie. De vraag is niet óf je AI adopteert, maar hoe snel je de juiste experimenten kunt identificeren en uitvoeren voordat concurrenten je voorbij streven. Dit framework biedt een strategische lens om die keuzes te maken. Het combineert twee kritische dimensies: (1) Implementatierisico - de technische, organisatorische en financiële complexiteit van een AI-initiatief, en (2) Waardecreatie Potentieel - de mate waarin het initiatief incrementele verbeteringen levert versus fundamentele businessmodel transformatie. Door je AI-portfolio te visualiseren in deze matrix, kun je bewust kiezen waar je investeert, welke experimenten je parallel uitvoert, en hoe je sequenced van quick wins naar strategic bets. Het framework is gebaseerd op academisch onderzoek naar 'dynamic capabilities' - de organisatorische capaciteiten die digitale transformatie mogelijk maken: sensing (opportuniteiten detecteren), seizing (snel testen en resources realloceren), en transforming (continue organisatorische aanpassing). Deze capabilities zijn niet aangeboren - ze worden opgebouwd door systematische experimentatie volgens de principes van de 'Experimentation Machine'.",
-    "howToUse": "Begin met het in kaart brengen van je huidige en potentiële AI-initiatieven in de vier kwadranten. Voor elk initiatief, bepaal: (1) Het implementatierisico - evalueer technische complexiteit, benodigde infrastructuur, organisatorische verandering, investering, en time-to-value. Laag risico betekent: operationeel binnen weken, minimale integraties, geen grootschalige verandertrajecten. Hoog risico betekent: maanden tot jaren, significante technische debt, fundamentele procesherontwerp, executive commitment. (2) Het waardecreatie potentieel - schat de impact in. Incrementeel: 10-30% efficiency gains, kost- of tijdbesparingen. Transformationeel: 10X productiviteitsverbeteringen, nieuwe revenue streams, fundamentele concurrentievoordelen. Gebruik de 'Diamond Square' lens uit het bronmateriaal: welke experimenten versterken je bestaande businessmodel versus welke creëren nieuwe modellen? Als strategisch leider, volg deze sequentie: START met Quick Wins (paars kwadrant) - bouw vertrouwen, bewijs AI's waarde, creëer momentum. Documenteer successen en deel breed. PARALLELLISEER met Learning Labs (groen kwadrant) - bouw capabilities terwijl je quick wins schaalt. Investeer in skill development en exploratie van emerging tech. GRADUEER naar Strategic Bets (blauw kwadrant) - wanneer je experimentele muscle hebt opgebouwd, durf je grote transformaties aan. NEGEER Low Priority (oranje kwadrant) - tenzij alle andere kwadranten verzadigd zijn. Gebruik het framework iteratief: elk kwartaal, evalueer je portfolio. Promoveer succesvolle learning labs naar quick wins of strategic bets. Stop falende experimenten snel. Herschik resources naar hoogwaardige opportuniteiten. Het framework is niet statisch - wat vandaag een strategic bet is, wordt morgen een quick win naarmate technologie matured. De sleutel is continue sensing van je omgeving en agile resource allocatie.",
+    "why": {
+      "headline": "Het tijdperk van de 10X Leader",
+      "paragraph": "We bevinden ons in het tijdperk van de '10X Leader' - waarbij business leaders die AI effectief inzetten 10 keer productiever zijn dan hun peers die dit niet doen. Dit is geen hyperbool: Google schrijft 25% van hun code met AI, Amazon bespaarde 4.500 ontwikkelaarsjaren, en Klarna verdubbelde hun groei door AI-gedreven platformharmonisatie. De vraag is niet óf je AI adopteert, maar hoe snel je de juiste experimenten kunt identificeren en uitvoeren.",
+      "keyPoints": [
+        "Dit framework combineert twee kritische dimensies: implementatierisico en waardecreatie potentieel",
+        "Visualiseer je AI-portfolio om bewust te kiezen waar je investeert en hoe je sequenced van quick wins naar strategic bets",
+        "Gebaseerd op 'dynamic capabilities': sensing, seizing en transforming - capaciteiten die worden opgebouwd door systematische experimentatie",
+        "De organisaties die winnen zijn 'Experimentation Machines' die systematisch testen, leren en itereren"
+      ]
+    },
+    "how": {
+      "headline": "Van portfolio-mapping naar strategische executie",
+      "paragraph": "Begin met het in kaart brengen van je huidige en potentiële AI-initiatieven in de vier kwadranten. Voor elk initiatief evalueer je het implementatierisico (technische complexiteit, organisatorische verandering, investering) en waardecreatie potentieel (incrementele verbetering versus transformationele impact).",
+      "keyPoints": [
+        "START met Quick Wins - bouw vertrouwen, bewijs AI's waarde, creëer momentum",
+        "PARALLELLISEER met Learning Labs - bouw capabilities terwijl je quick wins schaalt",
+        "GRADUEER naar Strategic Bets - wanneer je experimentele muscle hebt opgebouwd",
+        "NEGEER Low Priority - tenzij alle andere kwadranten verzadigd zijn"
+      ],
+      "steps": [
+        "Breng huidige en potentiële AI-initiatieven in kaart in de vier kwadranten",
+        "Evalueer implementatierisico: technische complexiteit, infrastructuur, organisatorische verandering, time-to-value",
+        "Schat waardecreatie potentieel: incrementeel (10-30% gains) vs. transformationeel (10X verbeteringen)",
+        "Prioriteer: 60% naar quick wins, 20% naar strategic bets, 15% naar learning labs, 5% naar low priority",
+        "Review elk kwartaal: promoveer successen, stop failures, herschik resources naar hoogwaardige opportuniteiten"
+      ]
+    },
+    "what": {
+      "headline": "Systematische experimentatie als competitief voordeel",
+      "paragraph": "Dit framework stelt je in staat om AI-adoptie te benaderen als een portfolio van experimenten met verschillende risico-waarde profielen. Het biedt duidelijkheid over waar te starten, hoe capabilities op te bouwen, en wanneer grote transformaties aan te durven.",
+      "keyPoints": [
+        "Inzicht in welke AI-experimenten onmiddellijke waarde leveren versus welke organisatorische capabilities opbouwen",
+        "Een sequentiële strategie van quick wins naar strategic bets die transformatierisico's minimaliseert",
+        "Portfolio-denken: run meerdere experimenten parallel, accepteer failures, schaal successen snel op",
+        "Een gemeenschappelijke taal voor AI-prioritering en resource allocatie binnen de organisatie"
+      ]
+    },
     "keyTakeaways": [
-      "Start met Quick Wins (laag risico, hoge waarde) - deze bouwen organisatorisch vertrouwen en financieren toekomstige experimenten. Voorbeelden: AI co-pilots voor content, geautomatiseerde analyses, chatbots. Meet successen concreet en deel breed.",
-      "Strategic Bets vereisen dynamic capabilities - je kunt niet succesvol transformeren zonder eerst 'sensing, seizing, transforming' muscles te ontwikkelen via kleinere experimenten. 70% van transformaties faalt door gebrek aan deze capabilities.",
-      "Niet alle AI-initiatieven zijn gelijk - het framework dwingt je tot strategische keuzes. Focus op kwadranten met hoogste return (paars en blauw), investeer selectief in capability building (groen), en minimaliseer effort op low-impact work (oranje).",
-      "Experimentatie is een portfolio-strategie - run meerdere experimenten parallel, accepteer dat sommige falen, schaal successen snel op. De organisaties die winnen zijn 'Experimentation Machines' die systematisch testen, leren en itereren.",
-      "Timing is kritiek - AI-adoptie gebeurt verticaal (maanden) niet gradueel (jaren). De infrastructuur bestaat al (8 miljard smartphones, 2 miljard laptops). Founders die AI gebruiken vervangen founders die dat niet doen. Dit geldt voor alle business leaders."
+      "Start met Quick Wins (laag risico, hoge waarde) - deze bouwen organisatorisch vertrouwen en financieren toekomstige experimenten zoals AI co-pilots, geautomatiseerde analyses en chatbots",
+      "Strategic Bets vereisen dynamic capabilities - ontwikkel eerst 'sensing, seizing, transforming' muscles via kleinere experimenten. 70% van transformaties faalt door gebrek aan deze capabilities",
+      "Experimentatie is een portfolio-strategie - run meerdere experimenten parallel, accepteer dat sommige falen, schaal successen snel op naar 10X resultaten",
+      "Timing is kritiek - AI-adoptie gebeurt verticaal (maanden) niet gradueel (jaren). Founders die AI gebruiken vervangen founders die dat niet doen"
     ]
+  },
+  "ui": {
+    "title": "AI Experimentatie Framework",
+    "subtitle": "Strategisch framework voor het prioriteren van AI-experimenten",
+    "backToIntro": "Terug naar introductie",
+    "backToFramework": "Terug naar framework",
+    "explore": "Verkennen",
+    "whyTitle": "Waarom dit framework",
+    "howTitle": "Hoe het werkt",
+    "whatTitle": "Wat je leert",
+    "keyTakeawaysTitle": "Belangrijkste inzichten",
+    "startExploring": "Start verkenning",
+    "selectQuadrant": "Selecteer een kwadrant",
+    "clickToExplore": "Klik op een kwadrant om meer te leren",
+    "examplesTitle": "Voorbeelden",
+    "recommendationsTitle": "Aanbevelingen",
+    "positionLabel": "Positie",
+    "loading": "Laden..."
   }
 } as const;
 
