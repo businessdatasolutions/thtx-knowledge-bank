@@ -39,7 +39,7 @@ export const InteractiveMatrix: React.FC<InteractiveMatrixProps> = ({
   const bottomLeft = getQuadrantByPosition(quadrants, 'bottom-left');
   const bottomRight = getQuadrantByPosition(quadrants, 'bottom-right');
 
-  const renderQuadrant = (quadrant: Quadrant | undefined, position: string) => {
+  const renderQuadrant = (quadrant: Quadrant | undefined) => {
     if (!quadrant) return null;
 
     const isSelected = quadrant.id === selectedQuadrantId;
@@ -71,53 +71,66 @@ export const InteractiveMatrix: React.FC<InteractiveMatrixProps> = ({
 
   return (
     <div className="h-full flex flex-col">
-      {/* Y-axis high label */}
-      <div className="flex justify-center mb-2">
-        <span className="text-sm font-medium text-slate-600 bg-white px-3 py-1 rounded-full shadow-sm">
-          {yAxis.highLabel}
-        </span>
-      </div>
-
       <div className="flex-1 flex">
-        {/* Y-axis label (rotated) */}
-        <div className="flex items-center justify-center w-12">
-          <span
-            className="text-sm font-semibold text-slate-700 whitespace-nowrap"
-            style={{ transform: 'rotate(-90deg)' }}
-          >
-            {yAxis.label}
-          </span>
+        {/* Y-axis (vertical, left side) */}
+        <div className="flex flex-col items-center py-4" style={{ width: '80px' }}>
+          {/* Y-axis high label (top) */}
+          <div className="flex-1 flex items-start pt-8">
+            <span
+              className="text-sm font-medium text-slate-600 bg-white px-3 py-1 rounded-full shadow-sm whitespace-nowrap"
+              style={{ transform: 'rotate(-90deg)', transformOrigin: 'center' }}
+            >
+              {yAxis.highLabel}
+            </span>
+          </div>
+
+          {/* Y-axis label (middle, rotated) - positioned more to the left */}
+          <div className="flex items-center w-full">
+            <span
+              className="text-sm font-semibold text-slate-700 whitespace-nowrap"
+              style={{ transform: 'rotate(-90deg)', transformOrigin: 'center', marginLeft: '-50px' }}
+            >
+              {yAxis.label}
+            </span>
+          </div>
+
+          {/* Y-axis low label (bottom) */}
+          <div className="flex-1 flex items-end pb-8">
+            <span
+              className="text-sm font-medium text-slate-600 bg-white px-3 py-1 rounded-full shadow-sm whitespace-nowrap"
+              style={{ transform: 'rotate(-90deg)', transformOrigin: 'center' }}
+            >
+              {yAxis.lowLabel}
+            </span>
+          </div>
         </div>
 
         {/* Matrix grid */}
         <div className="flex-1 grid grid-cols-2 grid-rows-2 gap-4">
-          {renderQuadrant(topLeft, 'top-left')}
-          {renderQuadrant(topRight, 'top-right')}
-          {renderQuadrant(bottomLeft, 'bottom-left')}
-          {renderQuadrant(bottomRight, 'bottom-right')}
+          {renderQuadrant(topLeft)}
+          {renderQuadrant(topRight)}
+          {renderQuadrant(bottomLeft)}
+          {renderQuadrant(bottomRight)}
         </div>
 
         {/* Spacer for symmetry */}
-        <div className="w-12" />
+        <div style={{ width: '80px' }} />
       </div>
 
-      {/* Y-axis low label */}
-      <div className="flex justify-center mt-2">
-        <span className="text-sm font-medium text-slate-600 bg-white px-3 py-1 rounded-full shadow-sm">
-          {yAxis.lowLabel}
-        </span>
-      </div>
-
-      {/* X-axis labels */}
-      <div className="flex justify-between mt-4 px-12">
+      {/* X-axis labels - closer to matrix */}
+      <div className="flex justify-between mt-6" style={{ paddingLeft: '80px', paddingRight: '80px' }}>
         <span className="text-sm font-medium text-slate-600 bg-white px-3 py-1 rounded-full shadow-sm">
           {xAxis.lowLabel}
         </span>
-        <span className="text-sm font-semibold text-slate-700">
-          {xAxis.label}
-        </span>
         <span className="text-sm font-medium text-slate-600 bg-white px-3 py-1 rounded-full shadow-sm">
           {xAxis.highLabel}
+        </span>
+      </div>
+
+      {/* X-axis title - further from matrix */}
+      <div className="flex justify-center mt-4">
+        <span className="text-sm font-semibold text-slate-700">
+          {xAxis.label}
         </span>
       </div>
     </div>
