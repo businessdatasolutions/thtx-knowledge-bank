@@ -1,5 +1,5 @@
 /**
- * AI Experimentatie & Waardecreatie Framework
+ * AI Portfolio & Waardecreatie Framework
  *
  * Generated Beat content.
  * Template: strategic-framework
@@ -9,14 +9,14 @@
 export const BEAT_CONTENT = {
   "metadata": {
     "id": "ai-experimentatie-framework",
-    "title": "AI Experimentatie & Waardecreatie Framework",
+    "title": "AI Portfolio & Waardecreatie Framework",
     "description": "Strategisch framework voor het positioneren van AI-experimenten op basis van risico en waardepotentieel",
     "author": "THTX",
     "publishDate": "2025-12-03",
     "templateType": "strategic-framework"
   },
   "framework": {
-    "title": "AI Experimentatie & Waardecreatie Framework",
+    "title": "AI Portfolio & Waardecreatie Framework",
     "description": "Dit framework helpt organisaties hun AI-initiatieven te positioneren op basis van twee cruciale dimensies: het implementatierisico en het potentieel voor waardecreatie. Het biedt een strategische lens om te bepalen welke experimenten prioriteit verdienen en welke aanpak past bij verschillende scenario's.",
     "xAxis": {
       "label": "Implementatierisico",
@@ -171,7 +171,7 @@ export const BEAT_CONTENT = {
     ]
   },
   "ui": {
-    "title": "AI Experimentatie Framework",
+    "title": "AI Portfolio Framework",
     "subtitle": "Strategisch framework voor het prioriteren van AI-experimenten",
     "backToIntro": "Terug naar introductie",
     "backToFramework": "Terug naar framework",
