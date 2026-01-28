@@ -140,10 +140,10 @@ export const BEAT_CONTENT = {
       "headline": "Van portfolio-mapping naar strategische executie",
       "paragraph": "Begin met het in kaart brengen van je huidige en potentiële AI-initiatieven in de vier kwadranten. Voor elk initiatief evalueer je het implementatierisico (technische complexiteit, organisatorische verandering, investering) en waardecreatie potentieel (incrementele verbetering versus transformationele impact).",
       "keyPoints": [
-        "START met Quick Wins - bouw vertrouwen, bewijs AI's waarde, creëer momentum",
-        "PARALLELLISEER met Learning Labs - bouw capabilities terwijl je quick wins schaalt",
-        "GRADUEER naar Strategic Bets - wanneer je experimentele muscle hebt opgebouwd",
-        "NEGEER Low Priority - tenzij alle andere kwadranten verzadigd zijn"
+        "START met Quick Wins – bouw vertrouwen, bewijs AI's waarde, creëer momentum",
+        "COMBINEER met Learning Labs – bouw capabilities terwijl je quick wins opschaalt",
+        "GROEI naar Strategic Bets – wanneer je experimentele muscle hebt opgebouwd",
+        "RESERVEER Low Priority voor beginners – laat nieuwe medewerkers hier experimenteren in sandbox-omgevingen, nooit in productie"
       ],
       "steps": [
         "Breng huidige en potentiële AI-initiatieven in kaart in de vier kwadranten",
