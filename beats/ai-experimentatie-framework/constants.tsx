@@ -59,7 +59,7 @@ export const BEAT_CONTENT = {
         "title": "Strategic Bets - Transformationele Doorbraken",
         "description": "Dit kwadrant vertegenwoordigt hoogwaardige, hoogrisico AI-initiatieven die fundamentele businessmodellen kunnen transformeren. Deze experimenten vereisen significante investeringen in infrastructuur, cultuurverandering, en organisatorische herstructurering. Ze belichamen 'Digital Seizing' - de strategische behendigheid om nieuwe business opportuniteiten te grijpen door snelle prototyping en resource-reallocatie. Hoewel het risico substantieel is, kan succes leiden tot duurzame concurrentievoordelen en marktleiderschap. Deze projecten vereisen executive sponsorship, dedicated teams, en een langetermijn commitment. Ze zijn geschikt voor organisaties die al experimentele muscle hebben opgebouwd via quick wins.",
         "examples": [
-          "Klarna's volledige dataplatform harmonisatie met eliminatie van alle SaaS-platforms (100% YoY groei)",
+          "Anthropic's interne AI-first transformatie (60% van werk via Claude, 50% productiviteitswinst)",
           "Booking.com's duizenden dagelijkse experimenten infrastructuur",
           "Ontwikkeling van proprietary AI-agents die autonome beslissingen nemen",
           "Fundamentele herontwerp van supply chain met real-time AI-optimalisatie",
@@ -128,12 +128,12 @@ export const BEAT_CONTENT = {
   "context": {
     "why": {
       "headline": "Het tijdperk van de 10X Leader",
-      "paragraph": "We bevinden ons in het tijdperk van de '10X Leader' - waarbij business leaders die AI effectief inzetten 10 keer productiever zijn dan hun peers die dit niet doen. Dit is geen hyperbool: Google schrijft 25% van hun code met AI, Amazon bespaarde 4.500 ontwikkelaarsjaren, en Klarna verdubbelde hun groei door AI-gedreven platformharmonisatie. De vraag is niet óf je AI adopteert, maar hoe snel je de juiste experimenten kunt identificeren en uitvoeren.",
+      "paragraph": "We bevinden ons in het tijdperk van de '10X Leader' – business leaders die AI effectief inzetten, realiseren aantoonbaar een veelvoud aan productiviteit en impact ten opzichte van peers die dat niet doen. Google-CEO Sundar Pichai gaf recent aan dat inmiddels meer dan 25% van de nieuwe Google-code door AI wordt gegenereerd en door engineers wordt gereviewd, wat de ontwikkelsnelheid aanzienlijk verhoogt. Amazon-CEO Andy Jassy meldt dat de generatieve AI-assistent voor ontwikkelaars het equivalent van 4.500 ontwikkelaarsjaren heeft bespaard en naar schatting 260 miljoen dollar aan jaarlijkse efficiëntiewinst oplevert. Ook Anthropic laat zien wat er gebeurt als je AI radicaal omarmt: CEO Dario Amodei zegt dat sommige engineers 'geen code meer schrijven, maar de code volledig door Claude Code laten genereren en alleen nog reviewen', en dat hij verwacht dat modellen binnen 6–12 maanden het grootste deel van het werk van software-engineers end-to-end kunnen uitvoeren. Intern rapporteert Anthropic dat medewerkers Claude inmiddels in ongeveer 60% van hun werk inzetten, met gemiddeld rond de 50% productiviteitswinst ten opzichte van een jaar eerder.",
       "keyPoints": [
-        "Dit framework combineert twee kritische dimensies: implementatierisico en waardecreatie potentieel",
-        "Visualiseer je AI-portfolio om bewust te kiezen waar je investeert en hoe je sequenced van quick wins naar strategic bets",
-        "Gebaseerd op 'dynamic capabilities': sensing, seizing en transforming - capaciteiten die worden opgebouwd door systematische experimentatie",
-        "De organisaties die winnen zijn 'Experimentation Machines' die systematisch testen, leren en itereren"
+        "Dit framework combineert twee kritische dimensies: implementatierisico en waardecreatiepotentieel",
+        "Visualiseer je AI-portfolio om bewust te kiezen waar je investeert en hoe je sequentieel opschaalt van quick wins naar strategische bets",
+        "Gebaseerd op het idee van 'dynamic capabilities': sensing, seizing en transforming – capaciteiten die je opbouwt via systematische experimentatie en leren",
+        "De organisaties die winnen zijn 'Experimentation Machines' die continu testen, leren en itereren, en zo AI stap voor stap in hun dagelijkse operatie verankeren"
       ]
     },
     "how": {
